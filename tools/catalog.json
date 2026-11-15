@@ -1,0 +1,25 @@
+{
+  "site": "Studybook",
+  "base": "https://divorcedlance.github.io/studybook/",
+  "courses": [
+    {
+      "id": "mate-nive",
+      "name": "Mate Nive",
+      "full": "Propedéutico en matemáticas",
+      "school": "Universidad del Pacífico",
+      "term": "2026-0",
+      "units": [
+        {"n": 1, "title": "Lógica y conjuntos", "short": "Lógica y conjuntos",
+         "topics": ["Lógica proposicional", "Conjuntos y cuantificadores", "Operaciones con conjuntos", "Conjuntos finitos"]},
+        {"n": 2, "title": "Álgebra", "short": "Álgebra",
+         "topics": ["Leyes de exponentes", "Logaritmos", "Productos notables", "Racionalización", "Polinomios", "División de polinomios", "Ecuaciones lineales y cuadráticas", "Valor absoluto", "Sistemas de ecuaciones lineales", "Fracciones parciales"]},
+        {"n": 3, "title": "Inecuaciones", "short": "Inecuaciones",
+         "topics": ["Inecuaciones lineales", "Inecuaciones cuadráticas", "Inecuaciones con radicales", "Inecuaciones racionales"]},
+        {"n": 4, "title": "Parábolas, circunferencias, oferta y demanda", "short": "Parábolas, circunferencias, oferta y demanda",
+         "page": "unidad-4.html"},
+        {"n": 5, "title": "Magnitudes proporcionales, interés, progresiones y sumatorias", "short": "Proporcionalidad, interés, progresiones",
+         "page": "unidad-5.html"}
+      ]
+    }
+  ]
+}

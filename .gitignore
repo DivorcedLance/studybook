@@ -1,0 +1,11 @@
+# Material del curso (PDF de unidades, apuntes, compendios): solo local, no se publica
+material/
+*.pdf
+*.pptx
+*.docx
+# Videos
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
