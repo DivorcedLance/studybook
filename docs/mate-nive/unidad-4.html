@@ -42,11 +42,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <header>
   <div class="top">
     <nav class="crumbs" aria-label="Ruta"><a href="../index.html">Studybook</a><span class="sep" aria-hidden="true">/</span><a href="index.html">Mate Nive</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Unidad 4</span></nav>
-    <button class="theme-btn" id="theme-btn" type="button"><span class="ic" aria-hidden="true"></span><span id="theme-txt">Modo oscuro</span></button>
+    <div class="top-btns"><button class="theme-btn search-btn" id="search-btn" type="button" aria-expanded="false" aria-controls="search-box"><span class="sic" aria-hidden="true">⌕</span><span>Buscar</span></button><button class="theme-btn" id="theme-btn" type="button"><span class="ic" aria-hidden="true"></span><span id="theme-txt">Modo oscuro</span></button></div>
   </div>
   <h1>Unidad 4</h1>
   <p class="lead">Parábolas, circunferencias, oferta y demanda. Elige el tema y luego la pestaña de teoría, ejercicios resueltos, ejemplos o solucionarios.</p>
 </header>
+<div class="sb-search" id="search-box" data-root="../" hidden></div>
 
 <!-- sb:units --><nav class="units" aria-label="Unidades"><a class="unit" href="unidad-4.html" aria-current="page"><span class="u-n">Unidad 4</span><span class="u-t">Parábolas, circunferencias, oferta y demanda</span></a><a class="unit" href="unidad-5.html"><span class="u-n">Unidad 5</span><span class="u-t">Proporcionalidad, interés, progresiones</span></a></nav><!-- /sb:units -->
 
@@ -61,6 +62,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   <button class="tab" role="tab" id="tab-ejercicios" data-tab="ejercicios" aria-selected="false">Ejercicios</button>
   <button class="tab" role="tab" id="tab-ejemplos" data-tab="ejemplos" aria-selected="false">Ejemplos</button>
   <button class="tab" role="tab" id="tab-solucionarios" data-tab="solucionarios" aria-selected="false">Solucionarios</button>
+  <button class="tab" role="tab" id="tab-interactivo" data-tab="interactivo" aria-selected="false"><span class="tab-long">Interactivo</span><span class="tab-short">Interact.</span></button>
 </div>
 
 <!-- ============================ PARÁBOLAS ============================ -->
@@ -1620,6 +1622,42 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 </div>
 
 
+<div class="panel" id="pn-parabolas-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores">
+    <span><i class="dot" style="background:var(--blue)"></i>vértice (h, k)</span>
+    <span><i class="dot" style="background:var(--orange)"></i>interceptos con los ejes</span>
+    <span><i class="dot" style="background:var(--purple)"></i>intersecciones (sistema)</span>
+    <span><i class="dot" style="background:var(--magenta)"></i>punto de tangencia / punto dado</span>
+    <span><i class="dot" style="background:var(--green)"></i>áreas</span>
+    <span class="note">Al <b>reemplazar</b> un valor, el número se pinta del color de lo que representa: por ejemplo, el \(\az4\) azul en \(k=(\az4)^2-8(\az4)+15\) es la \(h\) del vértice.</span>
+  </div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve los controles y mira cómo cambia todo a la vez: el gráfico, las cuentas y lo que significan. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="par-coef" id="iw-par-coef">
+    <h2 class="t-az">1. ¿Qué hace cada coeficiente?</h2>
+    <p class="iw-lead">Cambia \(a\), \(b\) y \(c\) en \(y=ax^2+bx+c\). Fíjate qué pasa con el vértice, hacia dónde abre y cuándo corta al eje \(x\).</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="par-cerca" id="iw-par-cerca">
+    <h2 class="t-ve">2. El corral de 20 metros</h2>
+    <p class="iw-lead">Con 20 m de cerca se arma un corral rectangular. Si un lado mide \(x\), el otro mide \(10-x\). Mueve \(x\) y busca el área más grande: es el vértice de la parábola \(A(x)=x(10-x)\).</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="par-recta" id="iw-par-recta">
+    <h2 class="t-mo">3. Recta y parábola: ¿cuántos cortes?</h2>
+    <p class="iw-lead">La parábola es \(y=x^2\) y la recta \(y=mx+k\). Al igualarlas sale una cuadrática; su discriminante dice cuántas veces se cortan. Busca el caso tangente (\(\Delta=0\)).</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="par-quiz" id="iw-par-quiz">
+    <h2>4. Práctica: el vértice</h2>
+    <p class="iw-lead">Cada vez sale una parábola distinta. Elige su vértice; después de responder verás cómo se calcula.</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 <!-- ========================= CIRCUNFERENCIAS ========================= -->
 
 <div class="panel" id="pn-circunferencias-teoria" role="tabpanel" hidden>
@@ -3124,6 +3162,43 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 </div>
 
 
+<div class="panel" id="pn-circunferencias-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores">
+    <span><i class="sw" style="background:var(--hl-yellow)"></i>términos en x</span>
+    <span><i class="sw" style="background:var(--hl-cyan)"></i>términos en y</span>
+    <span><i class="dot" style="background:var(--blue)"></i>centro (h, k) y radio r</span>
+    <span><i class="dot" style="background:var(--orange)"></i>interceptos / pendiente</span>
+    <span><i class="dot" style="background:var(--purple)"></i>intersecciones</span>
+    <span><i class="dot" style="background:var(--magenta)"></i>puntos dados</span>
+    <span class="note">Al reemplazar un punto, sus coordenadas se pintan de su color.</span>
+  </div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve los controles y mira cómo cambian el dibujo y las ecuaciones al mismo tiempo. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="cir-centro" id="iw-cir-centro">
+    <h2 class="t-az">1. Centro, radio y las dos ecuaciones</h2>
+    <p class="iw-lead">Mueve el centro \((h,k)\) y el radio \(r\). Arriba sale la ecuación ordinaria; abajo, la general que aparece en los problemas, y cómo se vuelve de una a la otra.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="cir-punto" id="iw-cir-punto">
+    <h2 class="t-ma">2. ¿Dentro, sobre o fuera?</h2>
+    <p class="iw-lead">La circunferencia es \((x-1)^2+(y+1)^2=25\). Mueve el punto \(P\): si al reemplazarlo sale menos que 25 está dentro; si sale 25, está sobre ella; si sale más, está fuera.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="cir-tangente" id="iw-cir-tangente">
+    <h2 class="t-na">3. La recta tangente</h2>
+    <p class="iw-lead">Elige el punto de tangencia \(T\) en \((x-3)^2+(y-4)^2=25\). La tangente siempre forma ángulo recto con el radio \(CT\): su pendiente es la inversa cambiada de signo.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="cir-quiz" id="iw-cir-quiz">
+    <h2>4. Práctica: de la ecuación general al centro y radio</h2>
+    <p class="iw-lead">Cada vez sale una ecuación distinta. Elige su centro y su radio; después de responder verás el porqué.</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 <!-- ========================= OFERTA Y DEMANDA ======================== -->
 
 <div class="panel" id="pn-oferta-demanda-teoria" role="tabpanel" hidden>
@@ -4035,10 +4110,44 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   </article>
 </div>
 
+<div class="panel" id="pn-oferta-demanda-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores">
+    <span><i class="dot" style="background:var(--blue)"></i>oferta (vende)</span>
+    <span><i class="dot" style="background:var(--orange)"></i>demanda (compra)</span>
+    <span><i class="dot" style="background:var(--purple)"></i>equilibrio: punto, cantidad qₑ y precio pₑ</span>
+    <span><i class="sw" style="background:var(--orange);opacity:.55"></i>excedente del consumidor (EC)</span>
+    <span><i class="sw" style="background:var(--blue);opacity:.45"></i>excedente del productor (EP)</span>
+    <span class="note">Los puntos de la oferta se reemplazan en azul, los de la demanda en naranja y los del equilibrio en morado.</span>
+  </div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve las rectas de oferta y demanda y mira cómo cambian el equilibrio y los excedentes. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="od-equilibrio" id="iw-od-equilibrio">
+    <h2 class="t-mo">1. Equilibrio y excedentes</h2>
+    <p class="iw-lead">Empieza con el ejemplo de la teoría: \(p=2q+20\) y \(p=-5q+60\). Cambia pendientes y cortes: el triángulo naranja es el excedente del consumidor (EC) y el azul, el del productor (EP).</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="od-precio" id="iw-od-precio">
+    <h2 class="t-ma">2. ¿Qué pasa si el precio no es el de equilibrio?</h2>
+    <p class="iw-lead">Con la oferta \(p=q+10\) y la demanda \(p=-2q+70\), fija un precio. Por encima del equilibrio sobra producto; por debajo, falta.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="od-quiz" id="iw-od-quiz">
+    <h2>3. Práctica: el punto de equilibrio</h2>
+    <p class="iw-lead">Cada vez salen otra oferta y otra demanda. Elige el punto donde se cruzan.</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 </div>
 
 <div class="teo-card" id="teo-card" role="dialog" aria-label="Teoría" hidden><div class="teo-top" title="Arrastra para moverla"><span class="teo-grip" aria-hidden="true"></span><span class="label">Teoría que se usa</span><span class="teo-hint">arrástrala</span><button class="teo-close" type="button" aria-label="Cerrar">×</button></div><div class="teo-body"></div><button class="sim-btn teo-go" type="button">Ir a la teoría completa →</button></div>
+<script src="../js/search-index.js"></script>
+<script src="../js/search.js"></script>
 <script src="../js/study.js"></script>
+<script src="../js/iw.js"></script>
 <script src="../js/mate-nive/u4.js"></script>
+<script src="../js/mate-nive/u4-int.js"></script>
 </body>
 </html>

@@ -42,11 +42,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <header>
   <div class="top">
     <nav class="crumbs" aria-label="Ruta"><a href="../index.html">Studybook</a><span class="sep" aria-hidden="true">/</span><a href="index.html">Mate Nive</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Unidad 5</span></nav>
-    <button class="theme-btn" id="theme-btn" type="button"><span class="ic" aria-hidden="true"></span><span id="theme-txt">Modo oscuro</span></button>
+    <div class="top-btns"><button class="theme-btn search-btn" id="search-btn" type="button" aria-expanded="false" aria-controls="search-box"><span class="sic" aria-hidden="true">⌕</span><span>Buscar</span></button><button class="theme-btn" id="theme-btn" type="button"><span class="ic" aria-hidden="true"></span><span id="theme-txt">Modo oscuro</span></button></div>
   </div>
   <h1>Unidad 5</h1>
   <p class="lead">Magnitudes proporcionales, interés simple y compuesto, progresiones y sumatorias. Elige el tema y luego la pestaña de teoría, ejercicios resueltos, ejemplos o solucionarios.</p>
 </header>
+<div class="sb-search" id="search-box" data-root="../" hidden></div>
 
 <!-- sb:units --><nav class="units" aria-label="Unidades"><a class="unit" href="unidad-4.html"><span class="u-n">Unidad 4</span><span class="u-t">Parábolas, circunferencias, oferta y demanda</span></a><a class="unit" href="unidad-5.html" aria-current="page"><span class="u-n">Unidad 5</span><span class="u-t">Proporcionalidad, interés, progresiones</span></a></nav><!-- /sb:units -->
 
@@ -62,6 +63,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   <button class="tab" role="tab" id="tab-ejercicios" data-tab="ejercicios" aria-selected="false">Ejercicios</button>
   <button class="tab" role="tab" id="tab-ejemplos" data-tab="ejemplos" aria-selected="false">Ejemplos</button>
   <button class="tab" role="tab" id="tab-solucionarios" data-tab="solucionarios" aria-selected="false">Solucionarios</button>
+  <button class="tab" role="tab" id="tab-interactivo" data-tab="interactivo" aria-selected="false"><span class="tab-long">Interactivo</span><span class="tab-short">Interact.</span></button>
 </div>
 
 <!-- ===================== MAGNITUDES PROPORCIONALES ===================== -->
@@ -1208,6 +1210,29 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 </div>
 
 
+<div class="panel" id="pn-magnitudes-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>DP (directamente proporcional)</span><span><i class="dot" style="background:var(--orange)"></i>IP (inversamente proporcional)</span><span><i class="dot" style="background:var(--purple)"></i>constante \(k\)</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En las tablas, la magnitud de referencia va en un recuadro. En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve los controles y mira cómo cambian la tabla, el gráfico y las cuentas al mismo tiempo. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="mp-dpip" id="iw-mp-dpip">
+    <h2 class="t-az">1. DP o IP: ¿qué se mantiene constante?</h2>
+    <p class="iw-lead">Elige DP o IP y cambia la constante \(k\). En DP el cociente \(y\div x\) no cambia; en IP lo que no cambia es el producto \(x\cdot y\).</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="mp-reparto" id="iw-mp-reparto">
+    <h2 class="t-ma">2. Reparto proporcional</h2>
+    <p class="iw-lead">Reparte un total en partes DP o IP a tres números. En IP primero se pasa a DP con los inversos y se multiplica por el MCM.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="mp-quiz" id="iw-mp-quiz">
+    <h2>3. Práctica: ¿DP, IP o ninguna?</h2>
+    <p class="iw-lead">Cada vez sale una tabla distinta. Decide cómo son \(x\) e \(y\); después de responder verás los cocientes y los productos.</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 <!-- ===================== INTERÉS SIMPLE Y COMPUESTO ===================== -->
 
 <div class="panel" id="pn-interes-teoria" role="tabpanel" hidden>
@@ -2114,6 +2139,35 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 </div>
 
 
+<div class="panel" id="pn-interes-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>capital \(K\)</span><span><i class="dot" style="background:var(--orange)"></i>tasa \(r\%\)</span><span><i class="dot" style="background:var(--green)"></i>tiempo \(t\) o periodos \(n\)</span><span><i class="dot" style="background:var(--purple)"></i>interés \(I\)</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve el capital, la tasa y el tiempo, y mira cómo crecen el monto y los intereses. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="in-carrera" id="iw-in-carrera">
+    <h2 class="t-mo">1. Simple contra compuesto</h2>
+    <p class="iw-lead">Con el mismo capital, la misma tasa y el mismo tiempo, compara el monto con interés simple y con interés compuesto, periodo por periodo.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="in-frecuencia" id="iw-in-frecuencia">
+    <h2 class="t-na">2. ¿Conviene capitalizar más seguido?</h2>
+    <p class="iw-lead">La misma tasa anual, capitalizada de distintas formas. Cada fila divide la tasa entre los periodos del año y cuenta el tiempo en esos periodos.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="in-periodo" id="iw-in-periodo">
+    <h2 class="t-mo">3. El interés de un solo periodo</h2>
+    <p class="iw-lead">Elige un periodo: su interés es la tasa por lo que hay al empezar ese periodo, que ya incluye los intereses anteriores.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="in-quiz" id="iw-in-quiz">
+    <h2>4. Práctica: tasa por periodo y número de periodos</h2>
+    <p class="iw-lead">Cada vez sale un enunciado distinto. Elige con qué tasa y cuántos periodos se trabaja.</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 <!-- ============================ PROGRESIONES ============================ -->
 
 <div class="panel" id="pn-progresiones-teoria" role="tabpanel" hidden>
@@ -2946,6 +3000,35 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 </div>
 
 
+<div class="panel" id="pn-progresiones-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>primer término \(a_1\)</span><span><i class="dot" style="background:var(--orange)"></i>diferencia \(d\) o razón \(r\)</span><span><i class="dot" style="background:var(--green)"></i>lugar \(n\) o número de términos</span><span><i class="dot" style="background:var(--purple)"></i>condición entre términos</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve los controles y mira cómo se arma cada progresión término a término. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="pr-constructor" id="iw-pr-constructor">
+    <h2 class="t-az">1. Arma tu progresión</h2>
+    <p class="iw-lead">Elige PA o PG, el primer término y la diferencia o la razón. El término \(n\) se pinta de magenta y se calcula con la fórmula.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="pr-carrera" id="iw-pr-carrera">
+    <h2 class="t-na">2. Carrera: PA contra PG</h2>
+    <p class="iw-lead">Las dos empiezan igual. La PA suma \(d\) cada vez; la PG multiplica por \(r\). ¿Desde qué término gana la PG?</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="pr-quiz" id="iw-pr-quiz">
+    <h2>3. Práctica: ¿PA, PG o ninguna?</h2>
+    <p class="iw-lead">Mira los cinco primeros términos y decide. Después de responder verás las diferencias y las razones.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="pr-quiz-conteo" id="iw-pr-quiz-conteo">
+    <h2>4. Práctica: ¿cuántos términos hay?</h2>
+    <p class="iw-lead">Cuenta los términos de una PA sin escribirlos todos.</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 <!-- ============================ SUMATORIAS ============================ -->
 
 <div class="panel" id="pn-sumatorias-teoria" role="tabpanel" hidden>
@@ -3635,10 +3718,43 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   </article>
 </div>
 
+<div class="panel" id="pn-sumatorias-interactivo" role="tabpanel" hidden>
+  <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>primer término \(a_1\)</span><span><i class="dot" style="background:var(--orange)"></i>diferencia \(d\) o razón \(r\)</span><span><i class="dot" style="background:var(--green)"></i>número de términos \(n\)</span><span><i class="dot" style="background:var(--purple)"></i>suma \(S_n\)</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
+  <div class="box"><h3>Para explorar</h3><p>Mueve \(n\) y mira por qué funcionan las fórmulas de suma. Puedes probar cuanto quieras; aquí nada se califica.</p></div>
+
+  <section class="iw" data-iw="su-gauss" id="iw-su-gauss">
+    <h2 class="t-az">1. La idea de Gauss, con cuadraditos</h2>
+    <p class="iw-lead">La suma \(1+2+\cdots+n\) es una escalera. Dos escaleras iguales, una al revés, forman un rectángulo de \(n\times(n+1)\).</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="su-tele" id="iw-su-tele">
+    <h2 class="t-mo">2. La suma telescópica</h2>
+    <p class="iw-lead">En \(\sum\left(\frac1i-\frac1{i+1}\right)\) casi todo se cancela: solo quedan el primero y el último.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="su-cuadrado" id="iw-su-cuadrado">
+    <h2 class="t-na">3. Una PG que llena un cuadrado</h2>
+    <p class="iw-lead">La suma \(\frac12+\frac14+\frac18+\cdots\) va llenando un cuadrado de lado 1: cada término llena la mitad de lo que falta.</p>
+    <div class="iw-body"></div>
+  </section>
+
+  <section class="iw" data-iw="su-quiz" id="iw-su-quiz">
+    <h2>4. Práctica: de la suma al término</h2>
+    <p class="iw-lead">Te dan la suma de los \(n\) primeros términos. Elige el término general con \(a_n=S_n-S_{n-1}\).</p>
+    <div class="iw-body"></div>
+  </section>
+</div>
+
 </div>
 
 <div class="teo-card" id="teo-card" role="dialog" aria-label="Teoría" hidden><div class="teo-top" title="Arrastra para moverla"><span class="teo-grip" aria-hidden="true"></span><span class="label">Teoría que se usa</span><span class="teo-hint">arrástrala</span><button class="teo-close" type="button" aria-label="Cerrar">×</button></div><div class="teo-body"></div><button class="sim-btn teo-go" type="button">Ir a la teoría completa →</button></div>
+<script src="../js/search-index.js"></script>
+<script src="../js/search.js"></script>
 <script src="../js/study.js"></script>
+<script src="../js/iw.js"></script>
 <script src="../js/mate-nive/u5.js"></script>
+<script src="../js/mate-nive/u5-int.js"></script>
 </body>
 </html>

@@ -12,8 +12,11 @@
   function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
   const col=c=>'var(--'+(c||'ink')+')';
   function fmt(v){return (Math.round(v*100)/100).toString().replace('-','−')}
+  /* id puede ser el id o el propio elemento; el contenedor se vacía, así se puede redibujar (elementos interactivos).
+     Devuelve las escalas: sx/sy (datos → svg) e ix/iy (svg → datos). */
   function plot(id,o){
-    const host=document.getElementById(id); if(!host) return;
+    const host=typeof id==='string'?document.getElementById(id):id; if(!host) return;
+    host.textContent='';
     const narrow=window.innerWidth<560; const W=o.w||(narrow?400:500), pad=narrow?26:30, padL=o.padL||(narrow?40:46);
     const [x0,x1]=o.x,[y0,y1]=o.y;
     const iw=W-padL-pad;
@@ -40,6 +43,7 @@
     (o.tx||[]).forEach(e=>{const v=Array.isArray(e)?e[0]:e, lab=Array.isArray(e)?e[1]:fmt(e);el('line',{x1:sx(v),x2:sx(v),y1:ay0-3,y2:ay0+3,style:'stroke:var(--muted)'},svg);t(sx(v),ay0+16,lab,{'text-anchor':'middle','font-size':'11'})});
     (o.ty||[]).forEach(e=>{const v=Array.isArray(e)?e[0]:e, lab=Array.isArray(e)?e[1]:fmt(e);el('line',{x1:ax0-3,x2:ax0+3,y1:sy(v),y2:sy(v),style:'stroke:var(--muted)'},svg);t(ax0-6,sy(v)+4,lab,{'text-anchor':'end','font-size':'11'})});
     const body=el('g',{'clip-path':`url(#${cid})`},svg);
+    (o.rects||[]).forEach(r=>{const xa=Math.min(sx(r.x0),sx(r.x1)),ya=Math.min(sy(r.y0),sy(r.y1));el('rect',{x:xa,y:ya,width:Math.abs(sx(r.x1)-sx(r.x0)),height:Math.abs(sy(r.y1)-sy(r.y0)),rx:r.rx||0,style:`fill:${col(r.c)};fill-opacity:${r.op??0.85};stroke:${r.stroke?col(r.stroke):'none'}`},body)});
     (o.polys||[]).forEach(p=>{el('polygon',{points:p.pts.map(q=>sx(q[0])+','+sy(q[1])).join(' '),style:`fill:${col(p.c)};fill-opacity:${p.op||0.22};stroke:${col(p.c)};stroke-opacity:.6`,'stroke-width':1},body)});
     (o.circs||[]).forEach(c=>{el('ellipse',{cx:sx(c.h),cy:sy(c.k),rx:c.r*iw/(x1-x0),ry:c.r*ih/(y1-y0),style:`fill:none;stroke:${col(c.c)}`,'stroke-width':c.wd||2,'stroke-dasharray':c.dash||''},body)});
     (o.segs||[]).forEach(s=>{el('line',{x1:sx(s.a[0]),y1:sy(s.a[1]),x2:sx(s.b[0]),y2:sy(s.b[1]),style:`stroke:${col(s.c||'muted')}`,'stroke-width':s.wd||1.3,'stroke-dasharray':s.dash===false?'':'4 4'},body)});
@@ -51,13 +55,29 @@
       if(f.t){const lx=f.tx??b, ly=f.ty??f.f(lx);t(sx(lx)+(f.dx||0),sy(ly)+(f.dy||-8),f.t,{style:`fill:${col(f.c)}`,'text-anchor':f.anchor||'end','font-weight':'700'})}
     });
     (o.pts||[]).forEach(p=>{
+      if(o.clipPts&&(p.x<x0||p.x>x1||p.y<y0||p.y>y1)) return;
       el('circle',{cx:sx(p.x),cy:sy(p.y),r:p.r||4.5,style:`fill:${col(p.c)};stroke:var(--sheet)`,'stroke-width':1.5},svg);
       if(p.t){t(sx(p.x)+(p.dx??7),sy(p.y)+(p.dy??-7),p.t,{style:`fill:${col(p.c)}`,'text-anchor':p.anchor||'start','font-weight':'700'})}
     });
     host.appendChild(svg);
+    return {svg,W,H,sx,sy,ix:px=>x0+(px-padL)/iw*(x1-x0),iy:py=>y0+(H-pad-py)/ih*(y1-y0)};
   }
 
-  window.SB={plot};
+  /* elementos interactivos: cada uno se registra con SB.widget(nombre, fn) y se arma la primera vez que su pestaña se muestra */
+  const WIDGETS={};
+  function initWidgets(panel){
+    if(!panel) return;
+    panel.querySelectorAll('.iw[data-iw]:not(.iw-ready)').forEach(sec=>{
+      const fn=WIDGETS[sec.dataset.iw]; if(!fn) return;
+      sec.classList.add('iw-ready');
+      const body=sec.querySelector('.iw-body')||sec;
+      try{ fn(body,sec) }catch(err){ console.error(err); body.insertAdjacentHTML('beforeend','<p class="iw-fail">No se pudo cargar este elemento.</p>') }
+    });
+  }
+  let wT=null;
+  function widget(name,fn){ WIDGETS[name]=fn; clearTimeout(wT); wT=setTimeout(()=>initWidgets(document.getElementById('pn-'+topic+'-'+tab)),0) }
+
+  window.SB={plot,widget};
 
   /* ---------------- tema + pestañas ---------------- */
   const TOPICS=[...document.querySelectorAll('.topic')].map(b=>b.dataset.topic);
@@ -111,29 +131,34 @@
     document.getElementById('tab-ejemplos').innerHTML='Ejemplos <span class="tab-n">('+document.querySelectorAll('#pn-'+topic+'-ejemplos article.ex').length+')</span>';
     document.getElementById('tab-ejemplos').setAttribute('aria-controls','pn-'+topic+'-ejemplos');
     document.getElementById('tab-solucionarios').innerHTML='<span class="tab-long">Solucionarios</span><span class="tab-short">Soluc.</span> <span class="tab-n">('+document.querySelectorAll('#pn-'+topic+'-solucionarios article.sl').length+')</span>';
-    document.getElementById('tab-solucionarios').setAttribute('aria-controls','pn-'+topic+'-solucionarios');
+    document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-controls','pn-'+topic+'-'+b.dataset.tab));
     const panel=document.getElementById('pn-'+topic+'-'+tab);
-    document.getElementById('tab-teoria').setAttribute('aria-controls','pn-'+topic+'-teoria');
-    document.getElementById('tab-ejercicios').setAttribute('aria-controls','pn-'+topic+'-ejercicios');
     typeset(panel);
     if(done.has(panel.id)) chain.then(()=>requestAnimationFrame(()=>fitMath(panel)));
+    initWidgets(panel);
+    const tb=document.querySelector(".tabs"), on=document.getElementById("tab-"+tab);
+    if(tb&&on&&tb.scrollWidth>tb.clientWidth) tb.scrollLeft=Math.max(0,on.offsetLeft-tb.offsetLeft-(tb.clientWidth-on.offsetWidth)/2);
+    markDone();
+    remember();
   }
-  const TABS=['ejercicios','ejemplos','solucionarios'];
+  const TABS=['ejercicios','ejemplos','solucionarios','interactivo'];
   function fromHash(){
-    const h=(location.hash||'').slice(1);
+    const h=decodeURIComponent((location.hash||'').slice(1));
     let t=h, tb='teoria';
     for(const x of TABS){ if(h.endsWith('-'+x)){ t=h.slice(0,-(x.length+1)); tb=x; } }
     if(TOPICS.includes(t)){topic=t;tab=tb}
+    else if(h){ const e=document.getElementById(h); if(e&&e.closest('.panel')&&!e.classList.contains('panel')){ goTo(h); return } }
     render();
   }
   function go(){const h=topic+(tab==='teoria'?'':'-'+tab);if(location.hash.slice(1)!==h)location.hash=h;else render()}
   /* ir a un ejercicio o ejemplo concreto (botones «Ver ejemplo similar» y «Parecido al ejercicio…») */
   function goTo(id){
     const el=document.getElementById(id); if(!el) return;
-    const mt=el.closest('.panel').id.match(/^pn-(.+)-(teoria|ejercicios|ejemplos|solucionarios)$/); if(!mt) return;
+    const pn=el.closest('.panel'); if(!pn) return;
+    const mt=pn.id.match(/^pn-(.+)-(teoria|ejercicios|ejemplos|solucionarios|interactivo)$/); if(!mt) return;
     topic=mt[1]; tab=mt[2];
     const h=topic+(tab==='teoria'?'':'-'+tab);
-    if(location.hash.slice(1)!==h) history.replaceState(null,'','#'+h);
+    if(location.hash.slice(1)!==h){ try{ history.replaceState(null,'',location.pathname+location.search+'#'+h) }catch(e){} }
     render();
     const smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const show=()=>{el.scrollIntoView({behavior:'auto',block:'start'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1600)};
@@ -141,6 +166,59 @@
     chain.then(()=>requestAnimationFrame(()=>el.scrollIntoView({behavior:smooth?'smooth':'auto',block:'start'})));
   }
   document.querySelectorAll('[data-goto]:not(.teo-go)').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.goto)));
+
+  /* ---------- «Hecho»: cada ejercicio, ejemplo y problema se puede marcar; se guarda en este navegador ---------- */
+  const PAGE=(location.pathname.match(/([^/]+)\/([^/]+?)(?:\.html)?$/)||[]).slice(1,3).join('/');
+  const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  const hecho=new Set((store.get('sb-hecho',{})[PAGE])||[]);
+  function saveHecho(){const all=store.get('sb-hecho',{});all[PAGE]=[...hecho];store.set('sb-hecho',all)}
+  document.querySelectorAll('.panel article.ej[id]').forEach(a=>{
+    const head=a.querySelector('.ej-head'); if(!head) return;
+    const b=document.createElement('button'); b.type='button'; b.className='done-btn';
+    b.innerHTML='<span class="dn-box" aria-hidden="true"></span><span class="dn-t">Hecho</span>';
+    b.title='Marcar como hecho (se guarda en este navegador)';
+    b.addEventListener('click',()=>{ hecho.has(a.id)?hecho.delete(a.id):hecho.add(a.id); saveHecho(); markDone() });
+    head.appendChild(b);
+  });
+  function markDone(){
+    document.querySelectorAll('.panel article.ej[id]').forEach(a=>{const on=hecho.has(a.id);a.classList.toggle('is-done',on);const b=a.querySelector('.done-btn');if(b)b.setAttribute('aria-pressed',String(on))});
+    document.querySelectorAll('.jump button[data-go]').forEach(b=>b.classList.toggle('is-done',hecho.has(b.dataset.go)));
+    document.querySelectorAll('.topic').forEach(t=>{
+      const ids=[...document.querySelectorAll('#pn-'+t.dataset.topic+'-ejercicios article.ej[id]')].map(a=>a.id);
+      const k=ids.filter(i=>hecho.has(i)).length; let s=t.querySelector('.t-done');
+      if(!k){ if(s) s.remove(); return }
+      if(!s){ s=document.createElement('span'); s.className='t-done'; t.appendChild(s) }
+      s.textContent=k===ids.length?'✓ Todos los ejercicios hechos':k+' de '+ids.length+' ejercicios hechos';
+    });
+  }
+  /* ---------- lo último que se vio, para «Continuar» en la portada ---------- */
+  function remember(){
+    const tn=document.querySelector('.topic[aria-pressed="true"] .t-name'), crumbs=document.querySelectorAll('.crumbs a');
+    const NOM={teoria:'Teoría',ejercicios:'Ejercicios',ejemplos:'Ejemplos',solucionarios:'Solucionarios',interactivo:'Interactivo'};
+    store.set('sb-ultimo',{page:PAGE+'.html',hash:topic+(tab==='teoria'?'':'-'+tab),curso:crumbs[1]?crumbs[1].textContent:'',unidad:(document.querySelector('h1')||{}).textContent||'',
+      tema:tn?tn.textContent:'',pestana:NOM[tab]||'',t:Date.now()});
+  }
+  /* ---------- buscador (botón «Buscar» o tecla /) ---------- */
+  const sbtn=document.getElementById('search-btn'), sbox=document.getElementById('search-box');
+  function openSearch(show){
+    if(!sbtn||!sbox) return;
+    sbox.hidden=!show; sbtn.setAttribute('aria-expanded',String(show));
+    if(show){ const i=sbox.querySelector('input'); if(i){ i.focus(); i.select() } }
+  }
+  if(sbtn&&sbox){
+    sbtn.addEventListener('click',()=>openSearch(sbox.hidden));
+    document.addEventListener('keydown',e=>{
+      const tg=e.target, typing=tg&&(tg.tagName==='INPUT'||tg.tagName==='TEXTAREA'||tg.isContentEditable);
+      if(e.key==='/'&&!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey){ e.preventDefault(); openSearch(true) }
+      else if(e.key==='Escape'&&!sbox.hidden&&sbox.contains(tg)){ openSearch(false); sbtn.focus() }
+    });
+    window.addEventListener('hashchange',()=>{ if(!sbox.hidden) openSearch(false) });
+  }
+  /* ---------- volver arriba ---------- */
+  const top=document.createElement('button'); top.type='button'; top.className='totop'; top.hidden=true; top.setAttribute('aria-label','Volver arriba'); top.innerHTML='<span aria-hidden="true">↑</span>';
+  top.addEventListener('click',()=>{ const sm=!window.matchMedia('(prefers-reduced-motion: reduce)').matches; window.scrollTo({top:0,behavior:sm?'smooth':'auto'}) });
+  document.body.appendChild(top);
+  window.addEventListener('scroll',()=>{ top.hidden=window.scrollY<900 },{passive:true});
   /* ---------- tarjeta flotante de teoría (se puede arrastrar y queda abierta) ---------- */
   const card=document.getElementById('teo-card'), cardBody=card.querySelector('.teo-body'), cardGo=card.querySelector('.teo-go'), cardTop=card.querySelector('.teo-top');
   const cache={}; let curBtn=null, pinned=false, moved=false, hideT=null;

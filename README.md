@@ -8,6 +8,9 @@ Cada curso tiene sus unidades; cada unidad, sus temas; y cada tema, cuatro pesta
 - **Ejercicios**: los de la unidad, resueltos paso a paso con los colores de clase y con los errores de la unidad señalados.
 - **Ejemplos**: ejemplos de la teoría y dos ejemplos de práctica por cada ejercicio, con resultados exactos.
 - **Solucionarios**: preguntas de PC y exámenes de ciclos anteriores, resueltas paso a paso.
+- **Interactivo**: gráficos con controles para explorar el tema y práctica con preguntas que se generan solas.
+
+Además: buscador de ejercicios, ejemplos, solucionarios, teoría e interactivos; botón «Hecho» en cada ejercicio (el avance se guarda en el navegador y se ve en la portada y en el curso); «Continuar donde te quedaste»; enlaces directos a un ejercicio (por ejemplo `mate-nive/unidad-5.html#pr10`).
 
 Cada ejercicio indica su dificultad: básico, intermedio o avanzado.
 
@@ -23,7 +26,11 @@ docs/                        sitio estático (lo que se publica)
   <curso>/index.html         página del curso: lista de unidades
   <curso>/unidad-N.html      una página por unidad (temas y pestañas)
   css/study.css              estilos compartidos
-  js/study.js                motor: pestañas, gráficos (SB.plot), tarjeta de teoría, modo oscuro
+  js/study.js                motor: pestañas, gráficos (SB.plot), tarjeta de teoría, «Hecho», enlaces directos, modo oscuro
+  js/iw.js                   piezas de los elementos interactivos (deslizadores, práctica, formato de números)
+  js/<curso>/uN-int.js       elementos interactivos de cada unidad (SB.widget)
+  js/search.js               buscador
+  js/search-index.js         índice de búsqueda (lo genera tools/sync.py)
   js/mathjax.js              configuración de MathJax y macros de colores (\az, \na, \mo, \ve, \ma)
   js/<curso>/uN.js           gráficos de cada unidad
   js/home.js                 modo oscuro de la portada y del curso
@@ -33,6 +40,6 @@ material/                    PDF de unidades, apuntes y compendios (solo local, 
                              GitHub Pages publica docs/ de la rama main
 ```
 
-Después de agregar una unidad o un tema, correr `python tools/sync.py` para actualizar la barra de unidades, las tarjetas del curso y los conteos.
+Después de agregar o cambiar una unidad, un tema o un ejercicio, correr `python tools/sync.py` para actualizar la barra de unidades, las tarjetas del curso, los conteos y el índice de búsqueda.
 
 Para verla en local basta abrir `docs/index.html` en el navegador.

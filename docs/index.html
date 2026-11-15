@@ -42,13 +42,30 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <button class="theme-btn" id="theme-btn" type="button"><span class="ic" aria-hidden="true"></span><span id="theme-txt">Modo oscuro</span></button>
   </div>
   <h1>Material de estudio</h1>
-  <p class="lead">Elige el curso. En cada unidad están la teoría, los ejercicios resueltos paso a paso con los colores de clase, ejemplos para practicar y los solucionarios de evaluaciones anteriores.</p>
+  <p class="lead">Elige el curso. En cada unidad están la teoría, los ejercicios resueltos paso a paso con los colores de clase, ejemplos para practicar, los solucionarios de evaluaciones anteriores y elementos interactivos para explorar cada tema.</p>
 </header>
 
-<!-- sb:courses --><ul class="ccards"><li class="ccard"><a href="mate-nive/index.html"><span class="label">Universidad del Pacífico · 2026-0</span><span class="c-name">Mate Nive</span><span class="c-full">Propedéutico en matemáticas</span><span class="c-meta">2 unidades disponibles · 85 ejercicios resueltos · 48 problemas de solucionario</span></a></li></ul><!-- /sb:courses -->
+<div class="sb-search" data-root=""></div>
+
+<div id="continuar" hidden></div>
+
+<!-- sb:courses --><ul class="ccards"><li class="ccard"><a href="mate-nive/index.html"><span class="label">Universidad del Pacífico · 2026-0</span><span class="c-name">Mate Nive</span><span class="c-full">Propedéutico en matemáticas</span><span class="c-meta">2 unidades disponibles · 85 ejercicios resueltos · 48 problemas de solucionario</span><span class="prog" data-course="mate-nive" hidden></span></a></li></ul><!-- /sb:courses -->
+
+<section class="howto" aria-labelledby="howto-t">
+  <h2 id="howto-t">Cómo estudiar con Studybook</h2>
+  <ol class="steps4">
+    <li><b>Teoría</b><span>Lee el tema. Cada parte tiene un «Ver ejemplos» para practicar justo eso.</span></li>
+    <li><b>Ejercicios</b><span>Intenta el ejercicio antes de mirar la solución. El botón <em>Teoría</em> muestra la parte que se usa.</span></li>
+    <li><b>Ejemplos y solucionarios</b><span>Practica con ejemplos parecidos y con preguntas de PC y exámenes anteriores.</span></li>
+    <li><b>Interactivo</b><span>Mueve los controles para ver qué cambia y practica con preguntas que se generan solas.</span></li>
+  </ol>
+  <p class="howto-n">Marca con <span class="done-demo">✓ Hecho</span> lo que ya resolviste: el avance se guarda en tu navegador y aparece aquí.</p>
+</section>
 
 <p class="foot">Hecho por Jose Vergara para sus clases.</p>
 </div>
+<script src="js/search-index.js"></script>
+<script src="js/search.js"></script>
 <script src="js/home.js"></script>
 </body>
 </html>
