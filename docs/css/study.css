@@ -282,7 +282,8 @@ mjx-container rect[fill="cyan"]{fill:var(--hl-cyan)}
   .tbl td{border:none;padding:3px 0;white-space:normal}
   .tbl td:first-child{font-size:.95rem}
   .tbl td:first-child::before{content:"Ejercicio "}
-  .tbl td[data-label]:not(:first-child)::before{content:attr(data-label) ": ";display:block;font-family:var(--f-display);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .tbl td[data-label]:not(:first-child)::before,.tbl-k td[data-label]:first-child::before{content:attr(data-label) ": ";display:block;font-family:var(--f-display);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .tbl-k td:first-child{font-size:inherit}
   .aspa2{font-size:1rem;column-gap:6px}
   .teo-card{width:calc(100vw - 24px);max-height:62vh}
 }

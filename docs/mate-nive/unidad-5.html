@@ -2189,7 +2189,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="math">\[a_{n+1}-a_n=\na d\]</div>
     <div class="math">\[a_n=\az{a_1}+(\ve n-1)\,\na d\]</div>
     <div class="steps-box"><ol><li>\(\na d\) = un término menos el anterior.</li><li>Entre dos términos cualesquiera: \(a_m-a_k=(m-k)\,\na d\). Por ejemplo, \(a_{11}-a_3=8\na d\).</li><li>Con \(\az{a_1}\) y \(\na d\) se arma \(a_n\) y se halla cualquier término.</li></ol></div>
-    <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li>De \(a_3\) a \(a_{11}\) hay <b>8 saltos</b> de \(\na d\), no 11 ni 9: se cuentan restando los lugares.</li><li><b>Tres términos consecutivos</b> de una PA conviene escribirlos como \(x-\na d,\ x,\ x+\na d\): al sumarlos, la \(\na d\) se cancela. El del medio es el promedio de los otros dos: \(2b=a+c\).</li><li>Una PA "crece en línea recta": si se grafican los puntos \((n,a_n)\), quedan sobre una recta de pendiente \(\na d\).</li><li>Una sucesión constante es PA con \(\na d=0\). En la unidad la diferencia se llama \(k\).</li></ul></div>
+    <div class="tbl tbl-k"><table>
+      <thead><tr><th>Si tengo</th><th>Uso</th><th>Y obtengo</th></tr></thead>
+      <tbody>
+        <tr><td>\(\az{a_1}\) y \(\na d\)</td><td>\(a_n=\az{a_1}+(\ve n-1)\na d\)</td><td>\(a_n\)</td></tr>
+        <tr><td>dos términos \(a_m\) y \(a_k\)</td><td>\(a_m-a_k=(m-k)\,\na d\)</td><td>\(\na d\)</td></tr>
+        <tr><td>un término \(a_m\) y \(\na d\)</td><td>\(a_m-\az{a_1}=(m-1)\,\na d\)</td><td>\(\az{a_1}\)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li>De \(a_3\) a \(a_{11}\) hay <b>8 saltos</b> de \(\na d\), no 11 ni 9: se cuentan restando los lugares.</li><li>Si dan una <b>cantidad impar de términos y su suma</b>, al del centro se le llama \(x\) y los demás se escriben con \(\na d\): \(x-\na d,\ x,\ x+\na d\) o \(x-2\na d,\ x-\na d,\ x,\ x+\na d,\ x+2\na d\). Al sumarlos, la \(\na d\) se cancela.</li><li>Si \(a,\ b,\ c\) están en PA, la diferencia se repite: \(b-a=c-b\) (es decir, \(2b=a+c\)).</li><li>Términos a la misma distancia de los extremos <b>suman</b> lo mismo: en \(a_1,\dots,a_5\), \(a_1+a_5=a_2+a_4=a_3+a_3\).</li><li>Una PA "crece en línea recta": si se grafican los puntos \((n,a_n)\), quedan sobre una recta de pendiente \(\na d\).</li><li>Una sucesión constante es PA con \(\na d=0\). En la unidad la diferencia se llama \(k\).</li></ul></div>
     <div class="plot" id="g-tpr1"></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-pr-pa">Ver ejemplos de esta parte →</button>
   </div>
@@ -2200,7 +2208,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="math">\[\frac{a_{n+1}}{a_n}=\na r\]</div>
     <div class="math">\[a_n=\az{a_1}\cdot\na r^{\,\ve n-1}\]</div>
     <div class="steps-box"><ol><li>\(\na r\) = un término entre el anterior.</li><li>Entre dos términos: \(\dfrac{a_m}{a_k}=\na r^{\,m-k}\). Por ejemplo, \(\dfrac{a_5}{a_2}=\na r^{3}\).</li><li>Con \(\az{a_1}\) y \(\na r\) se arma \(a_n\).</li></ol></div>
-    <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li><b>Crecer un \(p\%\) cada periodo</b> es una PG de razón \(\na r=1+\tfrac{p}{100}\) (es el interés compuesto). Bajar un \(p\%\) es \(\na r=1-\tfrac{p}{100}\). Duplicarse es \(\na r=2\).</li><li><b>Tres términos consecutivos</b> de una PG: \(\tfrac{x}{\na r},\ x,\ x\na r\). El del medio al cuadrado es el producto de los otros dos: \(b^2=ac\).</li><li>Términos a la misma distancia de los extremos dan el mismo producto: \(a_1a_n=a_2a_{n-1}=a_3a_{n-2}=\dots\) (es lo que se usa en los ejercicios 5 y 6).</li><li>Una sucesión constante (no nula) es PG con \(\na r=1\). En la unidad la razón también se llama \(k\).</li></ul></div>
+    <div class="tbl tbl-k"><table>
+      <thead><tr><th>Si tengo</th><th>Uso</th><th>Y obtengo</th></tr></thead>
+      <tbody>
+        <tr><td>\(\az{a_1}\) y \(\na r\)</td><td>\(a_n=\az{a_1}\cdot\na r^{\,\ve n-1}\)</td><td>\(a_n\)</td></tr>
+        <tr><td>dos términos \(a_m\) y \(a_k\)</td><td>\(\dfrac{a_m}{a_k}=\na r^{\,m-k}\)</td><td>\(\na r\)</td></tr>
+        <tr><td>un término \(a_m\) y \(\na r\)</td><td>\(\dfrac{a_m}{\az{a_1}}=\na r^{\,m-1}\)</td><td>\(\az{a_1}\)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li><b>Crecer un \(p\%\) cada periodo</b> es una PG de razón \(\na r=1+\tfrac{p}{100}\) (es el interés compuesto). Bajar un \(p\%\) es \(\na r=1-\tfrac{p}{100}\). Duplicarse es \(\na r=2\).</li><li>Si \(a,\ b,\ c\) están en PG, la razón se repite: \(\na r=\tfrac ba=\tfrac cb\) (es decir, \(b^2=ac\)).</li><li>Si dan una <b>cantidad impar de términos y su producto</b>, al del centro se le llama \(x\): \(\tfrac{x}{\na r},\ x,\ x\na r\) o \(\tfrac{x}{\na r^2},\ \tfrac{x}{\na r},\ x,\ x\na r,\ x\na r^2\). Al multiplicarlos, la \(\na r\) se cancela.</li><li>Términos a la misma distancia de los extremos dan el mismo producto: \(a_1a_n=a_2a_{n-1}=a_3a_{n-2}=\dots\) (es lo que se usa en los ejercicios 5 y 6).</li><li>Para <b>probar</b> que una sucesión es PA, se calcula \(b_{n+1}-b_n\); para PG, \(\tfrac{c_{n+1}}{c_n}\). Si el resultado no depende de \(n\), lo es.</li><li>Una sucesión constante (no nula) es PG con \(\na r=1\). En la unidad la razón también se llama \(k\).</li></ul></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-pr-pg">Ver ejemplos de esta parte →</button>
   </div>
 
@@ -2235,22 +2251,27 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1</span><h3>Los cinco primeros términos</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip bad">Error en la unidad</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="ex-pr1">Ver ejemplos similares →</button></span></div>
     <div class="enun">Escribir los primeros cinco términos de cada una de las siguientes progresiones: la progresión aritmética \((a_n)_{n\in\mathbb N}\), con \(a_3=21\) y \(a_{11}=85\); la progresión geométrica \((a_n)_{n\in\mathbb N}\), con \(a_1=5\) y \(a_2=3\).</div>
     <div class="sol">
-      <p class="paso">PA · Paso 1 · La diferencia</p>
-      <p>De \(a_3\) a \(a_{11}\) hay \(11-3=\ve8\) saltos de \(\na d\):</p>
-      <div class="math">\[a_{11}=a_3+\ve8\na d\]</div>
-      <div class="math">\[85=21+8\na d\]</div>
+      <p class="paso">PA · Paso 1 · La diferencia con a_m − a_k = (m − k)·d</p>
+      <div class="math">\[a_{11}-a_3=(11-3)\,\na d\]</div>
+      <div class="math">\[85-21=8\na d\]</div>
+      <div class="math">\[64=8\na d\]</div>
       <div class="math">\[\na d=8\]</div>
       <p class="paso">PA · Paso 2 · El primer término</p>
-      <p>De \(a_1\) a \(a_3\) hay 2 saltos:</p>
-      <div class="math">\[\az{a_1}=a_3-2\na d=21-16=5\]</div>
-      <p class="paso">PA · Paso 3 · Sumar 8 cada vez</p>
+      <div class="math">\[a_3-\az{a_1}=(3-1)\,\na d\]</div>
+      <div class="math">\[21-\az{a_1}=16\]</div>
+      <div class="math">\[\az{a_1}=5\]</div>
+      <p class="paso">PA · Paso 3 · Término general y los cinco términos</p>
+      <div class="math">\[a_n=5+(n-1)\cdot8=8n-3\]</div>
       <div class="math">\[\ma{5,\ 13,\ 21,\ 29,\ 37}\]</div>
       <p class="paso">PG · Paso 4 · La razón</p>
-      <div class="math">\[\na r=\frac{a_2}{a_1}=\frac35\]</div>
-      <p class="paso">PG · Paso 5 · Multiplicar por 3/5 cada vez</p>
-      <div class="math">\[a_3=3\cdot\na{\frac35}=\frac95\]</div>
-      <div class="math">\[a_4=\frac95\cdot\na{\frac35}=\frac{27}{25}\]</div>
-      <div class="math">\[a_5=\frac{27}{25}\cdot\na{\frac35}=\frac{81}{125}\]</div>
+      <div class="math">\[\frac{a_2}{a_1}=\na r^{\,2-1}\]</div>
+      <div class="math">\[\na r=\frac35\]</div>
+      <p class="paso">PG · Paso 5 · Término general</p>
+      <div class="math">\[a_n=\az5\cdot\left(\na{\tfrac35}\right)^{n-1}\]</div>
+      <p class="paso">PG · Paso 6 · Reemplazar n = 3, 4, 5</p>
+      <div class="math">\[a_3=5\cdot\left(\tfrac35\right)^{2}=5\cdot\frac9{25}=\frac95\]</div>
+      <div class="math">\[a_4=5\cdot\left(\tfrac35\right)^{3}=5\cdot\frac{27}{125}=\frac{27}{25}\]</div>
+      <div class="math">\[a_5=5\cdot\left(\tfrac35\right)^{4}=5\cdot\frac{81}{625}=\frac{81}{125}\]</div>
       <div class="math">\[\ma{5,\ 3,\ \tfrac95,\ \tfrac{27}{25},\ \tfrac{81}{125}}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>PA: \(5,\ 13,\ 21,\ 29,\ 37\). PG: \(5,\ 3,\ \tfrac95,\ \tfrac{27}{25},\ \tfrac{81}{125}\).</div>
@@ -2265,9 +2286,10 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <div class="math">\[\az{a_1}=2\]</div>
       <div class="math">\[\na d=7-2=5\]</div>
       <p class="paso">Paso 2 · Término general</p>
-      <div class="math">\[a_n=\az2+(\ve n-1)\na5\]</div>
+      <div class="math">\[a_n=\az2+(\ve n-1)\cdot\na5\]</div>
+      <div class="math">\[a_n=2+5n-5=5n-3\]</div>
       <p class="paso">Paso 3 · Reemplazar n = 12</p>
-      <div class="math">\[\ma{a_{12}}=2+(\ve{12}-1)\cdot5=2+55=57\]</div>
+      <div class="math">\[\ma{a_{12}}=5(12)-3=57\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{12}=57\).</div>
   </article>
@@ -2278,10 +2300,11 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="sol">
       <p class="paso">Paso 1 · Ver el patrón</p>
       <p>La sucesión no es una PA: \(\tfrac17-\tfrac13\ne\tfrac1{11}-\tfrac17\). Pero los <b>denominadores</b> \(3,\ 7,\ 11\) sí: suben de 4 en 4.</p>
-      <p class="paso">Paso 2 · Denominador del lugar 8</p>
-      <div class="math">\[\az3+(\ve8-1)\cdot\na4=3+28=31\]</div>
-      <p class="paso">Paso 3 · El término</p>
-      <div class="math">\[\ma{a_8}=\frac1{31}\]</div>
+      <p class="paso">Paso 2 · Denominador del lugar n</p>
+      <div class="math">\[b_n=\az3+(\ve n-1)\cdot\na4=4n-1\]</div>
+      <div class="math">\[a_n=\frac1{4n-1}\]</div>
+      <p class="paso">Paso 3 · Reemplazar n = 8</p>
+      <div class="math">\[\ma{a_8}=\frac1{4(8)-1}=\frac1{31}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_8=\tfrac1{31}\).</div>
   </article>
@@ -2292,9 +2315,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="sol">
       <p class="paso">Paso 1 · Leer el enunciado</p>
       <div class="lect">Sean \(a,b,c,d\in\mathbb N\) tales que <span class="u u-na">los tres primeros están en progresión geométrica</span> y <span class="u u-az">los tres últimos están en progresión aritmética</span>. Si <span class="u u-mo">\(a=d\)</span> y <span class="u u-mo">\(d+c=6\)</span>, determine el valor de \(a+b+c+d\).</div>
-      <p>Cada frase se vuelve una ecuación. Para tres términos consecutivos:</p>
-      <div class="math">\[\na{a,\,b,\,c\ \text{en PG}:\ b^2=ac}\]</div>
-      <div class="math">\[\az{b,\,c,\,d\ \text{en PA}:\ 2c=b+d}\]</div>
+      <p>Cada frase se vuelve una ecuación. Ojo: aquí la letra \(d\) es el cuarto número, no la diferencia.</p>
+      <p>En la PG \(a,\ b,\ c\) la razón se repite:</p>
+      <div class="math">\[\na{r=\frac ba=\frac cb}\]</div>
+      <div class="math">\[b^2=ac\]</div>
+      <p>En la PA \(b,\ c,\ d\) la diferencia se repite:</p>
+      <div class="math">\[\az{c-b=d-c}\]</div>
+      <div class="math">\[2c=b+d\]</div>
       <p class="paso">Paso 2 · Todo en función de d</p>
       <div class="math">\[\mo{c=6-d}\]</div>
       <div class="math">\[\mo{a=d}\]</div>
@@ -2344,15 +2371,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="enun">Sean \(x_1,x_2,\dots,x_n\) términos de una progresión geométrica tal que \(x_1\times x_2\times\cdots\times x_n=1\). Si \(x_1+x_2+\cdots+x_n=5\), calcule \(\tfrac1{x_1}+\tfrac1{x_2}+\cdots+\tfrac1{x_n}\).</div>
     <div class="warn"><b>Sobre el enunciado:</b> igual que en el ejercicio 5, se necesita que los términos sean positivos.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Usar el ejercicio 5</p>
-      <p>Con producto 1 (y términos positivos), cada par a la misma distancia de los extremos multiplica 1:</p>
+      <p class="paso">Paso 1 · Pares a la misma distancia de los extremos</p>
+      <p>Con producto 1 (y términos positivos), cada par a la misma distancia de los extremos multiplica 1 (ejercicio 5):</p>
       <div class="math">\[x_i\cdot x_{n+1-i}=x_1x_n=1\]</div>
-      <p class="paso">Paso 2 · Cada inverso es otro término</p>
-      <div class="math">\[\frac1{x_i}=x_{n+1-i}\]</div>
-      <div class="math">\[\text{por ejemplo}\quad \frac1{x_1}=x_n,\quad \frac1{x_2}=x_{n-1}\]</div>
+      <p class="paso">Paso 2 · Juntar los inversos por parejas</p>
+      <div class="math">\[\frac1{x_1}+\frac1{x_n}=\frac{x_1+x_n}{x_1x_n}=x_1+x_n\]</div>
+      <div class="math">\[\frac1{x_2}+\frac1{x_{n-1}}=\frac{x_2+x_{n-1}}{x_2x_{n-1}}=x_2+x_{n-1}\]</div>
+      <p>Y así con cada pareja. Si \(n\) es impar, el del medio cumple \(x_m\cdot x_m=1\): vale 1 y su inverso también.</p>
       <p class="paso">Paso 3 · Sumar</p>
-      <div class="math">\[\frac1{x_1}+\frac1{x_2}+\cdots+\frac1{x_n}=x_n+x_{n-1}+\cdots+x_1=\ma5\]</div>
-      <p>Es la misma suma, en orden inverso.</p>
+      <div class="math">\[\frac1{x_1}+\frac1{x_2}+\cdots+\frac1{x_n}=x_1+x_2+\cdots+x_n=\ma5\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>5.</div>
   </article>
@@ -2361,16 +2388,19 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">7</span><h3>Un polinomio sin raíces reales</h3><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span><span class="chip ok">Unidad correcta</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="ex-pr7">Ver ejemplos similares →</button></span></div>
     <div class="enun">Sea \((a_n)_{n\in\mathbb N}\) una progresión geométrica. Pruebe que para cada \(n\in\mathbb N\), el polinomio \(p(x)=a_nx^2+a_{n+1}x+a_{n+2}\) no tiene raíces reales.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Los coeficientes con la razón</p>
-      <p>Se supone, como siempre en una PG, que los términos no son cero (si \(a_n=0\), \(p\) ni siquiera sería de grado 2). Cada término es el anterior por \(\na r\):</p>
-      <div class="math">\[a_{n+1}=a_n\na r\]</div>
-      <div class="math">\[a_{n+2}=a_n\na r^2\]</div>
+      <p class="paso">Paso 1 · Los coeficientes con a₁ y r</p>
+      <p>Se supone, como siempre en una PG, que los términos no son cero (si \(a_n=0\), \(p\) ni siquiera sería de grado 2).</p>
+      <div class="math">\[a_n=\az{a_1}\,\na r^{\,n-1}\]</div>
+      <div class="math">\[a_{n+1}=\az{a_1}\,\na r^{\,n}\]</div>
+      <div class="math">\[a_{n+2}=\az{a_1}\,\na r^{\,n+1}\]</div>
       <p class="paso">Paso 2 · Discriminante</p>
       <p>Un polinomio de grado 2 no tiene raíces reales si \(\Delta=b^2-4ac\lt0\).</p>
-      <div class="math">\[\Delta=a_{n+1}^2-4\,a_n\,a_{n+2}=a_n^2\na r^2-4\,a_n\cdot a_n\na r^2=-3\,a_n^2\na r^2\]</div>
+      <div class="math">\[\Delta=a_{n+1}^2-4\,a_n\,a_{n+2}\]</div>
+      <div class="math">\[\Delta=(a_1r^{n})^2-4\,a_1r^{n-1}\,a_1r^{n+1}\]</div>
+      <div class="math">\[\Delta=a_1^2r^{2n}-4a_1^2r^{2n}=-3a_1^2r^{2n}\]</div>
       <p class="paso">Paso 3 · Signo</p>
-      <p>\(a_n\ne0\) y \(\na r\ne0\), así que \(a_n^2\na r^2\gt0\) y</p>
-      <div class="math">\[\ma{\Delta=-3a_n^2r^2\lt0}\]</div>
+      <p>\(a_1\ne0\) y \(\na r\ne0\), así que \(a_1^2r^{2n}\gt0\) y</p>
+      <div class="math">\[\ma{\Delta=-3a_1^2r^{2n}\lt0}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(\Delta=-3a_n^2r^2\lt0\) (es lo mismo que \(-3a_1^2r^{2n}\) de la unidad), así que \(p\) no tiene raíces reales.</div>
   </article>
@@ -2379,13 +2409,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">8</span><h3>La suma de las diferencias</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="chip bad">Error en la unidad</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-su-tel" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="ex-pr8">Ver ejemplos similares →</button></span></div>
     <div class="enun">Sea \((a_n)_{n\in\mathbb N}\) una progresión aritmética y \((b_n)_{n\in\mathbb N}\) una sucesión definida para cada \(n\in\mathbb N\) como \(b_n=\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)\). Pruebe que la sucesión \((b_n)_{n\in\mathbb N}\) es una progresión aritmética.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Cada sumando es la diferencia</p>
-      <p>En una PA, un término menos el anterior siempre da \(\na d\):</p>
-      <div class="math">\[a_{i+1}-a_i=\na d\]</div>
-      <p class="paso">Paso 2 · Calcular b<sub>n</sub></p>
-      <div class="math">\[b_n=\underbrace{\na d+\na d+\cdots+\na d}_{n\ \text{veces}}=n\na d\]</div>
-      <p>(Con la suma telescópica sale lo mismo: \(b_n=a_{n+1}-a_1=n\na d\).)</p>
-      <p class="paso">Paso 3 · b<sub>n</sub> es PA</p>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[\sum_{i=1}^{n}(a_{i+1}-a_i)=a_{n+1}-a_1\]</div>
+      <div class="math">\[b_n=a_{n+1}-a_1\]</div>
+      <p class="paso">Paso 2 · Usar a_n = a₁ + (n − 1)·d</p>
+      <div class="math">\[a_{n+1}=\az{a_1}+n\,\na d\]</div>
+      <div class="math">\[b_n=\az{a_1}+n\na d-\az{a_1}=n\na d\]</div>
+      <p class="paso">Paso 3 · Diferencia de (b_n)</p>
       <div class="math">\[\ma{b_{n+1}-b_n}=(n+1)\na d-n\na d=\na d\]</div>
       <p>La diferencia entre términos consecutivos es constante: \((b_n)\) es una PA de diferencia \(\na d\) (y primer término \(b_1=\na d\)).</p>
     </div>
@@ -2408,9 +2438,9 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <div class="math">\[(12-d)+\na1=13-d\]</div>
       <div class="math">\[12+\na4=16\]</div>
       <div class="math">\[(12+d)+\na{43}=55+d\]</div>
-      <p class="paso">Paso 4 · Condición de PG</p>
-      <p>El del medio al cuadrado es el producto de los otros dos:</p>
-      <div class="math">\[16^2=(13-d)(55+d)\]</div>
+      <p class="paso">Paso 4 · Están en PG: la razón se repite</p>
+      <div class="math">\[\na r=\frac{16}{13-d}=\frac{55+d}{16}\]</div>
+      <div class="math">\[16\cdot16=(13-d)(55+d)\]</div>
       <div class="math">\[256=715-42d-d^2\]</div>
       <div class="math">\[d^2+42d-459=0\]</div>
       <div class="math">\[(d+51)(d-9)=0\]</div>
@@ -2500,10 +2530,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p class="paso">Paso 1 · Leer el enunciado</p>
       <div class="lect"><span class="u u-mo">Los ángulos de un triángulo</span> están en <span class="u u-na">progresión aritmética</span>. Si <span class="u u-az">el más pequeño mide 40°</span>, ¿cuál es la medida de los otros dos?</div>
       <p><span class="u u-mo">Los ángulos de un triángulo</span> suman 180°. Esa es la ecuación.</p>
-      <p class="paso">Paso 2 · Los tres ángulos</p>
-      <div class="math">\[\az{40},\quad 40+\na d,\quad 40+2\na d\]</div>
+      <p class="paso">Paso 2 · Tres términos: al del medio se le llama x</p>
+      <p>Son tres términos (cantidad impar) y se conoce su suma: se escriben alrededor del central.</p>
+      <div class="math">\[x-\na d,\quad x,\quad x+\na d\]</div>
       <p class="paso">Paso 3 · Suman 180°</p>
-      <div class="math">\[120+3\na d=180\]</div>
+      <div class="math">\[(x-\na d)+x+(x+\na d)=180\]</div>
+      <div class="math">\[3x=180\]</div>
+      <div class="math">\[x=60\]</div>
+      <p class="paso">Paso 4 · El menor da la diferencia</p>
+      <div class="math">\[60-\na d=\az{40}\]</div>
       <div class="math">\[\na d=20\]</div>
       <div class="math">\[\ma{60^\circ\ \text{y}\ 80^\circ}\]</div>
     </div>
@@ -2523,15 +2558,16 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="enun">a) Escriba los cuatro primeros términos de \(a_n=\dfrac{n+1}{2n}\). b) Escriba los cinco primeros términos de la sucesión con \(b_1=2\) y \(b_{n+1}=3b_n-1\).</div>
     <div class="sol">
       <p class="paso">a) Reemplazar n = 1, 2, 3, 4</p>
-      <div class="math">\[a_1=\frac22=1\]</div>
-      <div class="math">\[a_2=\frac34\]</div>
-      <div class="math">\[a_3=\frac46=\frac23\]</div>
-      <div class="math">\[a_4=\frac58\]</div>
-      <p class="paso">b) Cada término sale del anterior</p>
-      <div class="math">\[b_2=3(2)-1=5\]</div>
-      <div class="math">\[b_3=3(5)-1=14\]</div>
-      <div class="math">\[b_4=41\]</div>
-      <div class="math">\[b_5=122\]</div>
+      <div class="math">\[a_1=\frac{1+1}{2\cdot1}=1\]</div>
+      <div class="math">\[a_2=\frac{2+1}{2\cdot2}=\frac34\]</div>
+      <div class="math">\[a_3=\frac{3+1}{2\cdot3}=\frac46=\frac23\]</div>
+      <div class="math">\[a_4=\frac{4+1}{2\cdot4}=\frac58\]</div>
+      <p class="paso">b) Reemplazar n en la regla</p>
+      <p>En \(b_{n+1}=3b_n-1\), con \(n=1\) sale \(b_2\); con \(n=2\) sale \(b_3\); y así.</p>
+      <div class="math">\[n=1:\ b_2=3b_1-1=3(2)-1=5\]</div>
+      <div class="math">\[n=2:\ b_3=3b_2-1=3(5)-1=14\]</div>
+      <div class="math">\[n=3:\ b_4=3(14)-1=41\]</div>
+      <div class="math">\[n=4:\ b_5=3(41)-1=122\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>a) \(1,\ \tfrac34,\ \tfrac23,\ \tfrac58\) · b) \(2,\ 5,\ 14,\ 41,\ 122\).</div>
   </article>
@@ -2540,14 +2576,20 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T2</span><h3>PA con dos términos conocidos</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-pr-pa">Ver la teoría ↑</button></span></div>
     <div class="enun">En una PA, \(a_5=18\) y \(a_{12}=46\). Halle \(a_1\), la diferencia y el término general.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Diferencia</p>
-      <div class="math">\[a_{12}-a_5=7\na d\]</div>
+      <p class="paso">Paso 1 · La diferencia con a_m − a_k = (m − k)·d</p>
+      <div class="math">\[a_{12}-a_5=(12-5)\,\na d\]</div>
       <div class="math">\[46-18=7\na d\]</div>
+      <div class="math">\[28=7\na d\]</div>
       <div class="math">\[\na d=4\]</div>
-      <p class="paso">Paso 2 · Primer término</p>
-      <div class="math">\[\az{a_1}=a_5-4\na d=18-16=2\]</div>
+      <p class="paso">Paso 2 · El primer término con la misma fórmula</p>
+      <div class="math">\[a_5-\az{a_1}=(5-1)\,\na d\]</div>
+      <div class="math">\[18-\az{a_1}=4\cdot4\]</div>
+      <div class="math">\[\az{a_1}=2\]</div>
       <p class="paso">Paso 3 · Término general</p>
-      <div class="math">\[\ma{a_n}=2+(n-1)\cdot4=4n-2\]</div>
+      <div class="math">\[a_n=\az{a_1}+(\ve n-1)\,\na d\]</div>
+      <div class="math">\[a_n=2+(n-1)\cdot4\]</div>
+      <div class="math">\[a_n=2+4n-4\]</div>
+      <div class="math">\[\ma{a_n=4n-2}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_1=2\), \(d=4\), \(a_n=4n-2\).</div>
   </article>
@@ -2556,15 +2598,19 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T3</span><h3>PG con dos términos conocidos</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-pr-pg">Ver la teoría ↑</button></span></div>
     <div class="enun">En una PG, \(a_2=6\) y \(a_5=162\). Halle la razón, el término general y \(a_7\).</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Razón</p>
-      <div class="math">\[\frac{a_5}{a_2}=\na r^3\]</div>
-      <div class="math">\[\frac{162}{6}=27=\na r^3\]</div>
-      <div class="math">\[\na r=3\]</div>
-      <p class="paso">Paso 2 · Primer término y término general</p>
-      <div class="math">\[\az{a_1}=\frac{a_2}{\na r}=2\]</div>
+      <p class="paso">Paso 1 · La razón con a_m / a_k = r^(m − k)</p>
+      <div class="math">\[\frac{a_5}{a_2}=\na r^{\,5-2}\]</div>
+      <div class="math">\[\frac{162}{6}=\na r^{3}\]</div>
+      <div class="math">\[27=\na r^{3}\]</div>
+      <div class="math">\[\na r=\sqrt[3]{27}=3\]</div>
+      <p class="paso">Paso 2 · El primer término con la misma fórmula</p>
+      <div class="math">\[\frac{a_2}{\az{a_1}}=\na r^{\,2-1}\]</div>
+      <div class="math">\[\frac{6}{\az{a_1}}=3\]</div>
+      <div class="math">\[\az{a_1}=2\]</div>
+      <p class="paso">Paso 3 · Término general y séptimo término</p>
+      <div class="math">\[a_n=\az{a_1}\cdot\na r^{\,\ve n-1}\]</div>
       <div class="math">\[a_n=2\cdot3^{n-1}\]</div>
-      <p class="paso">Paso 3 · Séptimo término</p>
-      <div class="math">\[\ma{a_7}=2\cdot3^6=1458\]</div>
+      <div class="math">\[\ma{a_7}=2\cdot3^{6}=2\cdot729=1458\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(r=3\), \(a_n=2\cdot3^{n-1}\), \(a_7=1458\).</div>
   </article>
@@ -2573,7 +2619,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T4</span><h3>Contar los términos</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-conteo" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-pr-conteo">Ver la teoría ↑</button></span></div>
     <div class="enun">¿Cuántos términos tiene la PA \(7,\ 11,\ 15,\ \dots,\ 199\)?</div>
     <div class="sol">
-      <div class="math">\[\ve n=\frac{199-\az7}{\na4}+1=48+1=\ma{49}\]</div>
+      <p class="paso">Paso 1 · Término general</p>
+      <div class="math">\[\az{a_1}=7\]</div>
+      <div class="math">\[\na d=11-7=4\]</div>
+      <div class="math">\[a_n=7+(\ve n-1)\cdot4\]</div>
+      <div class="math">\[a_n=7+4n-4=4n+3\]</div>
+      <p class="paso">Paso 2 · ¿En qué lugar está el 199?</p>
+      <div class="math">\[4n+3=199\]</div>
+      <div class="math">\[4n=196\]</div>
+      <div class="math">\[\ma{\ve n=49}\]</div>
+      <p>Otra forma, con la fórmula para contar términos:</p>
+      <div class="math">\[\ve n=\frac{199-\az7}{\na4}+1=48+1=49\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>49 términos.</div>
   </article>
@@ -2584,10 +2640,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1.1</span><h3>Cinco términos de una PA</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr1">Parecido al ejercicio 1 de la unidad ↑</button></span></div>
     <div class="enun">Escriba los cinco primeros términos de la PA con \(a_4=17\) y \(a_{10}=41\).</div>
     <div class="sol">
-      <div class="math">\[a_{10}-a_4=6\na d\]</div>
+      <p class="paso">Paso 1 · La diferencia</p>
+      <div class="math">\[a_{10}-a_4=(10-4)\,\na d\]</div>
+      <div class="math">\[41-17=6\na d\]</div>
       <div class="math">\[24=6\na d\]</div>
       <div class="math">\[\na d=4\]</div>
-      <div class="math">\[\az{a_1}=a_4-3\na d=17-12=5\]</div>
+      <p class="paso">Paso 2 · El primer término</p>
+      <div class="math">\[a_4-\az{a_1}=(4-1)\,\na d\]</div>
+      <div class="math">\[17-\az{a_1}=3\cdot4\]</div>
+      <div class="math">\[\az{a_1}=5\]</div>
+      <p class="paso">Paso 3 · Término general y los cinco términos</p>
+      <div class="math">\[a_n=5+(n-1)\cdot4=4n+1\]</div>
       <div class="math">\[\ma{5,\ 9,\ 13,\ 17,\ 21}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(5,\ 9,\ 13,\ 17,\ 21\).</div>
@@ -2597,10 +2660,16 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1.2</span><h3>Cinco términos de una PG</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr1">Parecido al ejercicio 1 de la unidad ↑</button></span></div>
     <div class="enun">Escriba los cinco primeros términos de la PG con \(a_1=4\) y \(a_2=6\).</div>
     <div class="sol">
-      <div class="math">\[\na r=\frac64=\frac32\]</div>
-      <div class="math">\[a_3=6\cdot\na{\tfrac32}=9\]</div>
-      <div class="math">\[a_4=9\cdot\na{\tfrac32}=\frac{27}2\]</div>
-      <div class="math">\[a_5=\frac{27}2\cdot\na{\tfrac32}=\frac{81}4\]</div>
+      <p class="paso">Paso 1 · La razón</p>
+      <div class="math">\[\frac{a_2}{a_1}=\na r^{\,2-1}\]</div>
+      <div class="math">\[\frac64=\na r\]</div>
+      <div class="math">\[\na r=\frac32\]</div>
+      <p class="paso">Paso 2 · Término general</p>
+      <div class="math">\[a_n=\az4\cdot\left(\na{\tfrac32}\right)^{n-1}\]</div>
+      <p class="paso">Paso 3 · Reemplazar n = 3, 4, 5</p>
+      <div class="math">\[a_3=4\cdot\left(\tfrac32\right)^{2}=4\cdot\frac94=9\]</div>
+      <div class="math">\[a_4=4\cdot\left(\tfrac32\right)^{3}=4\cdot\frac{27}8=\frac{27}2\]</div>
+      <div class="math">\[a_5=4\cdot\left(\tfrac32\right)^{4}=4\cdot\frac{81}{16}=\frac{81}4\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(4,\ 6,\ 9,\ \tfrac{27}2,\ \tfrac{81}4\).</div>
   </article>
@@ -2609,9 +2678,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">2.1</span><h3>El término 15</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr2">Parecido al ejercicio 2 de la unidad ↑</button></span></div>
     <div class="enun">Halle el término 15 de la PA \(3,\ 10,\ 17,\ 24,\ \dots\)</div>
     <div class="sol">
+      <p class="paso">Paso 1 · Primer término y diferencia</p>
       <div class="math">\[\az{a_1}=3\]</div>
-      <div class="math">\[\na d=7\]</div>
-      <div class="math">\[\ma{a_{15}}=3+14\cdot7=101\]</div>
+      <div class="math">\[\na d=10-3=7\]</div>
+      <p class="paso">Paso 2 · Término general</p>
+      <div class="math">\[a_n=3+(\ve n-1)\cdot7\]</div>
+      <div class="math">\[a_n=3+7n-7=7n-4\]</div>
+      <p class="paso">Paso 3 · Reemplazar n = 15</p>
+      <div class="math">\[\ma{a_{15}}=7(15)-4=101\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{15}=101\).</div>
   </article>
@@ -2620,8 +2694,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">2.2</span><h3>Una PA que baja</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr2">Parecido al ejercicio 2 de la unidad ↑</button></span></div>
     <div class="enun">Halle el término 20 de la PA \(40,\ 37,\ 34,\ 31,\ \dots\)</div>
     <div class="sol">
-      <p>La diferencia es negativa: \(\na d=37-40=-3\).</p>
-      <div class="math">\[\ma{a_{20}}=40+19\cdot(-3)=40-57=-17\]</div>
+      <p class="paso">Paso 1 · Primer término y diferencia</p>
+      <div class="math">\[\az{a_1}=40\]</div>
+      <div class="math">\[\na d=37-40=-3\]</div>
+      <p>La diferencia es negativa: la PA baja.</p>
+      <p class="paso">Paso 2 · Término general</p>
+      <div class="math">\[a_n=40+(\ve n-1)(-3)\]</div>
+      <div class="math">\[a_n=40-3n+3=-3n+43\]</div>
+      <p class="paso">Paso 3 · Reemplazar n = 20</p>
+      <div class="math">\[\ma{a_{20}}=-3(20)+43=-17\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{20}=-17\).</div>
   </article>
@@ -2630,9 +2711,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">3.1</span><h3>Denominadores en PA</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-sucesion" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr3">Parecido al ejercicio 3 de la unidad ↑</button></span></div>
     <div class="enun">Halle el décimo término de \(\tfrac12,\ \tfrac15,\ \tfrac18,\ \dots\)</div>
     <div class="sol">
-      <p>Los denominadores \(2,\ 5,\ 8\) forman una PA de diferencia 3:</p>
-      <div class="math">\[2+9\cdot3=29\]</div>
-      <div class="math">\[\ma{a_{10}=\tfrac1{29}}\]</div>
+      <p class="paso">Paso 1 · Ver el patrón</p>
+      <p>La sucesión no es PA ni PG. Pero los denominadores \(2,\ 5,\ 8\) sí forman una PA: suben de 3 en 3.</p>
+      <p class="paso">Paso 2 · Denominador del lugar n</p>
+      <div class="math">\[b_n=\az2+(\ve n-1)\cdot\na3=3n-1\]</div>
+      <div class="math">\[a_n=\frac1{3n-1}\]</div>
+      <p class="paso">Paso 3 · Reemplazar n = 10</p>
+      <div class="math">\[\ma{a_{10}}=\frac1{3(10)-1}=\frac1{29}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{10}=\tfrac1{29}\).</div>
   </article>
@@ -2641,10 +2726,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">3.2</span><h3>Numerador y denominador</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-sucesion" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr3">Parecido al ejercicio 3 de la unidad ↑</button></span></div>
     <div class="enun">Halle el sexto término de \(\tfrac23,\ \tfrac45,\ \tfrac67,\ \dots\)</div>
     <div class="sol">
-      <p>Numeradores \(2,4,6\): PA de diferencia 2. Denominadores \(3,5,7\): PA de diferencia 2.</p>
-      <div class="math">\[\text{numerador}=2+5\cdot2=12\]</div>
-      <div class="math">\[\text{denominador}=3+5\cdot2=13\]</div>
-      <div class="math">\[\ma{a_6=\tfrac{12}{13}}\]</div>
+      <p class="paso">Paso 1 · Numeradores y denominadores por separado</p>
+      <p>Numeradores \(2,\ 4,\ 6\): PA de diferencia 2. Denominadores \(3,\ 5,\ 7\): PA de diferencia 2.</p>
+      <div class="math">\[a_n=2+(n-1)\cdot2=2n\]</div>
+      <div class="math">\[b_n=3+(n-1)\cdot2=2n+1\]</div>
+      <p class="paso">Paso 2 · Término general</p>
+      <div class="math">\[c_n=\frac{a_n}{b_n}=\frac{2n}{2n+1}\]</div>
+      <p class="paso">Paso 3 · Reemplazar n = 6</p>
+      <div class="math">\[\ma{c_6}=\frac{12}{13}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_6=\tfrac{12}{13}\).</div>
   </article>
@@ -2653,13 +2742,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">4.1</span><h3>PA y luego PG</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr4">Parecido al ejercicio 4 de la unidad ↑</button></span></div>
     <div class="enun">Sean \(a,b,c,d\in\mathbb N\) tales que \(a,b,c\) están en PA y \(b,c,d\) están en PG. Si \(a=2\) y \(c=6\), halle \(a+b+c+d\).</div>
     <div class="sol">
-      <p class="paso">Paso 1 · PA: el del medio es el promedio</p>
-      <div class="math">\[2b=a+c=8\]</div>
+      <p>Ojo: aquí la letra \(d\) es el cuarto número, no la diferencia.</p>
+      <p class="paso">Paso 1 · PA: la diferencia se repite</p>
+      <p>En \(2,\ b,\ 6\):</p>
+      <div class="math">\[b-2=6-b\]</div>
+      <div class="math">\[2b=8\]</div>
       <div class="math">\[b=4\]</div>
-      <p class="paso">Paso 2 · PG: el del medio al cuadrado</p>
-      <div class="math">\[c^2=b\,d\]</div>
-      <div class="math">\[36=4d\]</div>
-      <div class="math">\[d=9\]</div>
+      <p class="paso">Paso 2 · PG: la razón se repite</p>
+      <p>En \(4,\ 6,\ d\):</p>
+      <div class="math">\[\na r=\frac64=\frac d6\]</div>
+      <div class="math">\[d=\frac{36}4=9\]</div>
+      <p class="paso">Paso 3 · Sumar</p>
       <div class="math">\[\ma{a+b+c+d}=2+4+6+9=21\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>21 (los números son 2, 4, 6, 9).</div>
@@ -2669,17 +2762,23 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">4.2</span><h3>PG y luego PA</h3><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr4">Parecido al ejercicio 4 de la unidad ↑</button></span></div>
     <div class="enun">Sean \(a,b,c,d\in\mathbb N\) tales que \(a,b,c\) están en PG y \(b,c,d\) están en PA. Si \(a=4\) y \(d=12\), halle \(a+b+c+d\).</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Todo con la razón</p>
-      <div class="math">\[b=4\na r\]</div>
-      <div class="math">\[c=4\na r^2\]</div>
-      <p class="paso">Paso 2 · PA: \(2c=b+d\)</p>
-      <div class="math">\[8\na r^2=4\na r+12\]</div>
-      <div class="math">\[2r^2-r-3=0\]</div>
-      <div class="math">\[(2r-3)(r+1)=0\]</div>
-      <p>Con \(r=-1\), \(b=-4\) no es natural. Entonces \(\na r=\tfrac32\).</p>
-      <p class="paso">Paso 3 · Los números</p>
-      <div class="math">\[b=6\]</div>
-      <div class="math">\[c=9\]</div>
+      <p>Ojo: aquí la letra \(d\) es el cuarto número (\(d=12\)), no la diferencia.</p>
+      <p class="paso">Paso 1 · PG: la razón se repite</p>
+      <p>En \(4,\ b,\ c\):</p>
+      <div class="math">\[\na r=\frac b4=\frac cb\]</div>
+      <div class="math">\[b^2=4c\]</div>
+      <p class="paso">Paso 2 · PA: la diferencia se repite</p>
+      <p>En \(b,\ c,\ 12\):</p>
+      <div class="math">\[c-b=12-c\]</div>
+      <div class="math">\[2c=12+b\]</div>
+      <div class="math">\[c=\frac{12+b}2\]</div>
+      <p class="paso">Paso 3 · Reemplazar c en la PG</p>
+      <div class="math">\[b^2=4\cdot\frac{12+b}2\]</div>
+      <div class="math">\[b^2=24+2b\]</div>
+      <div class="math">\[b^2-2b-24=0\]</div>
+      <div class="math">\[(b-6)(b+4)=0\]</div>
+      <p>\(b=-4\) no es natural, así que \(b=6\) y \(c=\tfrac{12+6}2=9\).</p>
+      <p class="paso">Paso 4 · Sumar</p>
       <div class="math">\[\ma{a+b+c+d}=4+6+9+12=31\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>31 (los números son 4, 6, 9, 12).</div>
@@ -2690,10 +2789,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="enun">En una PG de términos positivos \(a_1,\dots,a_5\) se sabe que \(a_1a_5=4\). Halle el producto \(a_1a_2a_3a_4a_5\).</div>
     <div class="sol">
       <p class="paso">Paso 1 · Pares a la misma distancia de los extremos</p>
-      <div class="math">\[a_1a_5=a_2a_4=a_3\cdot a_3=4\]</div>
+      <p>En \(a_1,\ a_2,\ a_3,\ a_4,\ a_5\), los pares equidistantes dan el mismo producto, y el del medio se junta consigo mismo:</p>
+      <div class="math">\[a_1a_5=a_2a_4=a_3\cdot a_3\]</div>
+      <div class="math">\[4=a_3^{\,2}\]</div>
       <div class="math">\[a_3=2\]</div>
       <p class="paso">Paso 2 · Producto</p>
-      <div class="math">\[\ma P=(a_1a_5)(a_2a_4)\,a_3=4\cdot4\cdot2=32\]</div>
+      <div class="math">\[\ma P=(a_1a_5)(a_2a_4)\,a_3\]</div>
+      <div class="math">\[\ma P=4\cdot4\cdot2=32\]</div>
+      <p>Otra forma, con \(a_n=a_1r^{n-1}\): \(P=a_1^5r^{10}=(a_1r^2)^5\) y \(a_1a_5=(a_1r^2)^2=4\), así que \(a_1r^2=2\) y \(P=2^5=32\).</p>
     </div>
     <div class="resp"><b>Respuesta</b>32.</div>
   </article>
@@ -2702,9 +2805,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">5.2</span><h3>Del producto a los extremos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr5">Parecido al ejercicio 5 de la unidad ↑</button></span></div>
     <div class="enun">En una PG de seis términos positivos, el producto de todos es 729. Halle \(a_1a_6\).</div>
     <div class="sol">
-      <p>Hay tres pares \((a_1a_6)(a_2a_5)(a_3a_4)\) y cada uno vale \(a_1a_6\):</p>
+      <p class="paso">Paso 1 · Pares a la misma distancia de los extremos</p>
+      <div class="math">\[a_1a_6=a_2a_5=a_3a_4\]</div>
+      <p class="paso">Paso 2 · El producto con los pares</p>
+      <div class="math">\[(a_1a_6)(a_2a_5)(a_3a_4)=729\]</div>
+      <div class="math">\[(a_1a_6)(a_1a_6)(a_1a_6)=729\]</div>
       <div class="math">\[(a_1a_6)^3=729\]</div>
-      <div class="math">\[\ma{a_1a_6}=9\]</div>
+      <div class="math">\[\ma{a_1a_6}=\sqrt[3]{729}=9\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_1a_6=9\).</div>
   </article>
@@ -2713,11 +2820,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">6.1</span><h3>Inversos con producto 16</h3><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr6">Parecido al ejercicio 6 de la unidad ↑</button></span></div>
     <div class="enun">Los números positivos \(x_1,\dots,x_5\) están en PG, con \(x_1x_5=16\) y \(x_1+\dots+x_5=31\). Calcule \(\tfrac1{x_1}+\dots+\tfrac1{x_5}\).</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Cada inverso</p>
-      <div class="math">\[x_i\,x_{6-i}=16\]</div>
-      <div class="math">\[\frac1{x_i}=\frac{x_{6-i}}{16}\]</div>
-      <p class="paso">Paso 2 · Sumar</p>
-      <div class="math">\[\frac1{x_1}+\dots+\frac1{x_5}=\frac{x_5+\dots+x_1}{16}=\ma{\frac{31}{16}}\]</div>
+      <p class="paso">Paso 1 · Pares a la misma distancia de los extremos</p>
+      <div class="math">\[x_1x_5=x_2x_4=x_3\cdot x_3=16\]</div>
+      <div class="math">\[x_3=4\]</div>
+      <p class="paso">Paso 2 · La suma sin el del medio</p>
+      <div class="math">\[x_1+x_2+x_4+x_5=31-4=27\]</div>
+      <p class="paso">Paso 3 · Juntar los inversos por parejas</p>
+      <div class="math">\[\frac1{x_1}+\frac1{x_5}=\frac{x_1+x_5}{x_1x_5}=\frac{x_1+x_5}{16}\]</div>
+      <div class="math">\[\frac1{x_2}+\frac1{x_4}=\frac{x_2+x_4}{x_2x_4}=\frac{x_2+x_4}{16}\]</div>
+      <p class="paso">Paso 4 · Sumar todo</p>
+      <div class="math">\[\frac{x_1+x_5}{16}+\frac{x_2+x_4}{16}+\frac1{x_3}\]</div>
+      <div class="math">\[=\frac{27}{16}+\frac14=\ma{\frac{31}{16}}\]</div>
       <p>Comprobación con \(1,2,4,8,16\): \(1+\tfrac12+\tfrac14+\tfrac18+\tfrac1{16}=\tfrac{31}{16}\).</p>
     </div>
     <div class="resp"><b>Respuesta</b>\(\tfrac{31}{16}\).</div>
@@ -2728,11 +2841,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="enun">Los números positivos \(y_1,y_2,y_3,y_4\) están en PG, su producto es 64 y su suma es 15. Calcule \(\tfrac1{y_1}+\tfrac1{y_2}+\tfrac1{y_3}+\tfrac1{y_4}\).</div>
     <div class="sol">
       <p class="paso">Paso 1 · El producto de los extremos</p>
-      <div class="math">\[(y_1y_4)(y_2y_3)=(y_1y_4)^2=64\]</div>
-      <div class="math">\[y_1y_4=8\]</div>
-      <p class="paso">Paso 2 · Los inversos</p>
-      <div class="math">\[\frac1{y_i}=\frac{y_{5-i}}8\]</div>
-      <div class="math">\[\text{suma}=\frac{15}8\]</div>
+      <div class="math">\[y_1y_4=y_2y_3\]</div>
+      <div class="math">\[(y_1y_4)(y_2y_3)=64\]</div>
+      <div class="math">\[(y_1y_4)^2=64\]</div>
+      <div class="math">\[y_1y_4=y_2y_3=8\]</div>
+      <p class="paso">Paso 2 · Juntar los inversos por parejas</p>
+      <div class="math">\[\frac1{y_1}+\frac1{y_4}=\frac{y_1+y_4}{8}\]</div>
+      <div class="math">\[\frac1{y_2}+\frac1{y_3}=\frac{y_2+y_3}{8}\]</div>
+      <p class="paso">Paso 3 · Sumar</p>
+      <div class="math">\[\frac{y_1+y_2+y_3+y_4}{8}=\ma{\frac{15}8}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(\tfrac{15}8\) (son \(1,2,4,8\)).</div>
   </article>
@@ -2741,9 +2858,18 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">7.1</span><h3>Una raíz doble</h3><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr7">Parecido al ejercicio 7 de la unidad ↑</button></span></div>
     <div class="enun">Sea \((a_n)\) una PG de razón \(r\). Pruebe que \(p(x)=a_nx^2-2a_{n+1}x+a_{n+2}\) tiene una sola raíz real y hállela.</div>
     <div class="sol">
-      <div class="math">\[\Delta=4a_{n+1}^2-4a_na_{n+2}=4a_n^2\na r^2-4a_n^2\na r^2=0\]</div>
-      <p>Con \(\Delta=0\) hay una raíz doble:</p>
-      <div class="math">\[\ma x=\frac{2a_{n+1}}{2a_n}=\na r\]</div>
+      <p class="paso">Paso 1 · Los coeficientes con a₁ y r</p>
+      <div class="math">\[a_n=\az{a_1}\,\na r^{\,n-1}\]</div>
+      <div class="math">\[a_{n+1}=\az{a_1}\,\na r^{\,n}\]</div>
+      <div class="math">\[a_{n+2}=\az{a_1}\,\na r^{\,n+1}\]</div>
+      <p class="paso">Paso 2 · Discriminante</p>
+      <div class="math">\[\Delta=(-2a_{n+1})^2-4\,a_n\,a_{n+2}\]</div>
+      <div class="math">\[\Delta=(2a_1r^{n})^2-4\,a_1r^{n-1}\,a_1r^{n+1}\]</div>
+      <div class="math">\[\Delta=4a_1^2r^{2n}-4a_1^2r^{2n}=0\]</div>
+      <p>Con \(\Delta=0\) hay una sola raíz real.</p>
+      <p class="paso">Paso 3 · La raíz</p>
+      <div class="math">\[x=\frac{-(-2a_{n+1})\pm\sqrt0}{2a_n}=\frac{a_{n+1}}{a_n}\]</div>
+      <div class="math">\[x=\frac{a_1r^{n}}{a_1r^{n-1}}=r^{\,n-(n-1)}=\ma{\na r}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(\Delta=0\); la raíz es \(x=r\).</div>
   </article>
@@ -2763,9 +2889,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">8.1</span><h3>Los términos de lugar par</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr8">Parecido al ejercicio 8 de la unidad ↑</button></span></div>
     <div class="enun">Sea \((a_n)\) una PA de diferencia \(d\) y \(b_n=a_{2n}\). Pruebe que \((b_n)\) es una PA y halle su diferencia.</div>
     <div class="sol">
-      <p>De \(a_{2n}\) a \(a_{2n+2}\) hay dos saltos de \(\na d\):</p>
-      <div class="math">\[b_{n+1}-b_n=a_{2n+2}-a_{2n}=\ma{2\na d}\]</div>
-      <p>La diferencia no depende de \(n\): es constante.</p>
+      <p class="paso">Paso 1 · Diferencia de la nueva sucesión</p>
+      <div class="math">\[b_{n+1}-b_n=a_{2(n+1)}-a_{2n}=a_{2n+2}-a_{2n}\]</div>
+      <p class="paso">Paso 2 · Usar a_n = a₁ + (n − 1)·d</p>
+      <div class="math">\[a_{2n+2}=\az{a_1}+(2n+1)\,\na d\]</div>
+      <div class="math">\[a_{2n}=\az{a_1}+(2n-1)\,\na d\]</div>
+      <p class="paso">Paso 3 · Restar</p>
+      <div class="math">\[b_{n+1}-b_n=(2n+1)\na d-(2n-1)\na d\]</div>
+      <div class="math">\[b_{n+1}-b_n=\ma{2\na d}\]</div>
+      <p>La diferencia no depende de \(n\): \((b_n)\) es una PA.</p>
     </div>
     <div class="resp"><b>Respuesta</b>Es una PA de diferencia \(2d\).</div>
   </article>
@@ -2774,7 +2906,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">8.2</span><h3>Productos de términos vecinos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr8">Parecido al ejercicio 8 de la unidad ↑</button></span></div>
     <div class="enun">Sea \((a_n)\) una PG de razón \(r\) y \(c_n=a_n\cdot a_{n+1}\). Pruebe que \((c_n)\) es una PG y halle su razón.</div>
     <div class="sol">
-      <div class="math">\[\frac{c_{n+1}}{c_n}=\frac{a_{n+1}a_{n+2}}{a_na_{n+1}}=\frac{a_{n+2}}{a_n}=\na r^2\]</div>
+      <p class="paso">Paso 1 · Razón de la nueva sucesión</p>
+      <div class="math">\[\frac{c_{n+1}}{c_n}=\frac{a_{n+1}\,a_{n+2}}{a_n\,a_{n+1}}=\frac{a_{n+2}}{a_n}\]</div>
+      <p class="paso">Paso 2 · Usar a_n = a₁·r^(n − 1)</p>
+      <div class="math">\[\frac{a_{n+2}}{a_n}=\frac{\az{a_1}\na r^{\,n+1}}{\az{a_1}\na r^{\,n-1}}\]</div>
+      <div class="math">\[=\na r^{\,(n+1)-(n-1)}=\ma{\na r^{2}}\]</div>
+      <p>La razón no depende de \(n\): \((c_n)\) es una PG.</p>
     </div>
     <div class="resp"><b>Respuesta</b>Es una PG de razón \(r^2\).</div>
   </article>
@@ -2783,14 +2920,21 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">9.1</span><h3>Suman 15; luego +1, +4, +19</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr9">Parecido al ejercicio 9 de la unidad ↑</button></span></div>
     <div class="enun">Tres términos consecutivos de una PA suman 15. Si se les suma 1, 4 y 19, respectivamente, forman tres términos consecutivos de una PG. Halle los términos de la PA.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · El del medio</p>
-      <div class="math">\[(x-d)+x+(x+d)=15\]</div>
+      <p class="paso">Paso 1 · Términos x − d, x, x + d</p>
+      <div class="math">\[(x-\na d)+x+(x+\na d)=15\]</div>
+      <div class="math">\[3x=15\]</div>
       <div class="math">\[x=5\]</div>
-      <p class="paso">Paso 2 · Los nuevos números en PG</p>
-      <div class="math">\[6-d,\quad 9,\quad 24+d\]</div>
-      <div class="math">\[81=(6-d)(24+d)\]</div>
+      <p class="paso">Paso 2 · Los nuevos números</p>
+      <div class="math">\[(5-d)+1=6-d\]</div>
+      <div class="math">\[5+4=9\]</div>
+      <div class="math">\[(5+d)+19=24+d\]</div>
+      <p class="paso">Paso 3 · Están en PG: la razón se repite</p>
+      <div class="math">\[\na r=\frac9{6-d}=\frac{24+d}9\]</div>
+      <div class="math">\[81=(24+d)(6-d)\]</div>
+      <div class="math">\[81=144-18d-d^2\]</div>
       <div class="math">\[d^2+18d-63=0\]</div>
       <div class="math">\[(d+21)(d-3)=0\]</div>
+      <p class="paso">Paso 4 · Los términos</p>
       <div class="math">\[d=3:\ \ma{2,5,8}\ (\to3,9,27)\]</div>
       <div class="math">\[d=-21:\ \ma{26,5,-16}\ (\to27,9,3)\]</div>
     </div>
@@ -3038,7 +3182,9 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <h2>1. Notación de sumatoria</h2>
     <div class="math">\[\sum_{i=1}^{\ve n}a_i=a_1+a_2+\cdots+a_{\ve n}\]</div>
     <p>Se lee "suma de \(a_i\) desde \(i=1\) hasta \(\ve n\)". La \(i\) es el contador: va tomando los valores \(1,2,\dots,\ve n\) y en cada uno se escribe el término.</p>
-    <div class="steps-box"><ol><li>Constante: \(\displaystyle\sum_{i=1}^{\ve n}c=c+c+\cdots+c=\ve nc\).</li><li>Se separa en sumas: \(\displaystyle\sum(a_i\pm b_i)=\sum a_i\pm\sum b_i\).</li><li>Un número que multiplica sale afuera: \(\displaystyle\sum c\,a_i=c\sum a_i\).</li></ol></div>
+    <div class="steps-box"><ol><li>Constante: \(\displaystyle\sum_{i=1}^{\ve n}c=c+c+\cdots+c=\ve nc\).</li><li>Se separa en sumas: \(\displaystyle\sum(a_i\pm b_i)=\sum a_i\pm\sum b_i\).</li><li>Un número que multiplica sale afuera: \(\displaystyle\sum c\,a_i=c\sum a_i\).</li><li>Si no empieza en 1, se resta lo que sobra: \(\displaystyle\sum_{i=m}^{n}a_i=\sum_{i=1}^{n}a_i-\sum_{i=1}^{m-1}a_i\).</li></ol></div>
+    <div class="math">\[\sum_{i=1}^{\ve n}i=\frac{\ve n(\ve n+1)}2\]</div>
+    <div class="math">\[\sum_{i=1}^{\ve n}i^2=\frac{\ve n(\ve n+1)(2\ve n+1)}6\]</div>
     <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li>El número de sumandos es <b>último − primero + 1</b>: \(\sum_{i=3}^{8}\) tiene 6 sumandos.</li><li>Lo mismo se puede escribir de varias formas: \(a_2+\cdots+a_{n+1}=\displaystyle\sum_{i=2}^{n+1}a_i=\sum_{i=1}^{n}a_{i+1}=\sum_{i=1}^{n+1}a_i-a_1\).</li><li>Una suma de productos <b>no</b> se separa: \(\sum a_ib_i\ne\sum a_i\cdot\sum b_i\).</li></ul></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-su-def">Ver ejemplos de esta parte →</button>
   </div>
@@ -3049,7 +3195,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <p>Al escribirla, cada término aparece una vez con \(+\) y otra con \(-\), y se cancela:</p>
     <div class="math">\[(\cancel{a_2}-a_1)+(\cancel{a_3}-\cancel{a_2})+(a_4-\cancel{a_3})=a_4-a_1\]</div>
     <p>Así con cualquier \(n\): solo quedan el último \(a_{n+1}\) y el primero \(a_1\).</p>
-    <div class="steps-box"><ol><li>Si dan \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=f(n)\), entonces \(a_{n+1}=a_1+f(n)\).</li><li>La diferencia entre dos vecinos: \(a_{n+1}-a_n=f(n)-f(n-1)\) (para \(n\ge2\)); y \(a_2-a_1=f(1)\).</li></ol></div>
+    <div class="steps-box"><ol><li>Si dan \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=f(n)\), entonces \(a_{n+1}=a_1+f(n)\).</li><li>Para un término concreto, se elige \(n\): \(a_8\) es \(a_{n+1}\) con \(n=7\). Para \(a_n\), se cambia \(n\) por \(n-1\) (vale desde \(n\ge2\)).</li><li>La diferencia entre dos vecinos: \(a_{n+1}-a_n=f(n)-f(n-1)\) (para \(n\ge2\)); y \(a_2-a_1=f(1)\).</li></ol></div>
     <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li>Si la resta es al revés, \(\sum(a_i-a_{i+1})=a_1-a_{n+1}\): cambia el signo.</li><li>Sirve para sumar fracciones como \(\tfrac1{i(i+1)}=\tfrac1i-\tfrac1{i+1}\): se escriben como diferencia de dos vecinos y se cancelan.</li><li>La telescópica no dice nada de \(a_1\): si el problema necesita \(a_1\), tiene que darlo.</li></ul></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-su-tel">Ver ejemplos de esta parte →</button>
   </div>
@@ -3059,6 +3205,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <p>Si se conoce la suma de los \(n\) primeros, \(\mo{S_n}=\displaystyle\sum_{i=1}^{n}a_i\), cada término es la diferencia de dos sumas seguidas:</p>
     <div class="math">\[a_1=\mo{S_1}\]</div>
     <div class="math">\[a_n=\mo{S_n}-\mo{S_{n-1}}\quad(n\ge2)\]</div>
+    <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
     <div class="steps-box"><ol><li>Para un término concreto: \(a_{41}=S_{41}-S_{40}\).</li><li>Para la fórmula: reemplazar \(n\) y \(n-1\), restar y simplificar.</li><li>Comprobar que la fórmula también da \(a_1=S_1\).</li></ol></div>
     <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li>\(S_n\) suma hasta el lugar \(n\); \(S_{n-1}\) suma lo mismo pero sin el último. Lo que sobra es \(a_n\).</li><li>Si \(S_n\) es de la forma \(An^2+Bn\), la sucesión es una PA de diferencia \(2A\).</li></ul></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-su-sn">Ver ejemplos de esta parte →</button>
@@ -3105,6 +3252,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="enun">Sea \((a_n)_{n\in\mathbb N}\) una sucesión tal que \(\forall n\in\mathbb N,\ \left[\displaystyle\sum_{i=1}^{n}a_i=\frac{n^2+11n}{4}\right]\). Determine el valor de \(a_{41}\).</div>
     <div class="sol">
       <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
       <div class="math">\[a_{41}=\mo{S_{41}}-\mo{S_{40}}\]</div>
       <p class="paso">Paso 2 · Calcular las dos sumas</p>
       <div class="math">\[\mo{S_{41}}=\frac{41^2+11\cdot41}{4}=\frac{1681+451}{4}=\frac{2132}4=533\]</div>
@@ -3123,12 +3271,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p class="paso">Paso 1 · Suma telescópica</p>
       <div class="math">\[\sum_{i=1}^{n}(a_{i+1}-a_i)=a_{n+1}-a_1\]</div>
       <div class="math">\[a_{n+1}-a_1=2n\]</div>
-      <div class="math">\[a_{n+1}=a_1+2n\]</div>
-      <p class="paso">Paso 2 · Diferencia entre vecinos</p>
-      <p>Para \(n\ge2\), \(a_n=a_1+2(n-1)\). Restando:</p>
-      <div class="math">\[a_{n+1}-a_n=(a_1+2n)-(a_1+2n-2)=2\]</div>
+      <div class="math">\[a_{n+1}=2n+a_1\]</div>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <p>\(a_n=a_{(n-1)+1}\): para \(n\ge2\) se reemplaza \(n\) por \(n-1\).</p>
+      <div class="math">\[a_n=2(n-1)+a_1=2n-2+a_1\]</div>
+      <p class="paso">Paso 3 · La diferencia</p>
+      <div class="math">\[\na d=a_{n+1}-a_n=(2n+a_1)-(2n-2+a_1)=2\]</div>
       <p>Y para \(n=1\): \(a_2-a_1=2(1)=2\).</p>
-      <p class="paso">Paso 3 · Conclusión</p>
+      <p class="paso">Paso 4 · Conclusión</p>
       <p>La diferencia entre términos consecutivos es siempre 2: es una PA de diferencia \(\ma{d=2}\), con \(a_n=a_1+2(n-1)\).</p>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{n+1}-a_n=2\) para todo \(n\): PA de diferencia \(d=2\).</div>
@@ -3140,11 +3290,11 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="sol">
       <p class="paso">Paso 1 · Suma telescópica</p>
       <div class="math">\[a_{n+1}-a_1=n^2+2n-1\]</div>
-      <p class="paso">Paso 2 · Usar n = 10 y n = 9</p>
-      <div class="math">\[n=10:\quad a_{11}-a_1=100+20-1=119\]</div>
-      <div class="math">\[n=9:\quad a_{10}-a_1=81+18-1=98\]</div>
+      <p class="paso">Paso 2 · Cada término con a₁</p>
+      <div class="math">\[n=10:\ a_{11}-a_1=100+20-1\ \to\ a_{11}=119+a_1\]</div>
+      <div class="math">\[n=9:\ a_{10}-a_1=81+18-1\ \to\ a_{10}=98+a_1\]</div>
       <p class="paso">Paso 3 · Restar (el a<sub>1</sub> se cancela)</p>
-      <div class="math">\[\ma{a_{11}-a_{10}}=119-98=21\]</div>
+      <div class="math">\[\ma{a_{11}-a_{10}}=119+a_1-(98+a_1)=21\]</div>
       <p>Otra forma: la suma hasta 10 menos la suma hasta 9 deja solo el último sumando, \(a_{11}-a_{10}\).</p>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{11}-a_{10}=21\).</div>
@@ -3158,13 +3308,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p class="paso">Paso 1 · Primer término</p>
       <div class="math">\[a_1=\mo{S_1}=\frac{3+13}{2}=8\]</div>
       <p class="paso">Paso 2 · Término general (n ≥ 2)</p>
-      <div class="math">\[a_n=\mo{S_n}-\mo{S_{n-1}}=\frac{3n^2+13n-3(n-1)^2-13(n-1)}{2}\]</div>
-      <div class="math">\[a_n=\frac{3(2n-1)+13}{2}=\frac{6n+10}{2}=3n+5\]</div>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
+      <div class="math">\[a_n=\frac{3n^2+13n}{2}-\frac{3(n-1)^2+13(n-1)}{2}\]</div>
+      <div class="math">\[a_n=\frac{3n^2+13n-3n^2+6n-3-13n+13}{2}\]</div>
+      <div class="math">\[a_n=\frac{6n+10}{2}=3n+5\]</div>
       <p>Con \(n=1\) también da \(3+5=8=a_1\), así que \(a_n=3n+5\) para todo \(n\).</p>
       <p class="paso">Paso 3 · Término 400</p>
       <div class="math">\[\ma{a_{400}}=3(400)+5=1205\]</div>
       <p class="paso">Paso 4 · Es PA</p>
-      <div class="math">\[a_{n+1}-a_n=3(n+1)+5-(3n+5)=3\]</div>
+      <div class="math">\[\na d=a_{n+1}-a_n=3(n+1)+5-(3n+5)=3\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{400}=1205\); \(a_n=3n+5\) es una PA de diferencia 3.</div>
   </article>
@@ -3282,13 +3434,16 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">11</span><h3>702 chocolates</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip ok">Unidad correcta</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="ex-su11">Ver ejemplos similares →</button></span></div>
     <div class="enun">Al finalizar el año, a un número de niños se le reparte 702 chocolates por su comportamiento, de tal manera que el primero recibe 2; el segundo, 4; el tercero, 6, y así sucesivamente. Si al final no sobran ni faltan chocolates, ¿cuántos niños son en total?</div>
     <div class="sol">
-      <p class="paso">Paso 1 · La suma de los n primeros pares</p>
-      <div class="math">\[2+4+6+\cdots+2\ve n=2(1+2+\cdots+\ve n)=\ve n(\ve n+1)\]</div>
-      <p class="paso">Paso 2 · Igualar a 702</p>
+      <p class="paso">Paso 1 · Término general</p>
+      <p>El primero recibe 2, el segundo 4, el tercero 6: PA con \(\az{a_1=2}\) y \(\na{d=2}\).</p>
+      <div class="math">\[a_n=\az2+(\ve n-1)\cdot\na2=2n\]</div>
+      <p class="paso">Paso 2 · La suma de la PA es 702</p>
+      <div class="math">\[\ve n\cdot\frac{\az{a_1}+a_n}2=702\]</div>
+      <div class="math">\[\frac{n(2+2n)}2=702\]</div>
       <div class="math">\[n(n+1)=702\]</div>
       <div class="math">\[n^2+n-702=0\]</div>
       <div class="math">\[(n+27)(n-26)=0\]</div>
-      <div class="math">\[\ma{n=26}\]</div>
+      <div class="math">\[\ma{\ve n=26}\]</div>
       <p>(También se ve directo: 702 es el producto de dos números seguidos, \(26\cdot27\).)</p>
     </div>
     <div class="resp"><b>Respuesta</b>26 niños.</div>
@@ -3300,15 +3455,20 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="sol">
       <p class="paso">Paso 1 · Leer el enunciado</p>
       <div class="lect">Las edades de 4 hermanos están en progresión aritmética y <span class="u u-mo">suman 54</span>. Si <span class="u u-na">la edad del mayor duplica a la del menor</span>, ¿cuál es <span class="u u-ma">la edad del tercero</span>?</div>
-      <p>Ordenadas de menor a mayor: \(a_1,\ a_1+d,\ a_1+2d,\ a_1+3d\).</p>
-      <p class="paso">Paso 2 · Ecuaciones</p>
-      <div class="math">\[\mo{4a_1+6d=54}\]</div>
-      <div class="math">\[\na{a_1+3d=2a_1}\]</div>
-      <p>De la segunda, \(a_1=3d\). En la primera:</p>
-      <div class="math">\[12d+6d=54\]</div>
-      <div class="math">\[d=3\]</div>
-      <div class="math">\[a_1=9\]</div>
-      <p class="paso">Paso 3 · El tercero</p>
+      <p>Ordenadas de menor a mayor: \(a_1,\ a_2,\ a_3,\ a_4\). El menor es \(a_1\) y el mayor es \(a_4\).</p>
+      <div class="math">\[\mo{\sum_{i=1}^{4}a_i=54}\]</div>
+      <div class="math">\[\na{a_4=2a_1}\]</div>
+      <p class="paso">Paso 2 · La suma de la PA</p>
+      <div class="math">\[4\cdot\frac{a_1+a_4}2=54\]</div>
+      <div class="math">\[2(a_1+2a_1)=54\]</div>
+      <div class="math">\[6a_1=54\]</div>
+      <div class="math">\[\az{a_1}=9\]</div>
+      <div class="math">\[a_4=18\]</div>
+      <p class="paso">Paso 3 · La diferencia</p>
+      <div class="math">\[a_4-a_1=(4-1)\,\na d\]</div>
+      <div class="math">\[18-9=3\na d\]</div>
+      <div class="math">\[\na d=3\]</div>
+      <p class="paso">Paso 4 · El tercero</p>
       <div class="math">\[9,\ 12,\ \ma{15},\ 18\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>15 años.</div>
@@ -3326,10 +3486,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T1</span><h3>Desarrollar sumatorias</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-def" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-su-def">Ver la teoría ↑</button></span></div>
     <div class="enun">Calcule a) \(\displaystyle\sum_{i=1}^{4}(2i-1)\) b) \(\displaystyle\sum_{k=3}^{6}k^2\) c) \(\displaystyle\sum_{i=1}^{10}5\)</div>
     <div class="sol">
-      <div class="math">\[\text{a)}\ 1+3+5+7=16\]</div>
-      <div class="math">\[\text{b)}\ 9+16+25+36=86\]</div>
-      <div class="math">\[\text{c)}\ 10\cdot5=50\]</div>
-      <p>En b) hay \(6-3+1=4\) sumandos; en c) el 5 se suma 10 veces.</p>
+      <p class="paso">a) Separar con las propiedades</p>
+      <div class="math">\[\sum_{i=1}^{4}(2i-1)=2\sum_{i=1}^{4}i-\sum_{i=1}^{4}1\]</div>
+      <div class="math">\[=2\cdot\frac{4\cdot5}{2}-4\cdot1=20-4=16\]</div>
+      <p>Desarrollando: \(1+3+5+7=16\). ✓</p>
+      <p class="paso">b) Empieza en 3: se resta lo que sobra</p>
+      <div class="math">\[\sum_{k=3}^{6}k^2=\sum_{k=1}^{6}k^2-\sum_{k=1}^{2}k^2\]</div>
+      <div class="math">\[=\frac{6\cdot7\cdot13}{6}-\frac{2\cdot3\cdot5}{6}=91-5=86\]</div>
+      <p>Desarrollando: \(9+16+25+36=86\). ✓</p>
+      <p class="paso">c) Una constante</p>
+      <div class="math">\[\sum_{i=1}^{10}5=10\cdot5=50\]</div>
+      <p>El 5 no depende de \(i\): se suma 10 veces.</p>
     </div>
     <div class="resp"><b>Respuesta</b>a) 16 · b) 86 · c) 50.</div>
   </article>
@@ -3339,10 +3506,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="enun">Calcule \(\displaystyle\sum_{i=1}^{99}\frac1{i(i+1)}\).</div>
     <div class="sol">
       <p class="paso">Paso 1 · Escribir cada sumando como resta</p>
+      <div class="math">\[\frac1{i(i+1)}=\frac Ai+\frac B{i+1}\]</div>
+      <div class="math">\[1=A(i+1)+Bi\]</div>
+      <div class="math">\[i=0:\ A=1\]</div>
+      <div class="math">\[i=-1:\ B=-1\]</div>
       <div class="math">\[\frac1{i(i+1)}=\frac1i-\frac1{i+1}\]</div>
-      <p class="paso">Paso 2 · Se cancela todo menos los extremos</p>
+      <p class="paso">Paso 2 · Es una telescópica</p>
+      <p>Con \(a_i=\tfrac1i\), cada sumando es \(a_i-a_{i+1}=-(a_{i+1}-a_i)\):</p>
+      <div class="math">\[\sum_{i=1}^{99}\left(\frac1i-\frac1{i+1}\right)=-(a_{100}-a_1)\]</div>
+      <div class="math">\[=-\frac1{100}+1=\ma{\frac{99}{100}}\]</div>
+      <p>Escrita entera, se cancela todo menos los extremos:</p>
       <div class="math">\[\left(1-\cancel{\tfrac12}\right)+\left(\cancel{\tfrac12}-\cancel{\tfrac13}\right)+\cdots+\left(\cancel{\tfrac1{99}}-\tfrac1{100}\right)\]</div>
-      <div class="math">\[=1-\frac1{100}=\ma{\frac{99}{100}}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(\tfrac{99}{100}\).</div>
   </article>
@@ -3351,8 +3525,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T3</span><h3>Término general desde la suma</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-su-sn">Ver la teoría ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=n^2+3n\), halle \(a_n\).</div>
     <div class="sol">
-      <div class="math">\[a_n=(n^2+3n)-\big((n-1)^2+3(n-1)\big)=2n-1+3=2n+2\]</div>
-      <p>Comprobación: \(a_1=S_1=4=2(1)+2\). ✓</p>
+      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
+      <p class="paso">Paso 2 · Reemplazar n y n − 1</p>
+      <div class="math">\[a_n=n^2+3n-\big[(n-1)^2+3(n-1)\big]\]</div>
+      <div class="math">\[a_n=n^2+3n-\big[n^2-2n+1+3n-3\big]\]</div>
+      <div class="math">\[a_n=n^2+3n-(n^2+n-2)\]</div>
+      <div class="math">\[\ma{a_n=2n+2}\]</div>
+      <p>Comprobación: \(a_1=S_1=1+3=4=2(1)+2\). ✓</p>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_n=2n+2\).</div>
   </article>
@@ -3361,8 +3541,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T4</span><h3>Sumas de PA</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-su-pa">Ver la teoría ↑</button></span></div>
     <div class="enun">Calcule a) \(1+2+\cdots+100\) b) \(\displaystyle\sum_{i=1}^{30}(3i+2)\)</div>
     <div class="sol">
-      <div class="math">\[\text{a)}\ \frac{100\cdot101}2=5050\]</div>
-      <div class="math">\[\text{b)}\ a_1=5,\ a_{30}=92:\quad 30\cdot\frac{5+92}2=1455\]</div>
+      <p class="paso">a) Suma de 1 hasta n</p>
+      <div class="math">\[\sum_{i=1}^{\ve n}i=\frac{\ve n(\ve n+1)}2\]</div>
+      <div class="math">\[\sum_{i=1}^{100}i=\frac{100\cdot101}2=5050\]</div>
+      <p>Es lo mismo que la suma de la PA: \(\ve{100}\cdot\tfrac{1+100}2=5050\).</p>
+      <p class="paso">b) Separar con las propiedades</p>
+      <div class="math">\[\sum_{i=1}^{30}(3i+2)=3\sum_{i=1}^{30}i+\sum_{i=1}^{30}2\]</div>
+      <div class="math">\[=3\cdot\frac{30\cdot31}2+30\cdot2\]</div>
+      <div class="math">\[=1395+60=1455\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>a) 5 050 · b) 1 455.</div>
   </article>
@@ -3371,8 +3557,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T5</span><h3>Sumas de PG</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-su-pg">Ver la teoría ↑</button></span></div>
     <div class="enun">Calcule a) \(3+6+12+\cdots\) (8 términos) b) \(\displaystyle\sum_{i=1}^{5}2\cdot3^{i-1}\)</div>
     <div class="sol">
-      <div class="math">\[\text{a)}\ 3\cdot\frac{2^8-1}{2-1}=3\cdot255=765\]</div>
-      <div class="math">\[\text{b)}\ 2\cdot\frac{3^5-1}{3-1}=243-1=242\]</div>
+      <p class="paso">a) Identificar la PG</p>
+      <p>\(3,\ 6,\ 12,\ \dots\) es una PG con \(\az{a_1=3}\) y \(\na{r=2}\): \(a_i=3\cdot2^{i-1}\).</p>
+      <div class="math">\[\sum_{i=1}^{8}a_i=\az{a_1}\cdot\frac{\na r^{\,\ve n}-1}{\na r-1}\]</div>
+      <div class="math">\[=3\cdot\frac{2^8-1}{2-1}=3\cdot255=765\]</div>
+      <p class="paso">b) El 2 sale afuera</p>
+      <div class="math">\[\sum_{i=1}^{5}2\cdot3^{i-1}=2\sum_{i=1}^{5}3^{i-1}\]</div>
+      <div class="math">\[=2\cdot\frac{3^5-1}{3-1}=243-1=242\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>a) 765 · b) 242.</div>
   </article>
@@ -3383,7 +3574,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1.1</span><h3>El término 20</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su1">Parecido al ejercicio 1 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=n^2+5n\), halle \(a_{20}\).</div>
     <div class="sol">
-      <div class="math">\[a_{20}=S_{20}-S_{19}=(400+100)-(361+95)=500-456=\ma{44}\]</div>
+      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
+      <div class="math">\[a_n=n^2+5n-\big[(n-1)^2+5(n-1)\big]\]</div>
+      <p class="paso">Paso 2 · Reemplazar n = 20</p>
+      <div class="math">\[a_{20}=20^2+5\cdot20-\big[19^2+5\cdot19\big]\]</div>
+      <div class="math">\[a_{20}=500-456=\ma{44}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{20}=44\).</div>
   </article>
@@ -3392,8 +3588,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1.2</span><h3>Con fracción</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su1">Parecido al ejercicio 1 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=\frac{n^2+7n}2\), halle \(a_{30}\).</div>
     <div class="sol">
-      <div class="math">\[S_{30}=\frac{900+210}2=555\]</div>
-      <div class="math">\[S_{29}=\frac{841+203}2=522\]</div>
+      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
+      <div class="math">\[a_n=\frac{n^2+7n}2-\frac{(n-1)^2+7(n-1)}2\]</div>
+      <p class="paso">Paso 2 · Reemplazar n = 30</p>
+      <div class="math">\[a_{30}=\frac{30^2+7\cdot30}2-\frac{29^2+7\cdot29}2\]</div>
+      <div class="math">\[a_{30}=\frac{1110}2-\frac{1044}2\]</div>
       <div class="math">\[a_{30}=555-522=\ma{33}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{30}=33\).</div>
@@ -3403,9 +3603,18 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">2.1</span><h3>Diferencias que suman 5n</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su2">Parecido al ejercicio 2 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=5n\) para todo \(n\), pruebe que \((a_n)\) es una PA.</div>
     <div class="sol">
-      <div class="math">\[a_{n+1}=a_1+5n\]</div>
-      <div class="math">\[a_n=a_1+5(n-1)\]</div>
-      <div class="math">\[a_{n+1}-a_n=\ma5\]</div>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[\sum_{i=1}^{n}(a_{i+1}-a_i)=a_{n+1}-a_1\]</div>
+      <div class="math">\[a_{n+1}-a_1=5n\]</div>
+      <div class="math">\[a_{n+1}=5n+a_1\]</div>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <p>\(a_n=a_{(n-1)+1}\): se reemplaza \(n\) por \(n-1\) (vale para \(n\ge2\); con \(n=1\) da \(a_1\), que también es cierto).</p>
+      <div class="math">\[a_n=5(n-1)+a_1=5n-5+a_1\]</div>
+      <p class="paso">Paso 3 · La diferencia</p>
+      <div class="math">\[\na d=a_{n+1}-a_n\]</div>
+      <div class="math">\[\na d=5n+a_1-(5n-5+a_1)\]</div>
+      <div class="math">\[\na d=\ma5\]</div>
+      <p>No depende de \(n\): es una PA.</p>
     </div>
     <div class="resp"><b>Respuesta</b>Es una PA de diferencia 5.</div>
   </article>
@@ -3414,8 +3623,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">2.2</span><h3>Con el primer término</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su2">Parecido al ejercicio 2 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=3n\) y \(a_1=4\), halle \(a_{20}\).</div>
     <div class="sol">
-      <p>Con \(n=19\): \(a_{20}-a_1=3(19)=57\).</p>
-      <div class="math">\[a_{20}=4+57=\ma{61}\]</div>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[a_{n+1}-a_1=3n\]</div>
+      <div class="math">\[a_{n+1}-4=3n\]</div>
+      <div class="math">\[a_{n+1}=3n+4\]</div>
+      <p class="paso">Paso 2 · a₂₀ es a_(n+1) con n = 19</p>
+      <div class="math">\[a_{20}=3(19)+4=\ma{61}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{20}=61\).</div>
   </article>
@@ -3424,9 +3637,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">3.1</span><h3>Diferencia de vecinos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su3">Parecido al ejercicio 3 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=n^2+n\), halle \(a_8-a_7\).</div>
     <div class="sol">
-      <div class="math">\[n=7:\ a_8-a_1=56\]</div>
-      <div class="math">\[n=6:\ a_7-a_1=42\]</div>
-      <div class="math">\[a_8-a_7=56-42=\ma{14}\]</div>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[a_{n+1}-a_1=n^2+n\]</div>
+      <p class="paso">Paso 2 · Cada término con a₁</p>
+      <div class="math">\[n=7:\ a_8-a_1=7^2+7\ \to\ a_8=56+a_1\]</div>
+      <div class="math">\[n=6:\ a_7-a_1=6^2+6\ \to\ a_7=42+a_1\]</div>
+      <p class="paso">Paso 3 · Restar (a₁ se cancela)</p>
+      <div class="math">\[a_8-a_7=56+a_1-(42+a_1)\]</div>
+      <div class="math">\[a_8-a_7=\ma{14}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>14.</div>
   </article>
@@ -3435,8 +3653,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">3.2</span><h3>Un término concreto</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su3">Parecido al ejercicio 3 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=2n^2-n\) y \(a_1=3\), halle \(a_6\).</div>
     <div class="sol">
-      <p>Con \(n=5\): \(a_6-a_1=2(25)-5=45\).</p>
-      <div class="math">\[a_6=3+45=\ma{48}\]</div>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[a_{n+1}-a_1=2n^2-n\]</div>
+      <div class="math">\[a_{n+1}-3=2n^2-n\]</div>
+      <p class="paso">Paso 2 · a₆ es a_(n+1) con n = 5</p>
+      <div class="math">\[a_6-3=2\cdot5^2-5=45\]</div>
+      <div class="math">\[a_6=\ma{48}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_6=48\).</div>
   </article>
@@ -3445,9 +3667,18 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">4.1</span><h3>Término 50 y la PA</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su4">Parecido al ejercicio 4 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=2n^2+3n\), halle \(a_n\), \(a_{50}\) y pruebe que es una PA.</div>
     <div class="sol">
-      <div class="math">\[a_n=(2n^2+3n)-\big(2(n-1)^2+3(n-1)\big)=4n-2+3=4n+1\]</div>
-      <p>\(a_1=S_1=5=4+1\). ✓ \(\quad a_{n+1}-a_n=4\).</p>
-      <div class="math">\[\ma{a_{50}}=201\]</div>
+      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
+      <div class="math">\[a_n=2n^2+3n-\big[2(n-1)^2+3(n-1)\big]\]</div>
+      <div class="math">\[a_n=2n^2+3n-\big[2n^2-4n+2+3n-3\big]\]</div>
+      <div class="math">\[a_n=2n^2+3n-2n^2+n+1\]</div>
+      <div class="math">\[\ma{a_n=4n+1}\]</div>
+      <p>Comprobación: \(a_1=S_1=2+3=5=4(1)+1\). ✓</p>
+      <p class="paso">Paso 2 · Término 50</p>
+      <div class="math">\[\ma{a_{50}}=4(50)+1=201\]</div>
+      <p class="paso">Paso 3 · Es PA</p>
+      <div class="math">\[\na d=a_{n+1}-a_n\]</div>
+      <div class="math">\[\na d=4(n+1)+1-(4n+1)=4\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_n=4n+1\), \(a_{50}=201\); PA de diferencia 4.</div>
   </article>
@@ -3456,9 +3687,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">4.2</span><h3>Término 100</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su4">Parecido al ejercicio 4 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=\frac{5n^2+n}2\), halle \(a_{100}\).</div>
     <div class="sol">
-      <div class="math">\[a_n=\frac{5(2n-1)+1}2=\frac{10n-4}2=5n-2\]</div>
-      <p>\(a_1=S_1=3=5-2\). ✓</p>
-      <div class="math">\[\ma{a_{100}}=498\]</div>
+      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
+      <div class="math">\[a_n=\frac{5n^2+n}2-\frac{5(n-1)^2+(n-1)}2\]</div>
+      <div class="math">\[a_n=\frac{5n^2+n-5n^2+10n-5-n+1}2\]</div>
+      <div class="math">\[a_n=\frac{10n-4}2=5n-2\]</div>
+      <p>Comprobación: \(a_1=S_1=3=5-2\). ✓</p>
+      <p class="paso">Paso 2 · Término 100</p>
+      <div class="math">\[\ma{a_{100}}=5(100)-2=498\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{100}=498\).</div>
   </article>
@@ -3467,7 +3703,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">5.1</span><h3>Constante con una suma</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel t-su-def" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su5">Parecido al ejercicio 5 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=0\) para todo \(n\) y \(\displaystyle\sum_{i=1}^{10}a_i=40\), halle \(a_1\).</div>
     <div class="sol">
-      <p>La sucesión es constante (ejercicio 5): todos valen \(a_1\).</p>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[a_{n+1}-a_1=0\]</div>
+      <div class="math">\[a_{n+1}=a_1\]</div>
+      <p>Todos los términos valen \(a_1\): la sucesión es constante (ejercicio 5).</p>
+      <p class="paso">Paso 2 · La suma de una constante</p>
+      <div class="math">\[\sum_{i=1}^{10}a_i=\sum_{i=1}^{10}a_1=10\,a_1\]</div>
       <div class="math">\[10a_1=40\]</div>
       <div class="math">\[\ma{a_1=4}\]</div>
     </div>
@@ -3478,10 +3719,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">5.2</span><h3>Constante desde el segundo</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su5">Parecido al ejercicio 5 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=6\) para todo \(n\) y \(a_1=2\), calcule \(a_1+a_2+a_3+a_4+a_5\).</div>
     <div class="sol">
+      <p class="paso">Paso 1 · Suma telescópica</p>
       <div class="math">\[a_{n+1}-a_1=6\]</div>
-      <div class="math">\[a_{n+1}=8\ \text{ para todo }n\]</div>
-      <p>La sucesión es \(2,\ 8,\ 8,\ 8,\dots\): constante desde el segundo término.</p>
-      <div class="math">\[2+4\cdot8=\ma{34}\]</div>
+      <div class="math">\[a_{n+1}=6+2=8\]</div>
+      <p class="paso">Paso 2 · ¿Qué términos da?</p>
+      <p>Con \(n=1,2,3,\dots\) la fórmula da \(a_2,\ a_3,\ a_4,\dots\): todos valen 8. El primero no sale de ahí: es el dato, \(a_1=2\).</p>
+      <div class="math">\[2,\ 8,\ 8,\ 8,\ 8,\ \dots\]</div>
+      <p class="paso">Paso 3 · Sumar</p>
+      <div class="math">\[a_1+a_2+a_3+a_4+a_5=2+4\cdot8=\ma{34}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>34.</div>
   </article>
@@ -3490,9 +3735,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">6.1</span><h3>Una PG de razón 3</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su6">Parecido al ejercicio 6 de la unidad ↑</button></span></div>
     <div class="enun">Sea \(a_1=1\) y \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=3^n-1\) para todo \(n\). Pruebe que \((a_n)\) es una PG.</div>
     <div class="sol">
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[a_{n+1}-a_1=3^n-1\]</div>
       <div class="math">\[a_{n+1}-1=3^n-1\]</div>
       <div class="math">\[a_{n+1}=3^n\]</div>
-      <p>Con \(a_1=1=3^0\): \(a_n=3^{n-1}\) para todo \(n\), y \(\tfrac{a_{n+1}}{a_n}=\ma3\).</p>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <div class="math">\[a_n=3^{n-1}\]</div>
+      <p>Vale para \(n\ge2\); con \(n=1\) da \(3^0=1=a_1\), así que vale para todo \(n\).</p>
+      <p class="paso">Paso 3 · La razón</p>
+      <div class="math">\[\na r=\frac{a_{n+1}}{a_n}=\frac{3^n}{3^{n-1}}=3^{\,n-(n-1)}=\ma3\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_n=3^{n-1}\): PG de razón 3.</div>
   </article>
@@ -3501,8 +3752,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">6.2</span><h3>Con primer término 5</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su6">Parecido al ejercicio 6 de la unidad ↑</button></span></div>
     <div class="enun">Sea \(a_1=5\) y \(\displaystyle\sum_{i=1}^{n}(a_{i+1}-a_i)=5\cdot2^n-5\) para todo \(n\). Halle \(a_n\) y la razón.</div>
     <div class="sol">
-      <div class="math">\[a_{n+1}=5+5\cdot2^n-5=5\cdot2^n\]</div>
-      <p>Con \(a_1=5=5\cdot2^0\): \(a_n=5\cdot2^{n-1}\).</p>
+      <p class="paso">Paso 1 · Suma telescópica</p>
+      <div class="math">\[a_{n+1}-a_1=5\cdot2^n-5\]</div>
+      <div class="math">\[a_{n+1}-5=5\cdot2^n-5\]</div>
+      <div class="math">\[a_{n+1}=5\cdot2^n\]</div>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <div class="math">\[a_n=5\cdot2^{n-1}\]</div>
+      <p>Con \(n=1\) da \(5=a_1\). ✓</p>
+      <p class="paso">Paso 3 · La razón</p>
+      <div class="math">\[\na r=\frac{a_{n+1}}{a_n}=\frac{5\cdot2^n}{5\cdot2^{n-1}}=\ma2\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_n=5\cdot2^{n-1}\), razón 2.</div>
   </article>
@@ -3597,8 +3855,12 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">10.2</span><h3>Figuritas</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su10">Parecido al ejercicio 10 de la unidad ↑</button></span></div>
     <div class="enun">Se reparten 105 figuritas en PA: el primero recibe 3 y el último 18. ¿Cuántos amigos son?</div>
     <div class="sol">
-      <div class="math">\[n\cdot\frac{3+18}2=105\]</div>
-      <div class="math">\[\ma{n=10}\]</div>
+      <p class="paso">Paso 1 · Suma de una PA</p>
+      <div class="math">\[\sum_{i=1}^{\ve n}a_i=\ve n\cdot\frac{\az{a_1}+a_n}2\]</div>
+      <p class="paso">Paso 2 · Reemplazar</p>
+      <div class="math">\[\ve n\cdot\frac{3+18}2=105\]</div>
+      <div class="math">\[21n=210\]</div>
+      <div class="math">\[\ma{\ve n=10}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>10 amigos.</div>
   </article>
@@ -3607,10 +3869,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">11.1</span><h3>Múltiplos de 3 que suman 630</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su11">Parecido al ejercicio 11 de la unidad ↑</button></span></div>
     <div class="enun">Se reparten 630 lápices: al primero 3, al segundo 6, al tercero 9, y así sucesivamente, sin que sobre ni falte. ¿Cuántas personas son?</div>
     <div class="sol">
-      <div class="math">\[3(1+2+\cdots+n)=\frac{3n(n+1)}2=630\]</div>
-      <div class="math">\[n(n+1)=420\]</div>
+      <p class="paso">Paso 1 · Término general</p>
+      <div class="math">\[a_n=\az3+(\ve n-1)\cdot\na3=3n\]</div>
+      <p class="paso">Paso 2 · La suma de la PA es 630</p>
+      <div class="math">\[\ve n\cdot\frac{\az{a_1}+a_n}2=630\]</div>
+      <div class="math">\[\frac{n(3+3n)}2=630\]</div>
+      <div class="math">\[3n+3n^2=1260\]</div>
+      <div class="math">\[n^2+n-420=0\]</div>
       <div class="math">\[(n+21)(n-20)=0\]</div>
-      <div class="math">\[\ma{n=20}\]</div>
+      <div class="math">\[\ma{\ve n=20}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>20 personas.</div>
   </article>
@@ -3619,10 +3886,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">11.2</span><h3>Empezando en 5</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su11">Parecido al ejercicio 11 de la unidad ↑</button></span></div>
     <div class="enun">¿Cuántos términos de \(5+7+9+\cdots\) hay que sumar para obtener 192?</div>
     <div class="sol">
-      <div class="math">\[S_n=n\cdot\frac{2(5)+(n-1)2}2=n(n+4)=192\]</div>
+      <p class="paso">Paso 1 · Término general</p>
+      <div class="math">\[a_n=\az5+(\ve n-1)\cdot\na2=2n+3\]</div>
+      <p class="paso">Paso 2 · La suma de la PA es 192</p>
+      <div class="math">\[\ve n\cdot\frac{\az{a_1}+a_n}2=192\]</div>
+      <div class="math">\[\frac{n(5+2n+3)}2=192\]</div>
+      <div class="math">\[2n^2+8n=384\]</div>
       <div class="math">\[n^2+4n-192=0\]</div>
       <div class="math">\[(n+16)(n-12)=0\]</div>
-      <div class="math">\[\ma{n=12}\]</div>
+      <div class="math">\[\ma{\ve n=12}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>12 términos.</div>
   </article>
@@ -3631,11 +3903,19 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">12.1</span><h3>Cinco hermanos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-su-pa" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su12">Parecido al ejercicio 12 de la unidad ↑</button></span></div>
     <div class="enun">Las edades de 5 hermanos están en PA y suman 60. Si el mayor tiene el triple de la edad del menor, ¿cuál es la edad del segundo?</div>
     <div class="sol">
-      <div class="math">\[5a_1+10d=60\]</div>
-      <div class="math">\[a_1+4d=3a_1\Rightarrow a_1=2d\]</div>
-      <div class="math">\[20d=60\]</div>
-      <div class="math">\[d=3\]</div>
-      <div class="math">\[a_1=6:\quad 6,\ \ma9,\ 12,\ 15,\ 18\]</div>
+      <p class="paso">Paso 1 · La suma de la PA</p>
+      <div class="math">\[\sum_{i=1}^{5}a_i=5\cdot\frac{\az{a_1}+a_5}2=60\]</div>
+      <p class="paso">Paso 2 · El mayor es el triple del menor</p>
+      <div class="math">\[a_5=3\az{a_1}\]</div>
+      <div class="math">\[5\cdot\frac{a_1+3a_1}2=60\]</div>
+      <div class="math">\[10a_1=60\]</div>
+      <div class="math">\[\az{a_1}=6\]</div>
+      <div class="math">\[a_5=18\]</div>
+      <p class="paso">Paso 3 · La diferencia</p>
+      <div class="math">\[a_5-a_1=(5-1)\,\na d\]</div>
+      <div class="math">\[18-6=4\na d\]</div>
+      <div class="math">\[\na d=3\]</div>
+      <div class="math">\[6,\ \ma9,\ 12,\ 15,\ 18\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>9 años.</div>
   </article>
