@@ -1241,16 +1241,21 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   <div class="box" id="t-in-porc">
     <h2 class="t-mo">1. Tanto por ciento</h2>
     <div class="math">\[\na{r\%}=\frac{r}{100}\]</div>
-    <div class="steps-box"><ol><li>"El \(r\%\) de \(N\)": \(\dfrac{r}{100}\cdot N\).</li><li>"¿Qué tanto por ciento es \(A\) de \(B\)?": \(\dfrac AB\cdot100\%\).</li><li>Aumentar \(N\) en un \(r\%\): \(N+r\%\cdot N=N(1+r\%)\).</li></ol></div>
+    <div class="steps-box"><ol><li>"El \(r\%\) de \(N\)": \(\dfrac{r}{100}\cdot N\).</li><li>"¿Qué tanto por ciento es \(A\) de \(B\)?": \(\dfrac AB\cdot100\%\).</li><li>Aumentar \(N\) en un \(r\%\): \(N+r\%\cdot N=N(1+r\%)\).</li><li>Porcentaje de un porcentaje: "de" se cambia por "por". El 20 % del 40 % de 200 es \(\tfrac{20}{100}\cdot\tfrac{40}{100}\cdot200=16\).</li></ol></div>
     <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li>Lo que va después de "de" es el total, el 100 %. "El 20 % <b>del monto</b>" se calcula sobre el monto, no sobre el capital.</li><li>Si el dato es un porcentaje de algo que todavía no conoces, escríbelo como ecuación: "400 es el 20 % de \(N\)" es \(\tfrac{20}{100}N=400\).</li></ul></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-in-porc">Ver ejemplos de esta parte →</button>
   </div>
 
   <div class="box" id="t-in-simple">
     <h2 class="t-az">2. Interés simple</h2>
-    <p>Capital \(\az K\) (lo que se presta), tasa \(\na{r\%}\), tiempo \(\ve t\), interés \(\mo I\) (lo que se gana) y monto \(M\) (lo que se recibe al final).</p>
+    <p>Capital \(\az K\) (lo que se presta; en clase también se escribe \(C\)), tasa \(\na{r\%}\), tiempo \(\ve t\), interés \(\mo I\) (lo que se gana) y monto \(M\) (lo que se recibe al final).</p>
     <div class="math">\[\mo I=\az K\cdot\na{r\%}\cdot\ve t\qquad M=\az K+\mo I\]</div>
-    <div class="steps-box"><ol><li>Ver el periodo de la tasa: mensual, bimestral, trimestral… Si no dice, es <b>anual</b>.</li><li>Pasar el tiempo a ese periodo. Un año tiene 12 meses, 6 bimestres, 4 trimestres, 3 cuatrimestres o 2 semestres.</li><li>Reemplazar en la fórmula.</li></ol></div>
+    <div class="steps-box"><ol><li>Escribir los datos: \(\az K\), \(\na{r\%}\) con su periodo, \(\ve t\), y \(\mo I\) o \(M\). Marcar lo que se busca.</li><li>Ver el periodo de la tasa: mensual, bimestral, trimestral… Si no dice, es <b>anual</b>.</li><li>Pasar el tiempo a ese periodo. Un año tiene 12 meses, 6 bimestres, 4 trimestres, 3 cuatrimestres o 2 semestres.</li><li>Reemplazar en la fórmula.</li></ol></div>
+    <p>Para pasar el tiempo, se multiplica por una fracción que vale 1 y se tachan las unidades:</p>
+    <div class="math">\[10\ \text{meses}\cdot\frac{1\ \text{año}}{12\ \text{meses}}=\frac{10}{12}\ \text{años}\]</div>
+    <div class="math">\[\tfrac32\ \text{años}\cdot\frac{2\ \text{semestres}}{1\ \text{año}}=3\ \text{semestres}\]</div>
+    <div class="math">\[4\ \text{semestres}\cdot\frac{2\ \text{trimestres}}{1\ \text{semestre}}=8\ \text{trimestres}\]</div>
+    <p>"Un año y medio" es \(1+\tfrac12=\tfrac32\) años.</p>
     <div class="plan-box"><p class="plan-t">Lo que hay que entender</p><ul><li><b>La tasa manda</b>: el tiempo se mide en la unidad de la tasa. Al 3 % mensual durante 2 años, \(\ve t=24\). Al 6 % anual durante 9 meses, \(\ve t=\tfrac9{12}\).</li><li>El interés es DP al capital y al tiempo: en el doble de tiempo se gana el doble de interés.</li><li>"Interés" es solo lo que se gana; "monto" es capital más interés. Fíjate cuál de los dos da o pide el enunciado.</li><li>Si a mitad de camino el dinero cambia (se retira una parte, se pasa a otra tasa), se parte el tiempo en tramos y cada tramo se calcula aparte. Ayuda dibujar una línea de tiempo.</li></ul></div>
     <button class="sim-btn box-link" type="button" data-goto="ex-t-in-simple">Ver ejemplos de esta parte →</button>
   </div>
@@ -1575,12 +1580,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">T2</span><h3>Monto con interés simple</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="t-in-simple">Ver la teoría ↑</button></span></div>
     <div class="enun">Se prestan 2 400 soles al 6 % bimestral de interés simple durante 10 meses. ¿Cuál es el monto?</div>
     <div class="sol">
-      <p class="paso">Paso 1 · El tiempo en bimestres</p>
-      <p>La tasa es bimestral: 10 meses = \(\ve5\) bimestres.</p>
-      <p class="paso">Paso 2 · Interés</p>
-      <div class="math">\[\mo I=\az{2400}\cdot\na{\tfrac{6}{100}}\cdot\ve5=720\]</div>
-      <p class="paso">Paso 3 · Monto</p>
-      <div class="math">\[\ma M=2400+720=3120\]</div>
+      <p class="paso">Paso 1 · Los datos</p>
+      <p>\(\az{K=2400}\), \(\na{r\%=6\%}\) bimestral, \(\ve{t=10}\) meses. Se busca el monto \(M\).</p>
+      <p class="paso">Paso 2 · El tiempo en la unidad de la tasa</p>
+      <div class="math">\[10\ \text{meses}\cdot\frac{1\ \text{bimestre}}{2\ \text{meses}}=\ve5\ \text{bimestres}\]</div>
+      <p class="paso">Paso 3 · Interés</p>
+      <div class="math">\[\mo I=\az K\cdot\na{r\%}\cdot\ve t\]</div>
+      <div class="math">\[\mo I=2400\cdot\frac{6}{100}\cdot5=720\]</div>
+      <p class="paso">Paso 4 · Monto</p>
+      <div class="math">\[\ma M=\az K+\mo I=2400+720=3120\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>3 120 soles.</div>
   </article>
@@ -1660,11 +1668,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">5.1</span><h3>Cuánto depositar para ganar</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="in5">Parecido al ejercicio 5 de la unidad ↑</button></span></div>
     <div class="enun">¿Cuánto hay que depositar al 8 % anual de interés simple durante 5 años para ganar 6 000 soles de intereses?</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Interés</p>
-      <div class="math">\[\mo I=\az K\cdot\na{\tfrac{8}{100}}\cdot\ve5=0.4K\]</div>
-      <p class="paso">Paso 2 · Igualar</p>
-      <div class="math">\[0.4K=6000\]</div>
-      <div class="math">\[\ma K=15\,000\]</div>
+      <p class="paso">Paso 1 · Los datos</p>
+      <p>\(\az K\) = ?, \(\na{r\%=8\%}\) anual, \(\ve{t=5}\) años, \(\mo{I=6000}\). La tasa es anual y el tiempo ya está en años.</p>
+      <p class="paso">Paso 2 · Reemplazar en I = K·r%·t</p>
+      <div class="math">\[\mo I=\az K\cdot\na{r\%}\cdot\ve t\]</div>
+      <div class="math">\[6000=\az K\cdot\frac{8}{100}\cdot5\]</div>
+      <div class="math">\[6000=\frac{40K}{100}\]</div>
+      <div class="math">\[\ma K=\frac{6000\cdot100}{40}=15\,000\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>15 000 soles.</div>
   </article>
@@ -1673,13 +1683,15 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">5.2</span><h3>Cuánto depositar para tener</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="in5">Parecido al ejercicio 5 de la unidad ↑</button></span></div>
     <div class="enun">Se quiere tener 13 000 soles en total dentro de 3 años. Si el banco paga 10 % anual de interés simple, ¿cuánto hay que depositar hoy?</div>
     <div class="sol">
-      <p class="paso">Paso 1 · ¿Interés o monto?</p>
-      <p>"Tener 13 000 en total" es el <b>monto</b>: capital más interés.</p>
-      <p class="paso">Paso 2 · Monto</p>
-      <div class="math">\[M=\az K+\az K\cdot\na{\tfrac{10}{100}}\cdot\ve3=1.3K\]</div>
-      <p class="paso">Paso 3 · Igualar</p>
-      <div class="math">\[1.3K=13\,000\]</div>
-      <div class="math">\[\ma K=10\,000\]</div>
+      <p class="paso">Paso 1 · Los datos</p>
+      <p>\(\az K\) = ?, \(\na{r\%=10\%}\) anual, \(\ve{t=3}\) años. "Tener 13 000 en total" es el <b>monto</b>: \(M=13\,000\).</p>
+      <p class="paso">Paso 2 · El interés en función de K</p>
+      <div class="math">\[\mo I=\az K\cdot\frac{10}{100}\cdot3=\frac{3K}{10}\]</div>
+      <p class="paso">Paso 3 · El monto</p>
+      <div class="math">\[M=\az K+\mo I\]</div>
+      <div class="math">\[13\,000=K+\frac{3K}{10}\]</div>
+      <div class="math">\[13\,000=\frac{13K}{10}\]</div>
+      <div class="math">\[\ma K=\frac{13\,000\cdot10}{13}=10\,000\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>10 000 soles.</div>
   </article>
@@ -1710,13 +1722,16 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">6.2</span><h3>Se retira la mitad</h3><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="in6">Parecido al ejercicio 6 de la unidad ↑</button></span></div>
     <div class="enun">Se imponen 24 000 soles al 5 % anual. A los 6 meses se retira la mitad del capital, y el resto sigue impuesto hasta completar 2 años. ¿Cuánto interés se ganó en total?</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Los primeros 6 meses</p>
-      <div class="math">\[\az{24\,000}\cdot\na{\tfrac{5}{100}}\cdot\ve{\tfrac12}=600\]</div>
-      <p class="paso">Paso 2 · Los 18 meses restantes</p>
-      <p>Sigue la mitad, 12 000, durante \(\ve{\tfrac32}\) años:</p>
-      <div class="math">\[\az{12\,000}\cdot\na{\tfrac{5}{100}}\cdot\ve{\tfrac32}=900\]</div>
-      <p class="paso">Paso 3 · Total</p>
-      <div class="math">\[\ma{\mo I}=600+900=1500\]</div>
+      <p class="paso">Paso 1 · Dos tramos</p>
+      <p>2 años son 24 meses: los primeros 6 meses trabaja todo el capital y los 18 meses siguientes solo la mitad.</p>
+      <p class="paso">Paso 2 · Primer tramo</p>
+      <p>\(\az{K=24\,000}\), \(\na{5\%}\) anual, \(\ve t=6\) meses \(=\tfrac12\) año.</p>
+      <div class="math">\[\mo{I_1}=24\,000\cdot\frac{5}{100}\cdot\frac12=600\]</div>
+      <p class="paso">Paso 3 · Segundo tramo</p>
+      <p>\(\az{K=12\,000}\), \(\na{5\%}\) anual, \(\ve t=18\) meses \(=\tfrac32\) años.</p>
+      <div class="math">\[\mo{I_2}=12\,000\cdot\frac{5}{100}\cdot\frac32=900\]</div>
+      <p class="paso">Paso 4 · Total</p>
+      <div class="math">\[\ma{\mo I}=\mo{I_1}+\mo{I_2}=600+900=1500\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>1 500 soles.</div>
   </article>
@@ -1758,14 +1773,23 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">8.1</span><h3>Porcentaje del monto</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-porc t-in-simple" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="in8">Parecido al ejercicio 8 de la unidad ↑</button></span></div>
     <div class="enun">Un capital impuesto durante 6 meses genera un interés igual al 20 % del monto. ¿Qué tanto por ciento del monto será el interés en 2 años?</div>
     <div class="sol">
-      <p class="paso">Paso 1 · El dato (6 meses)</p>
-      <div class="math">\[\mo I=\frac15(K+I)\]</div>
-      <div class="math">\[4I=K\qquad \mo I=\frac K4\]</div>
-      <p class="paso">Paso 2 · En 24 meses</p>
-      <p>Es 4 veces el tiempo: 4 veces el interés.</p>
-      <div class="math">\[\mo{I_{24}}=4\cdot\frac K4=K\qquad M_{24}=2K\]</div>
-      <p class="paso">Paso 3 · Tanto por ciento</p>
-      <div class="math">\[\frac{K}{2K}\cdot100\%=\ma{50\%}\]</div>
+      <p class="paso">Paso 1 · El dato de 6 meses</p>
+      <p>El interés de 6 meses, \(\mo{I_6}\), es el 20 % del monto:</p>
+      <div class="math">\[\mo{I_6}=\frac{20}{100}M=\frac15M\]</div>
+      <div class="math">\[5I_6=M=K+I_6\]</div>
+      <div class="math">\[4I_6=K\]</div>
+      <div class="math">\[\mo{I_6}=\frac K4\]</div>
+      <p class="paso">Paso 2 · El interés en 24 meses</p>
+      <p>Con la tasa mensual \(\na{r\%}\): \(I_6=K\cdot r\%\cdot6\) e \(I_{24}=K\cdot r\%\cdot24\). Del primero:</p>
+      <div class="math">\[K\cdot r\%=\frac{I_6}{6}\]</div>
+      <div class="math">\[\mo{I_{24}}=\frac{I_6}{6}\cdot24=4I_6\]</div>
+      <div class="math">\[\mo{I_{24}}=4\cdot\frac K4=K\]</div>
+      <p class="paso">Paso 3 · El monto en 24 meses</p>
+      <div class="math">\[M=K+I_{24}=2K\]</div>
+      <p class="paso">Paso 4 · ¿Qué tanto por ciento del monto?</p>
+      <div class="math">\[M\cdot x\%=I_{24}\]</div>
+      <div class="math">\[2K\cdot\frac{x}{100}=K\]</div>
+      <div class="math">\[\ma{x=50}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>50 %.</div>
   </article>
@@ -1790,16 +1814,19 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">9.1</span><h3>Dos partes y monto total</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="in9">Parecido al ejercicio 9 de la unidad ↑</button></span></div>
     <div class="enun">Los 2/5 de un capital se imponen al 6 % anual durante 10 meses y el resto al 4 % anual durante un año y medio. Si el monto total es de 21 120 soles, calcule el interés total.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Partes</p>
-      <p>Capital \(5k\): las partes son \(\az{2k}\) y \(\az{3k}\).</p>
+      <p class="paso">Paso 1 · Las dos partes</p>
+      <p>\(\az{\tfrac25K}\) al \(\na{6\%}\) anual durante \(\ve t=\tfrac{10}{12}\) años; \(\az{\tfrac35K}\) al \(\na{4\%}\) anual durante \(\ve t=\tfrac32\) años.</p>
       <p class="paso">Paso 2 · Intereses</p>
-      <div class="math">\[\az{2k}\cdot\na{\tfrac{6}{100}}\cdot\ve{\tfrac{10}{12}}=0.1k\qquad\az{3k}\cdot\na{\tfrac{4}{100}}\cdot\ve{\tfrac32}=0.18k\]</div>
+      <div class="math">\[\mo{I_1}=\frac{2K}5\cdot\frac{6}{100}\cdot\frac{10}{12}=\frac{K}{50}\]</div>
+      <div class="math">\[\mo{I_2}=\frac{3K}5\cdot\frac{4}{100}\cdot\frac32=\frac{9K}{250}\]</div>
       <p class="paso">Paso 3 · Monto total</p>
-      <div class="math">\[5k+0.28k=21\,120\]</div>
-      <div class="math">\[5.28k=21\,120\]</div>
-      <div class="math">\[k=4000\]</div>
+      <div class="math">\[M_1=\frac{2K}5+\frac{K}{50}\]</div>
+      <div class="math">\[M_2=\frac{3K}5+\frac{9K}{250}\]</div>
+      <div class="math">\[M_1+M_2=K+\frac{K}{50}+\frac{9K}{250}=21\,120\]</div>
+      <div class="math">\[\frac{264K}{250}=21\,120\]</div>
+      <div class="math">\[K=20\,000\]</div>
       <p class="paso">Paso 4 · Interés total</p>
-      <div class="math">\[\ma{\mo I}=0.28(4000)=1120\]</div>
+      <div class="math">\[\ma{\mo I}=\frac{20\,000}{50}+\frac{9\cdot20\,000}{250}=400+720=1120\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>1 120 soles.</div>
   </article>
@@ -2014,7 +2041,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <div class="panel" id="pn-interes-solucionarios" role="tabpanel" hidden>
   <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>capital \(K\)</span><span><i class="dot" style="background:var(--orange)"></i>tasa \(r\%\)</span><span><i class="dot" style="background:var(--green)"></i>tiempo \(t\) o periodos \(n\)</span><span><i class="dot" style="background:var(--purple)"></i>interés \(I\)</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
   <div class="box"><h3>Solucionarios de evaluaciones anteriores</h3><p>Preguntas de este tema que salieron en prácticas calificadas (PC) y exámenes finales (EF) de ciclos anteriores, resueltas paso a paso con los colores de clase. La etiqueta de cada una dice de qué evaluación y pregunta salió.</p><p class="dif-leg"><span class="dif-leg-t">Dificultad:</span><span class="it"><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span> un solo procedimiento, directo</span><span class="it"><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span> varios pasos o hay que plantear</span><span class="it"><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span> planteamiento con letras o varias ideas juntas</span></p></div>
-  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-interes-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-interes-g25">Ciclo 2025-0</button><button data-go="sl-in-1">1</button><button data-go="sl-in-2">2</button><button data-go="sl-in-3">3</button><button data-go="sl-in-4">4</button><button data-go="sl-in-5">5</button><button data-go="sl-in-6">6</button></div>
+  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-interes-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-interes-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-interes-rep">Repaso de clase</button><button data-go="sl-in-1">1</button><button data-go="sl-in-2">2</button><button data-go="sl-in-3">3</button><button data-go="sl-in-4">4</button><button data-go="sl-in-5">5</button><button data-go="sl-in-6">6</button><button data-go="sl-in-7">7</button><button data-go="sl-in-8">8</button></div>
 
   <h2 class="ex-group" id="grp-interes-g26">Ciclo 2026-0</h2>
   <p class="grp-note">Del compendio 2026-0 (venía con solucionario).</p>
@@ -2135,6 +2162,31 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p>Como \(r\,\%=\tfrac{r}{100}\), ese resultado es la tasa en decimal: por ejemplo, 0.2 es 20 %.</p>
     </div>
     <div class="resp"><b>Respuesta</b>a) A: 20 %; B: \(P_o=144\); C: \(P_a=200\). Conviene la acción C (30 %) · b) \(r\,\%=a\left(4^{\frac1{an}}-1\right)\).</div>
+  </article>
+
+  <h2 class="ex-group" id="grp-interes-rep">Repaso de clase</h2>
+  <p class="grp-note">Preguntas tipo evaluación resueltas en el repaso de clase.</p>
+
+  <article class="ej sl" id="sl-in-7">
+    <div class="ej-head"><span class="num">7</span><h3>Tasa bimestral a mensual</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">Repaso de clase</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">Complete: una tasa de 12 % bimestral equivale a una tasa de ____ mensual.</div>
+    <div class="sol">
+      <p>En interés simple, la tasa es proporcional al tiempo. Un bimestre son 2 meses:</p>
+      <div class="math">\[\frac{12\%\ \text{bimestral}}{2\ \text{meses}}=\ma{6\%}\ \text{mensual}\]</div>
+      <p>Comprobación con 100 soles: en un bimestre se ganan 12; en un mes, la mitad, 6.</p>
+    </div>
+    <div class="resp"><b>Respuesta</b>6 % mensual.</div>
+  </article>
+
+  <article class="ej sl" id="sl-in-8">
+    <div class="ej-head"><span class="num">8</span><h3>Porcentaje de un porcentaje</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">Repaso de clase</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-porc" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">Complete: el 20 % del 40 % de 200 es ____.</div>
+    <div class="sol">
+      <p>"De" se cambia por "por", y cada porcentaje se escribe sobre 100:</p>
+      <div class="math">\[\frac{20}{100}\cdot\frac{40}{100}\cdot200\]</div>
+      <div class="math">\[=\frac{20}{100}\cdot80=\ma{16}\]</div>
+    </div>
+    <div class="resp"><b>Respuesta</b>16.</div>
   </article>
 </div>
 
@@ -2945,14 +2997,19 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">9.2</span><h3>Tres términos de una PG</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="pr9">Parecido al ejercicio 9 de la unidad ↑</button></span></div>
     <div class="enun">Tres términos consecutivos de una PG tienen producto 216 y suma 21. Hállelos.</div>
     <div class="sol">
-      <p class="paso">Paso 1 · Escribirlos como x/r, x, xr</p>
-      <div class="math">\[\frac x{\na r}\cdot x\cdot x\na r=x^3=216\]</div>
-      <div class="math">\[x=6\]</div>
+      <p class="paso">Paso 1 · Escribirlos como x/r, x, x·r</p>
+      <p>Son tres términos y se conoce su producto: al del centro se le llama \(x\).</p>
+      <div class="math">\[\frac x{\na r}\cdot x\cdot x\na r=216\]</div>
+      <div class="math">\[x^3=216=2^3\cdot3^3\]</div>
+      <div class="math">\[x=2\cdot3=6\]</div>
       <p class="paso">Paso 2 · La suma</p>
       <div class="math">\[\frac6{\na r}+6+6\na r=21\]</div>
+      <div class="math">\[\frac6r+6r=15\]</div>
+      <div class="math">\[6+6r^2=15r\]</div>
       <div class="math">\[6r^2-15r+6=0\]</div>
       <div class="math">\[2r^2-5r+2=0\]</div>
       <div class="math">\[(2r-1)(r-2)=0\]</div>
+      <p class="paso">Paso 3 · Los términos</p>
       <div class="math">\[r=2:\ \ma{3,6,12}\]</div>
       <div class="math">\[r=\tfrac12:\ \ma{12,6,3}\]</div>
     </div>
@@ -3079,7 +3136,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <div class="panel" id="pn-progresiones-solucionarios" role="tabpanel" hidden>
   <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>primer término \(a_1\)</span><span><i class="dot" style="background:var(--orange)"></i>diferencia \(d\) o razón \(r\)</span><span><i class="dot" style="background:var(--green)"></i>lugar \(n\) o número de términos</span><span><i class="dot" style="background:var(--purple)"></i>condición entre términos</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
   <div class="box"><h3>Solucionarios de evaluaciones anteriores</h3><p>Preguntas de este tema que salieron en prácticas calificadas (PC) y exámenes finales (EF) de ciclos anteriores, resueltas paso a paso con los colores de clase. La etiqueta de cada una dice de qué evaluación y pregunta salió.</p><p class="dif-leg"><span class="dif-leg-t">Dificultad:</span><span class="it"><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span> un solo procedimiento, directo</span><span class="it"><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span> varios pasos o hay que plantear</span><span class="it"><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span> planteamiento con letras o varias ideas juntas</span></p></div>
-  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-progresiones-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-progresiones-g25">Ciclo 2025-0</button><button data-go="sl-pr-1">1</button><button data-go="sl-pr-2">2</button><button data-go="sl-pr-3">3</button></div>
+  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-progresiones-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-progresiones-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-progresiones-rep">Repaso de clase</button><button data-go="sl-pr-1">1</button><button data-go="sl-pr-2">2</button><button data-go="sl-pr-3">3</button><button data-go="sl-pr-4">4</button></div>
 
   <h2 class="ex-group" id="grp-progresiones-g26">Ciclo 2026-0</h2>
   <p class="grp-note">Del compendio 2026-0 (venía con solucionario).</p>
@@ -3140,6 +3197,28 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <div class="math">\[S=\sum_{n=1}^{5}(5n+1018)=5(1+2+3+4+5)+5\cdot1018=75+5090=\ma{5165}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>a) \(a_n=5n+1018\); 205 términos · b) \(S=5165\).</div>
+  </article>
+
+  <h2 class="ex-group" id="grp-progresiones-rep">Repaso de clase</h2>
+  <p class="grp-note">Preguntas tipo evaluación resueltas en el repaso de clase.</p>
+
+  <article class="ej sl" id="sl-pr-4">
+    <div class="ej-head"><span class="num">4</span><h3>¿PA y PG a la vez?</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">Repaso de clase</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">Justifique la falsedad de la siguiente proposición: no existe progresión que sea aritmética y geométrica a la vez.</div>
+    <div class="sol">
+      <p class="paso">Paso 1 · Buscar una que sea las dos cosas</p>
+      <p>Tres términos consecutivos de una PA: \(x-\na d,\ x,\ x+\na d\). Si también están en PG, la razón se repite:</p>
+      <div class="math">\[\na r=\frac{x}{x-d}=\frac{x+d}{x}\]</div>
+      <div class="math">\[x^2=(x+d)(x-d)\]</div>
+      <div class="math">\[x^2=x^2-d^2\]</div>
+      <div class="math">\[d^2=0\]</div>
+      <div class="math">\[d=0\]</div>
+      <p class="paso">Paso 2 · Contraejemplo</p>
+      <p>Con \(\na{d=0}\) la sucesión es constante. Por ejemplo:</p>
+      <div class="math">\[5,\ 5,\ 5,\ 5,\ \dots\]</div>
+      <p>Es PA de diferencia \(\na{d=0}\) y PG de razón \(\na{r=1}\).</p>
+    </div>
+    <div class="resp"><b>Respuesta</b>Es falsa: \(5,\ 5,\ 5,\dots\) es PA de diferencia \(d=0\) y PG de razón \(r=1\) a la vez.</div>
   </article>
 </div>
 
@@ -3574,12 +3653,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1.1</span><h3>El término 20</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su1">Parecido al ejercicio 1 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=n^2+5n\), halle \(a_{20}\).</div>
     <div class="sol">
-      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <p class="paso">Paso 1 · Término general: a_n = Σ₁ⁿ − Σ₁ⁿ⁻¹</p>
       <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
       <div class="math">\[a_n=n^2+5n-\big[(n-1)^2+5(n-1)\big]\]</div>
+      <div class="math">\[a_n=n^2+5n-\big[n^2-2n+1+5n-5\big]\]</div>
+      <div class="math">\[a_n=n^2+5n-(n^2+3n-4)\]</div>
+      <div class="math">\[a_n=2n+4\]</div>
       <p class="paso">Paso 2 · Reemplazar n = 20</p>
-      <div class="math">\[a_{20}=20^2+5\cdot20-\big[19^2+5\cdot19\big]\]</div>
-      <div class="math">\[a_{20}=500-456=\ma{44}\]</div>
+      <div class="math">\[\ma{a_{20}}=2(20)+4=44\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{20}=44\).</div>
   </article>
@@ -3588,13 +3669,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">1.2</span><h3>Con fracción</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-sn" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su1">Parecido al ejercicio 1 de la unidad ↑</button></span></div>
     <div class="enun">Si \(\displaystyle\sum_{i=1}^{n}a_i=\frac{n^2+7n}2\), halle \(a_{30}\).</div>
     <div class="sol">
-      <p class="paso">Paso 1 · El término es la diferencia de dos sumas</p>
+      <p class="paso">Paso 1 · Término general: a_n = Σ₁ⁿ − Σ₁ⁿ⁻¹</p>
       <div class="math">\[a_n=\sum_{i=1}^{n}a_i-\sum_{i=1}^{n-1}a_i\]</div>
       <div class="math">\[a_n=\frac{n^2+7n}2-\frac{(n-1)^2+7(n-1)}2\]</div>
+      <div class="math">\[a_n=\frac{n^2+7n-n^2+2n-1-7n+7}2\]</div>
+      <div class="math">\[a_n=\frac{2n+6}2=n+3\]</div>
       <p class="paso">Paso 2 · Reemplazar n = 30</p>
-      <div class="math">\[a_{30}=\frac{30^2+7\cdot30}2-\frac{29^2+7\cdot29}2\]</div>
-      <div class="math">\[a_{30}=\frac{1110}2-\frac{1044}2\]</div>
-      <div class="math">\[a_{30}=555-522=\ma{33}\]</div>
+      <div class="math">\[\ma{a_{30}}=30+3=33\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{30}=33\).</div>
   </article>
@@ -3627,8 +3708,11 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <div class="math">\[a_{n+1}-a_1=3n\]</div>
       <div class="math">\[a_{n+1}-4=3n\]</div>
       <div class="math">\[a_{n+1}=3n+4\]</div>
-      <p class="paso">Paso 2 · a₂₀ es a_(n+1) con n = 19</p>
-      <div class="math">\[a_{20}=3(19)+4=\ma{61}\]</div>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <div class="math">\[a_n=3(n-1)+4=3n+1\]</div>
+      <p>Vale para \(n\ge2\); con \(n=1\) da \(4=a_1\). ✓</p>
+      <p class="paso">Paso 3 · Reemplazar n = 20</p>
+      <div class="math">\[\ma{a_{20}}=3(20)+1=61\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_{20}=61\).</div>
   </article>
@@ -3639,12 +3723,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="sol">
       <p class="paso">Paso 1 · Suma telescópica</p>
       <div class="math">\[a_{n+1}-a_1=n^2+n\]</div>
-      <p class="paso">Paso 2 · Cada término con a₁</p>
-      <div class="math">\[n=7:\ a_8-a_1=7^2+7\ \to\ a_8=56+a_1\]</div>
-      <div class="math">\[n=6:\ a_7-a_1=6^2+6\ \to\ a_7=42+a_1\]</div>
+      <div class="math">\[a_{n+1}=n^2+n+a_1\]</div>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <div class="math">\[a_n=(n-1)^2+(n-1)+a_1\]</div>
+      <div class="math">\[a_n=n^2-2n+1+n-1+a_1\]</div>
+      <div class="math">\[a_n=n^2-n+a_1\]</div>
       <p class="paso">Paso 3 · Restar (a₁ se cancela)</p>
-      <div class="math">\[a_8-a_7=56+a_1-(42+a_1)\]</div>
-      <div class="math">\[a_8-a_7=\ma{14}\]</div>
+      <div class="math">\[a_8-a_7=(64-8+a_1)-(49-7+a_1)\]</div>
+      <div class="math">\[a_8-a_7=56-42=\ma{14}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>14.</div>
   </article>
@@ -3656,9 +3742,14 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p class="paso">Paso 1 · Suma telescópica</p>
       <div class="math">\[a_{n+1}-a_1=2n^2-n\]</div>
       <div class="math">\[a_{n+1}-3=2n^2-n\]</div>
-      <p class="paso">Paso 2 · a₆ es a_(n+1) con n = 5</p>
-      <div class="math">\[a_6-3=2\cdot5^2-5=45\]</div>
-      <div class="math">\[a_6=\ma{48}\]</div>
+      <div class="math">\[a_{n+1}=2n^2-n+3\]</div>
+      <p class="paso">Paso 2 · Para a_n, cambiar n por n − 1</p>
+      <div class="math">\[a_n=2(n-1)^2-(n-1)+3\]</div>
+      <div class="math">\[a_n=2n^2-4n+2-n+1+3\]</div>
+      <div class="math">\[a_n=2n^2-5n+6\]</div>
+      <p>Con \(n=1\) da \(2-5+6=3=a_1\). ✓</p>
+      <p class="paso">Paso 3 · Reemplazar n = 6</p>
+      <div class="math">\[\ma{a_6}=2\cdot6^2-5\cdot6+6=72-30+6=48\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>\(a_6=48\).</div>
   </article>
@@ -3769,9 +3860,17 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">7.1</span><h3>Cuatro contra dos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su7">Parecido al ejercicio 7 de la unidad ↑</button></span></div>
     <div class="enun">En una PG de términos positivos, la suma de los 4 primeros términos es 10 veces la suma de los 2 primeros. Halle la razón.</div>
     <div class="sol">
-      <div class="math">\[a_1\frac{r^4-1}{r-1}=10\,a_1\frac{r^2-1}{r-1}\]</div>
+      <p class="paso">Paso 1 · Las dos sumas son de una PG</p>
+      <div class="math">\[\sum_{i=1}^{4}a_i=10\sum_{i=1}^{2}a_i\]</div>
+      <div class="math">\[\sum_{i=1}^{\ve n}a_i=\az{a_1}\cdot\frac{\na r^{\,\ve n}-1}{\na r-1}\]</div>
+      <p class="paso">Paso 2 · Reemplazar</p>
+      <div class="math">\[a_1\cdot\frac{r^4-1}{r-1}=10\,a_1\cdot\frac{r^2-1}{r-1}\]</div>
+      <div class="math">\[r^4-1=10(r^2-1)\]</div>
       <div class="math">\[(r^2-1)(r^2+1)=10(r^2-1)\]</div>
+      <p class="paso">Paso 3 · Dividir entre r² − 1</p>
+      <p>Con términos positivos, \(r\gt0\). Y \(r\ne1\): con \(r=1\) quedaría \(4a_1=20a_1\), o sea \(a_1=0\). Entonces \(r^2-1\ne0\):</p>
       <div class="math">\[r^2+1=10\]</div>
+      <div class="math">\[r^2=9\]</div>
       <div class="math">\[r=\pm3\]</div>
       <p>Con términos positivos, \(\ma{r=3}\).</p>
     </div>
@@ -3782,6 +3881,13 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="ej-head"><span class="num">7.2</span><h3>Veintiocho veces</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-pg" aria-expanded="false">Teoría</button><button class="sim-btn" type="button" data-goto="su7">Parecido al ejercicio 7 de la unidad ↑</button></span></div>
     <div class="enun">En una PG, \(S_6=28\,S_3\). Halle la razón.</div>
     <div class="sol">
+      <p class="paso">Paso 1 · Las dos sumas son de una PG</p>
+      <div class="math">\[\sum_{i=1}^{6}a_i=28\sum_{i=1}^{3}a_i\]</div>
+      <div class="math">\[a_1\cdot\frac{r^6-1}{r-1}=28\,a_1\cdot\frac{r^3-1}{r-1}\]</div>
+      <p class="paso">Paso 2 · Simplificar</p>
+      <div class="math">\[r^6-1=28(r^3-1)\]</div>
+      <div class="math">\[(r^3-1)(r^3+1)=28(r^3-1)\]</div>
+      <p>Con \(r\ne1\) (si no, \(6a_1=84a_1\) y \(a_1=0\)) se divide entre \(r^3-1\):</p>
       <div class="math">\[r^3+1=28\]</div>
       <div class="math">\[r^3=27\]</div>
       <div class="math">\[\ma{r=3}\]</div>
