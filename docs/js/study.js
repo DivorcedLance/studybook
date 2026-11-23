@@ -122,7 +122,10 @@
   function render(){
     /* una pestaña sin panel en este tema (p. ej. aún sin solucionarios) se oculta */
     document.querySelectorAll('.tab').forEach(b=>{b.hidden=!document.getElementById('pn-'+topic+'-'+b.dataset.tab)});
-    if(!document.getElementById('pn-'+topic+'-'+tab)) tab='teoria';
+    /* con una sola pestaña (página Final) la barra no aporta nada */
+    const tbar=document.querySelector('.tabs'); if(tbar) tbar.hidden=document.querySelectorAll('.tab:not([hidden])').length<2;
+    /* si el tema no tiene esa pestaña, se abre la primera que tenga (la página Final no tiene teoría) */
+    if(!document.getElementById('pn-'+topic+'-'+tab)) tab=['teoria'].concat(TABS).find(x=>document.getElementById('pn-'+topic+'-'+x))||'teoria';
     document.querySelectorAll('.topic').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.topic===topic)));
     document.querySelectorAll('.tab').forEach(b=>{const on=b.dataset.tab===tab;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1});
     document.querySelectorAll('.panel').forEach(p=>{p.hidden=p.id!=='pn-'+topic+'-'+tab});
@@ -184,11 +187,13 @@
     document.querySelectorAll('.panel article.ej[id]').forEach(a=>{const on=hecho.has(a.id);a.classList.toggle('is-done',on);const b=a.querySelector('.done-btn');if(b)b.setAttribute('aria-pressed',String(on))});
     document.querySelectorAll('.jump button[data-go]').forEach(b=>b.classList.toggle('is-done',hecho.has(b.dataset.go)));
     document.querySelectorAll('.topic').forEach(t=>{
-      const ids=[...document.querySelectorAll('#pn-'+t.dataset.topic+'-ejercicios article.ej[id]')].map(a=>a.id);
+      let ids=[...document.querySelectorAll('#pn-'+t.dataset.topic+'-ejercicios article.ej[id]')].map(a=>a.id), cosa='ejercicios';
+      /* temas sin ejercicios (página Final): se cuentan los ejemplos y las preguntas */
+      if(!ids.length){ ids=[...document.querySelectorAll('.panel[id^="pn-'+t.dataset.topic+'-"] article.ej[id]')].map(a=>a.id); cosa='' }
       const k=ids.filter(i=>hecho.has(i)).length; let s=t.querySelector('.t-done');
       if(!k){ if(s) s.remove(); return }
       if(!s){ s=document.createElement('span'); s.className='t-done'; t.appendChild(s) }
-      s.textContent=k===ids.length?'✓ Todos los ejercicios hechos':k+' de '+ids.length+' ejercicios hechos';
+      s.textContent=k===ids.length?(cosa?'✓ Todos los ejercicios hechos':'✓ Todo hecho'):k+' de '+ids.length+(cosa?' ejercicios hechos':' hechos');
     });
   }
   /* ---------- lo último que se vio, para «Continuar» en la portada ---------- */

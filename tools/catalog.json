@@ -18,7 +18,27 @@
         {"n": 4, "title": "Parábolas, circunferencias, oferta y demanda", "short": "Parábolas, circunferencias, oferta y demanda",
          "page": "unidad-4.html"},
         {"n": 5, "title": "Magnitudes proporcionales, interés, progresiones y sumatorias", "short": "Proporcionalidad, interés, progresiones",
-         "page": "unidad-5.html"}
+         "page": "unidad-5.html"},
+        {"n": 6, "label": "Final", "title": "Repaso para el final", "short": "Repaso para el final",
+         "page": "final.html",
+         "build": {
+           "skeleton": "unidad-5.html",
+           "lead": "Repaso para el examen final: todos los ejemplos de magnitudes proporcionales, interés, progresiones y sumatorias, agrupados por tema y con las mismas soluciones de la Unidad 5, y las preguntas del repaso de clase.",
+           "description": "Repaso para el final de Mate Nive (propedéutico en matemáticas 2026-0): ejemplos resueltos paso a paso de magnitudes proporcionales, interés simple y compuesto, progresiones y sumatorias, y preguntas tipo evaluación del repaso de clase.",
+           "keywords": "repaso final, magnitudes proporcionales, interés simple, interés compuesto, progresión aritmética, progresión geométrica, sumatorias, ejemplos resueltos, propedéutico, Universidad del Pacífico",
+           "examples_note": "Los mismos ejemplos de la Unidad 5, con las mismas soluciones. Primero los de la teoría; después, dos por cada tipo de ejercicio (por ejemplo, 9.1 y 9.2 son del mismo tipo). El botón «Teoría» abre la teoría en la Unidad 5.",
+           "topics": [
+             {"id": "magnitudes", "from": "unidad-5.html", "panel": "pn-magnitudes-ejemplos", "sub": "{n} ejemplos resueltos"},
+             {"id": "interes", "from": "unidad-5.html", "panel": "pn-interes-ejemplos", "sub": "{n} ejemplos resueltos"},
+             {"id": "progresiones", "from": "unidad-5.html", "panel": "pn-progresiones-ejemplos", "sub": "{n} ejemplos resueltos"},
+             {"id": "sumatorias", "from": "unidad-5.html", "panel": "pn-sumatorias-ejemplos", "sub": "{n} ejemplos resueltos"},
+             {"id": "repaso", "name": "Repaso de clase", "sub": "{n} preguntas tipo evaluación",
+              "note": "Preguntas tipo evaluación que se resolvieron en el repaso de clase. Mezclan temas de inecuaciones, parábolas, interés y progresiones.",
+              "items": [["final-extra", "sl-rep-ineq"], ["unidad-5.html", "sl-in-8"], ["unidad-5.html", "sl-in-7"],
+                        ["unidad-4.html", "sl-par-15"], ["unidad-5.html", "sl-pr-4"], ["unidad-4.html", "sl-par-12"]]}
+           ],
+           "scripts": ["mate-nive/u4.js", "mate-nive/u5.js"]
+         }}
       ]
     }
   ]

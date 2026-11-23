@@ -9,6 +9,8 @@ y actualiza el «· N ejercicios» de cada botón de tema. No toca nada más.
 Uso: python tools/sync.py          (desde la raíz del repo)
 """
 import json, os, re, sys, html as H
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import final
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEB = os.path.join(ROOT, 'docs')
@@ -89,12 +91,16 @@ def index_page(s, href, where_unit, topic_names):
     return items, ids
 SEARCH = {'items': [], 'units': {}}
 
+def lab(u): return u.get('label') or 'Unidad %d' % u['n']
 def plural(n, uno, varios): return '%d %s' % (n, uno if n == 1 else varios)
 
 course_cards = []
 for c in cat['courses']:
     cdir = os.path.join(WEB, c['id'])
     units = c['units']
+    # páginas de repaso armadas a partir de las unidades (tools/final.py)
+    for u in units:
+        if u.get('build') and final.build(c, u, WEB): changed.append(os.path.relpath(os.path.join(cdir, u['page']), ROOT))
     avail = [u for u in units if u.get('page')]
     info = {}
     for u in avail:
@@ -106,15 +112,15 @@ for c in cat['courses']:
                        lambda m: m.group(1) + (' · ' + plural(t['ej'], 'ejercicio', 'ejercicios') if t['ej'] else '') + m.group(2), s, count=1, flags=re.S)
         info[u['n']] = (p, s, st)
         href = c['id'] + '/' + u['page']
-        items, ids = index_page(s, href, '%s · Unidad %d' % (c['name'], u['n']), {t['id']: H.unescape(t['name']) for t in st})
-        SEARCH['items'] += items
+        items, ids = index_page(s, href, '%s · %s' % (c['name'], lab(u)), {t['id']: H.unescape(t['name']) for t in st})
+        if not u.get('build'): SEARCH['items'] += items   # la página Final repite artículos: no se indexa dos veces
         SEARCH['units'][href[:-5]] = dict(course=c['id'], n=u['n'], total=len(ids), ej=sum(t['ej'] for t in st))
     # barra de unidades (solo las que ya tienen página)
     for u in avail:
         p, s, st = info[u['n']]
         bar = '<nav class="units" aria-label="Unidades">' + ''.join(
-            '<a class="unit" href="%s"%s><span class="u-n">Unidad %d</span><span class="u-t">%s</span></a>' % (
-                v['page'], ' aria-current="page"' if v is u else '', v['n'], H.escape(v.get('short', v['title'])))
+            '<a class="unit" href="%s"%s><span class="u-n">%s</span><span class="u-t">%s</span></a>' % (
+                v['page'], ' aria-current="page"' if v is u else '', lab(v), H.escape(v.get('short', v['title'])))
             for v in avail) + '</nav>'
         write(p, block(s, 'units', bar, p))
     # tarjetas de unidades en la página del curso
@@ -124,14 +130,14 @@ for c in cat['courses']:
         if u.get('page'):
             _, _, st = info[u['n']]
             ej, ex, sl, iw = (sum(t[k] for t in st) for k in ('ej', 'ex', 'sl', 'iw'))
-            tot['ej'] += ej; tot['ex'] += ex; tot['sl'] += sl
+            if not u.get('build'): tot['ej'] += ej; tot['ex'] += ex; tot['sl'] += sl
             chips = ''.join('<li><a href="%s#%s">%s</a></li>' % (u['page'], t['id'], t['name']) for t in st)
             meta = ' · '.join(x for x in (plural(ej, 'ejercicio resuelto', 'ejercicios resueltos') if ej else '',
                                           plural(ex, 'ejemplo', 'ejemplos') if ex else '',
-                                          plural(sl, 'problema de solucionario', 'problemas de solucionario') if sl else '',
+                                          (plural(sl, 'pregunta de repaso', 'preguntas de repaso') if u.get('build') else plural(sl, 'problema de solucionario', 'problemas de solucionario')) if sl else '',
                                           plural(iw, 'elemento interactivo', 'elementos interactivos') if iw else '') if x)
-            cards.append('<li class="ucard"><a class="ucard-main" href="%s"><span class="u-n">Unidad %d</span><span class="u-title">%s</span><span class="u-meta">%s</span></a><div class="prog" data-unit="%s/%s" hidden></div><ul class="u-topics">%s</ul></li>' % (
-                u['page'], u['n'], H.escape(u['title']), meta, c['id'], u['page'][:-5], chips))
+            cards.append('<li class="ucard"><a class="ucard-main" href="%s"><span class="u-n">%s</span><span class="u-title">%s</span><span class="u-meta">%s</span></a><div class="prog" data-unit="%s/%s" hidden></div><ul class="u-topics">%s</ul></li>' % (
+                u['page'], lab(u), H.escape(u['title']), meta, c['id'], u['page'][:-5], chips))
         else:
             chips = ''.join('<li><span>%s</span></li>' % H.escape(t) for t in u.get('topics', []))
             cards.append('<li class="ucard soon"><details><summary class="ucard-main"><span class="u-n">Unidad %d · aún sin material</span><span class="u-title">%s</span></summary><ul class="u-topics">%s</ul></details></li>' % (
@@ -141,7 +147,7 @@ for c in cat['courses']:
     first = avail[0]['page'] if avail else 'index.html'
     course_cards.append('<li class="ccard"><a href="%s/index.html"><span class="label">%s · %s</span><span class="c-name">%s</span><span class="c-full">%s</span><span class="c-meta">%s · %s · %s</span><span class="prog" data-course="%s" hidden></span></a></li>' % (
         c['id'], H.escape(c['school']), c['term'], H.escape(c['name']), H.escape(c['full']),
-        plural(len(avail), 'unidad disponible', 'unidades disponibles'),
+        plural(len([u for u in avail if not u.get('build')]), 'unidad disponible', 'unidades disponibles'),
         plural(tot['ej'], 'ejercicio resuelto', 'ejercicios resueltos'),
         plural(tot['sl'], 'problema de solucionario', 'problemas de solucionario'), c['id']))
 hp = os.path.join(WEB, 'index.html')

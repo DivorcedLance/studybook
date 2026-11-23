@@ -9,3 +9,4 @@ material/
 *.mov
 *.avi
 *.webm
+__pycache__/
