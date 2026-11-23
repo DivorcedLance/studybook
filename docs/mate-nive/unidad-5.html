@@ -1075,7 +1075,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <div class="panel" id="pn-magnitudes-solucionarios" role="tabpanel" hidden>
   <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>DP (directamente proporcional)</span><span><i class="dot" style="background:var(--orange)"></i>IP (inversamente proporcional)</span><span><i class="dot" style="background:var(--purple)"></i>constante \(k\)</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En las tablas, la magnitud de referencia va en un recuadro. En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
   <div class="box"><h3>Solucionarios de evaluaciones anteriores</h3><p>Preguntas de este tema que salieron en prácticas calificadas (PC) y exámenes finales (EF) de ciclos anteriores, resueltas paso a paso con los colores de clase. La etiqueta de cada una dice de qué evaluación y pregunta salió.</p><p class="dif-leg"><span class="dif-leg-t">Dificultad:</span><span class="it"><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span> un solo procedimiento, directo</span><span class="it"><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span> varios pasos o hay que plantear</span><span class="it"><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span> planteamiento con letras o varias ideas juntas</span></p></div>
-  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-magnitudes-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-magnitudes-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-magnitudes-gotr">Otras evaluaciones</button><button data-go="sl-mp-1">1</button><button data-go="sl-mp-2">2</button><button data-go="sl-mp-3">3</button><button data-go="sl-mp-4">4</button><button data-go="sl-mp-5">5</button><button data-go="sl-mp-6">6</button></div>
+  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-magnitudes-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-magnitudes-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-magnitudes-gotr">Otras evaluaciones</button><button class="jump-g" data-go="grp-magnitudes-rep">Ciclo 2024-2</button><button data-go="sl-mp-1">1</button><button data-go="sl-mp-2">2</button><button data-go="sl-mp-3">3</button><button data-go="sl-mp-4">4</button><button data-go="sl-mp-5">5</button><button data-go="sl-mp-6">6</button><button data-go="sl-mp-7">7</button><button data-go="sl-mp-8">8</button></div>
 
   <h2 class="ex-group" id="grp-magnitudes-g26">Ciclo 2026-0</h2>
   <p class="grp-note">Del compendio 2026-0 (venía con solucionario).</p>
@@ -1206,6 +1206,57 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p>El segundo recibe menos que en a): ahora su dinero estuvo invertido menos tiempo que el del tercero y el del cuarto.</p>
     </div>
     <div class="resp"><b>Respuesta</b>a) 30 000 soles · b) 22 500 soles.</div>
+  </article>
+  <h2 class="ex-group" id="grp-magnitudes-rep">Ciclo 2024-2</h2>
+  <p class="grp-note">Del examen final 2024-2, resuelto en la asesoría previa al final y en el repaso de clase.</p>
+
+  <article class="ej sl" id="sl-mp-7">
+    <div class="ej-head"><span class="num">7</span><h3>Tres magnitudes en un cuadro</h3><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span><span class="chip src">EF 2024-2 · Preg. 2a</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-mp-compuesta t-mp-tablas" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">En el cuadro se muestran algunos de los valores que toman las magnitudes \(A\), \(B\) y \(C\). Se sabe que \(A\) DP \(B\) cuando \(C\) es constante y \(\sqrt A\) IP \(C\) cuando \(B\) es constante.<div class="mtab-wrap"><table class="mtab"><tbody><tr><th>\(A\)</th><td>12</td><td>3</td><td>\(b^2\)</td></tr><tr><th>\(B\)</th><td>3</td><td>27</td><td>\(9a^2\)</td></tr><tr><th>\(C\)</th><td>1</td><td>\(a\)</td><td>\(b\)</td></tr></tbody></table></div><b>1)</b> (1 pt) Complete con una relación de proporcionalidad entre las tres magnitudes.<br><b>2)</b> (2 pts) Determine el valor de \(\sqrt[k]{a\times b}\).</div>
+    <div class="sol">
+      <p class="paso">1) Paso 1 · Cada relación por separado</p>
+      <p>\(A\) DP \(B\) (con \(C\) constante) y \(\sqrt A\) IP \(C\) (con \(B\) constante):</p>
+      <div class="math">\[\az{\frac AB=k_1}\qquad\na{\sqrt A\cdot C=k_2}\]</div>
+      <p class="paso">1) Paso 2 · Juntarlas con la misma forma</p>
+      <p>Para juntarlas, \(A\) tiene que aparecer igual en las dos. Se saca raíz a la primera:</p>
+      <div class="math">\[\az{\frac{\sqrt A}{\sqrt B}=\sqrt{k_1}}\]</div>
+      <p>Ahora \(\sqrt A\) es DP a \(\sqrt B\) e IP a \(C\):</p>
+      <div class="math">\[\mo{\frac{\sqrt A\cdot C}{\sqrt B}=k}\]</div>
+      <p class="paso">2) Paso 3 · La constante con la primera columna</p>
+      <div class="math">\[\mo k=\frac{\sqrt{12}\cdot1}{\sqrt3}=\sqrt{\frac{12}{3}}=\sqrt4=\mo2\]</div>
+      <p class="paso">2) Paso 4 · Segunda columna: a</p>
+      <div class="math">\[\frac{\sqrt3\cdot a}{\sqrt{27}}=2\]</div>
+      <div class="math">\[\frac{\sqrt3\cdot a}{3\sqrt3}=2\]</div>
+      <div class="math">\[\frac a3=2\]</div>
+      <div class="math">\[a=6\]</div>
+      <p class="paso">2) Paso 5 · Tercera columna: b</p>
+      <div class="math">\[\frac{\sqrt{b^2}\cdot b}{\sqrt{9a^2}}=2\]</div>
+      <p>Con \(b\gt0\) y \(a=6\): \(\sqrt{b^2}=b\) y \(\sqrt{9a^2}=3a=18\).</p>
+      <div class="math">\[\frac{b\cdot b}{18}=2\]</div>
+      <div class="math">\[b^2=36\]</div>
+      <div class="math">\[b=6\]</div>
+      <p class="paso">2) Paso 6 · Lo que se pide</p>
+      <p>El índice de la raíz es la constante \(k=2\):</p>
+      <div class="math">\[\ma{\sqrt[k]{a\times b}=\sqrt[2]{6\cdot6}=6}\]</div>
+    </div>
+    <div class="resp"><b>Respuesta</b>1) \(\dfrac{\sqrt A\cdot C}{\sqrt B}=k\) · 2) \(k=2\), \(a=6\), \(b=6\) y \(\sqrt[k]{a\times b}=6\).</div>
+  </article>
+
+  <article class="ej sl" id="sl-mp-8">
+    <div class="ej-head"><span class="num">8</span><h3>El hotel de Ica</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">EF 2024-2 · Preg. 2b</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-mp-compuesta" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">En cierto hotel de Ica tres personas pueden vivir en un hotel durante 6 días por 360 dólares.<br><b>1)</b> (1 pt) Utilice el diccionario \(C\): costo, \(D\): número de días, \(N\): número de viajeros, y complete con la relación de proporcionalidad.<br><b>2)</b> (1 pt) ¿Cuánto se paga al hotel por hospedar 16 personas durante 9 días?</div>
+    <div class="sol">
+      <p class="paso">1) Paso 1 · ¿Cómo cambia el costo?</p>
+      <p>Más días, más costo; más viajeros, más costo. El costo es DP a las dos:</p>
+      <div class="math">\[\az{C\ \text{DP}\ D}\qquad\az{C\ \text{DP}\ N}\]</div>
+      <div class="math">\[\mo{\frac{C}{D\cdot N}=k}\]</div>
+      <p class="paso">2) Paso 2 · Tabla</p>
+      <div class="mtab-wrap"><table class="mtab"><thead><tr><th></th><th>1.ª columna</th><th>2.ª columna</th></tr></thead><tbody><tr><th>\(C\)</th><td>360</td><td>\(\ma x\)</td></tr><tr><th>\(D\)</th><td>6</td><td>9</td></tr><tr><th>\(N\)</th><td>3</td><td>16</td></tr></tbody></table></div>
+      <p class="paso">2) Paso 3 · Igualar las dos columnas</p>
+      <div class="math">\[\frac{360}{6\cdot3}=\frac{\ma x}{9\cdot16}\]</div>
+      <div class="math">\[\ma x=\frac{9\cdot16\cdot360}{6\cdot3}=\frac{144\cdot360}{18}=144\cdot20=2880\]</div>
+    </div>
+    <div class="resp"><b>Respuesta</b>1) \(\dfrac{C}{D\cdot N}=k\) · 2) 2 880 dólares.</div>
   </article>
 </div>
 
@@ -2041,7 +2092,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <div class="panel" id="pn-interes-solucionarios" role="tabpanel" hidden>
   <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>capital \(K\)</span><span><i class="dot" style="background:var(--orange)"></i>tasa \(r\%\)</span><span><i class="dot" style="background:var(--green)"></i>tiempo \(t\) o periodos \(n\)</span><span><i class="dot" style="background:var(--purple)"></i>interés \(I\)</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
   <div class="box"><h3>Solucionarios de evaluaciones anteriores</h3><p>Preguntas de este tema que salieron en prácticas calificadas (PC) y exámenes finales (EF) de ciclos anteriores, resueltas paso a paso con los colores de clase. La etiqueta de cada una dice de qué evaluación y pregunta salió.</p><p class="dif-leg"><span class="dif-leg-t">Dificultad:</span><span class="it"><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span> un solo procedimiento, directo</span><span class="it"><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span> varios pasos o hay que plantear</span><span class="it"><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span> planteamiento con letras o varias ideas juntas</span></p></div>
-  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-interes-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-interes-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-interes-rep">Repaso de clase</button><button data-go="sl-in-1">1</button><button data-go="sl-in-2">2</button><button data-go="sl-in-3">3</button><button data-go="sl-in-4">4</button><button data-go="sl-in-5">5</button><button data-go="sl-in-6">6</button><button data-go="sl-in-7">7</button><button data-go="sl-in-8">8</button></div>
+  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-interes-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-interes-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-interes-rep">Ciclo 2024-2</button><button data-go="sl-in-1">1</button><button data-go="sl-in-2">2</button><button data-go="sl-in-3">3</button><button data-go="sl-in-4">4</button><button data-go="sl-in-5">5</button><button data-go="sl-in-6">6</button><button data-go="sl-in-7">7</button><button data-go="sl-in-8">8</button><button data-go="sl-in-9">9</button></div>
 
   <h2 class="ex-group" id="grp-interes-g26">Ciclo 2026-0</h2>
   <p class="grp-note">Del compendio 2026-0 (venía con solucionario).</p>
@@ -2164,11 +2215,11 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="resp"><b>Respuesta</b>a) A: 20 %; B: \(P_o=144\); C: \(P_a=200\). Conviene la acción C (30 %) · b) \(r\,\%=a\left(4^{\frac1{an}}-1\right)\).</div>
   </article>
 
-  <h2 class="ex-group" id="grp-interes-rep">Repaso de clase</h2>
-  <p class="grp-note">Preguntas tipo evaluación resueltas en el repaso de clase.</p>
+  <h2 class="ex-group" id="grp-interes-rep">Ciclo 2024-2</h2>
+  <p class="grp-note">Del examen final 2024-2, resuelto en la asesoría previa al final y en el repaso de clase.</p>
 
   <article class="ej sl" id="sl-in-7">
-    <div class="ej-head"><span class="num">7</span><h3>Tasa bimestral a mensual</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">Repaso de clase</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button></span></div>
+    <div class="ej-head"><span class="num">7</span><h3>Tasa bimestral a mensual</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">EF 2024-2 · Preg. 1a-III</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-simple" aria-expanded="false">Teoría</button></span></div>
     <div class="enun">Complete: una tasa de 12 % bimestral equivale a una tasa de ____ mensual.</div>
     <div class="sol">
       <p>En interés simple, la tasa es proporcional al tiempo. Un bimestre son 2 meses:</p>
@@ -2179,7 +2230,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   </article>
 
   <article class="ej sl" id="sl-in-8">
-    <div class="ej-head"><span class="num">8</span><h3>Porcentaje de un porcentaje</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">Repaso de clase</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-porc" aria-expanded="false">Teoría</button></span></div>
+    <div class="ej-head"><span class="num">8</span><h3>Porcentaje de un porcentaje</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">EF 2024-2 · Preg. 1a-III</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-porc" aria-expanded="false">Teoría</button></span></div>
     <div class="enun">Complete: el 20 % del 40 % de 200 es ____.</div>
     <div class="sol">
       <p>"De" se cambia por "por", y cada porcentaje se escribe sobre 100:</p>
@@ -2187,6 +2238,34 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <div class="math">\[=\frac{20}{100}\cdot80=\ma{16}\]</div>
     </div>
     <div class="resp"><b>Respuesta</b>16.</div>
+  </article>
+  <article class="ej sl" id="sl-in-9">
+    <div class="ej-head"><span class="num">9</span><h3>El interés del tercer periodo</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="chip src">EF 2024-2 · Preg. 4</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-in-compuesto" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">Determine el capital que se invierte al 20 % capitalizable semestralmente. Si el interés generado durante el tercer periodo de capitalización excede al interés generado en el periodo inmediato anterior en 110 soles. Utilizando el siguiente diccionario: \(K\): capital inicial, \(M_n\): monto total al final del periodo \(n\), \(I_n\): interés generado durante el periodo \(n\).<br><b>a)</b> (2 pts) Complete únicamente usando \(K\), \(n\) o números: la tasa de interés semestral es \(r\%=\) ___ %, \(M_n=\) ____ ; \(I_n=\) ____ (1); \(I_3=\) ____ (2).<br><b>b)</b> (2 pts) Usando las ecuaciones (1) y (2) determine el valor de \(K\).<br><b>c)</b> (1 pt) Determine el número de meses que deben transcurrir para que el capital aumente en 46.41 %. (Sugerencia: \(\log_{1.1}1.4641=4\))</div>
+    <div class="sol">
+      <p class="paso">a) Paso 1 · La tasa del periodo</p>
+      <p>«Capitalizable semestralmente»: el periodo es el semestre, y un año tiene 2.</p>
+      <div class="math">\[\na{r\%}=\frac{20\%}{2}=\na{10\%}\ \text{semestral}\]</div>
+      <p class="paso">a) Paso 2 · Monto e interés del periodo n</p>
+      <div class="math">\[M_n=\az K(1+\na{0.1})^{\ve n}=K(1.1)^n\]</div>
+      <p>El interés del periodo \(n\) es la tasa por lo que hay al empezar ese periodo, \(M_{n-1}\):</p>
+      <div class="math">\[\mo{I_n}=K(1.1)^{n-1}\cdot0.1\qquad(1)\]</div>
+      <p class="paso">a) Paso 3 · El dato</p>
+      <p>El interés del tercer periodo excede al del segundo en 110:</p>
+      <div class="math">\[\mo{I_3}=\mo{I_2}+110\qquad(2)\]</div>
+      <p class="paso">b) Paso 4 · Reemplazar (1) en (2)</p>
+      <div class="math">\[K(1.1)^2(0.1)=K(1.1)(0.1)+110\]</div>
+      <div class="math">\[0.121K=0.11K+110\]</div>
+      <div class="math">\[0.011K=110\]</div>
+      <div class="math">\[\ma{\az K=10\,000}\]</div>
+      <p class="paso">c) Paso 5 · Aumentar 46.41 %</p>
+      <p>Que el capital aumente 46.41 % es llegar a \(M_n=1.4641K\):</p>
+      <div class="math">\[K(1.1)^n=1.4641K\]</div>
+      <div class="math">\[(1.1)^n=1.4641\]</div>
+      <div class="math">\[\ve n=\log_{1.1}1.4641=4\ \text{semestres}\]</div>
+      <div class="math">\[4\ \text{semestres}\cdot\frac{6\ \text{meses}}{1\ \text{semestre}}=\ma{24\ \text{meses}}\]</div>
+    </div>
+    <div class="resp"><b>Respuesta</b>a) \(r\%=10\%\); \(M_n=K(1.1)^n\); \(I_n=0.1K(1.1)^{n-1}\); \(I_3=I_2+110\) · b) \(K=10\,000\) soles · c) 24 meses.</div>
   </article>
 </div>
 
@@ -3136,7 +3215,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <div class="panel" id="pn-progresiones-solucionarios" role="tabpanel" hidden>
   <div class="legend" aria-label="Colores"><span><i class="dot" style="background:var(--blue)"></i>primer término \(a_1\)</span><span><i class="dot" style="background:var(--orange)"></i>diferencia \(d\) o razón \(r\)</span><span><i class="dot" style="background:var(--green)"></i>lugar \(n\) o número de términos</span><span><i class="dot" style="background:var(--purple)"></i>condición entre términos</span><span><i class="dot" style="background:var(--magenta)"></i>lo que se busca</span><span class="note">En «Leer el enunciado», cada color une una frase con su número o su expresión.</span></div>
   <div class="box"><h3>Solucionarios de evaluaciones anteriores</h3><p>Preguntas de este tema que salieron en prácticas calificadas (PC) y exámenes finales (EF) de ciclos anteriores, resueltas paso a paso con los colores de clase. La etiqueta de cada una dice de qué evaluación y pregunta salió.</p><p class="dif-leg"><span class="dif-leg-t">Dificultad:</span><span class="it"><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span> un solo procedimiento, directo</span><span class="it"><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span> varios pasos o hay que plantear</span><span class="it"><span class="dif d3" title="Dificultad: avanzado" aria-label="Dificultad: avanzado"><i></i><i></i><i></i>Avanzado</span> planteamiento con letras o varias ideas juntas</span></p></div>
-  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-progresiones-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-progresiones-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-progresiones-rep">Repaso de clase</button><button data-go="sl-pr-1">1</button><button data-go="sl-pr-2">2</button><button data-go="sl-pr-3">3</button><button data-go="sl-pr-4">4</button></div>
+  <div class="jump" aria-label="Ir al problema"><button class="jump-g" data-go="grp-progresiones-g26">Ciclo 2026-0</button><button class="jump-g" data-go="grp-progresiones-g25">Ciclo 2025-0</button><button class="jump-g" data-go="grp-progresiones-rep">Ciclo 2024-2</button><button data-go="sl-pr-1">1</button><button data-go="sl-pr-2">2</button><button data-go="sl-pr-3">3</button><button data-go="sl-pr-4">4</button></div>
 
   <h2 class="ex-group" id="grp-progresiones-g26">Ciclo 2026-0</h2>
   <p class="grp-note">Del compendio 2026-0 (venía con solucionario).</p>
@@ -3199,11 +3278,11 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     <div class="resp"><b>Respuesta</b>a) \(a_n=5n+1018\); 205 términos · b) \(S=5165\).</div>
   </article>
 
-  <h2 class="ex-group" id="grp-progresiones-rep">Repaso de clase</h2>
-  <p class="grp-note">Preguntas tipo evaluación resueltas en el repaso de clase.</p>
+  <h2 class="ex-group" id="grp-progresiones-rep">Ciclo 2024-2</h2>
+  <p class="grp-note">Del examen final 2024-2, resuelto en la asesoría previa al final y en el repaso de clase.</p>
 
   <article class="ej sl" id="sl-pr-4">
-    <div class="ej-head"><span class="num">4</span><h3>¿PA y PG a la vez?</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">Repaso de clase</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button></span></div>
+    <div class="ej-head"><span class="num">4</span><h3>¿PA y PG a la vez?</h3><span class="dif d1" title="Dificultad: básico" aria-label="Dificultad: básico"><i></i><i></i><i></i>Básico</span><span class="chip src">EF 2024-2 · Preg. 1b-II</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-pr-pa t-pr-pg" aria-expanded="false">Teoría</button></span></div>
     <div class="enun">Justifique la falsedad de la siguiente proposición: no existe progresión que sea aritmética y geométrica a la vez.</div>
     <div class="sol">
       <p class="paso">Paso 1 · Buscar una que sea las dos cosas</p>
@@ -3217,6 +3296,8 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
       <p>Con \(\na{d=0}\) la sucesión es constante. Por ejemplo:</p>
       <div class="math">\[5,\ 5,\ 5,\ 5,\ \dots\]</div>
       <p>Es PA de diferencia \(\na{d=0}\) y PG de razón \(\na{r=1}\).</p>
+      <p class="paso">Otra forma (de la asesoría)</p>
+      <p>Si se aceptan progresiones de solo dos términos, \(2,\ 4\) también sirve: es PA de diferencia \(\na{d=2}\) y PG de razón \(\na{r=2}\).</p>
     </div>
     <div class="resp"><b>Respuesta</b>Es falsa: \(5,\ 5,\ 5,\dots\) es PA de diferencia \(d=0\) y PG de razón \(r=1\) a la vez.</div>
   </article>

@@ -23,8 +23,8 @@
          "page": "final.html",
          "build": {
            "skeleton": "unidad-5.html",
-           "lead": "Repaso para el examen final: todos los ejemplos de magnitudes proporcionales, interés, progresiones y sumatorias, agrupados por tema y con las mismas soluciones de la Unidad 5, y las preguntas del repaso de clase.",
-           "description": "Repaso para el final de Mate Nive (propedéutico en matemáticas 2026-0): ejemplos resueltos paso a paso de magnitudes proporcionales, interés simple y compuesto, progresiones y sumatorias, y preguntas tipo evaluación del repaso de clase.",
+           "lead": "Repaso para el examen final: todos los ejemplos de magnitudes proporcionales, interés, progresiones y sumatorias, agrupados por tema y con las mismas soluciones de la Unidad 5; el examen final 2024-2 completo, resuelto en la asesoría previa al final, y otros problemas del repaso de clase.",
+           "description": "Repaso para el final de Mate Nive (propedéutico en matemáticas 2026-0): ejemplos resueltos paso a paso de magnitudes proporcionales, interés simple y compuesto, progresiones y sumatorias, el examen final 2024-2 resuelto y otros problemas del repaso de clase.",
            "keywords": "repaso final, magnitudes proporcionales, interés simple, interés compuesto, progresión aritmética, progresión geométrica, sumatorias, ejemplos resueltos, propedéutico, Universidad del Pacífico",
            "examples_note": "Los mismos ejemplos de la Unidad 5, con las mismas soluciones. Primero los de la teoría; después, dos por cada tipo de ejercicio (por ejemplo, 9.1 y 9.2 son del mismo tipo). El botón «Teoría» abre la teoría en la Unidad 5.",
            "topics": [
@@ -32,10 +32,14 @@
              {"id": "interes", "from": "unidad-5.html", "panel": "pn-interes-ejemplos", "sub": "{n} ejemplos resueltos"},
              {"id": "progresiones", "from": "unidad-5.html", "panel": "pn-progresiones-ejemplos", "sub": "{n} ejemplos resueltos"},
              {"id": "sumatorias", "from": "unidad-5.html", "panel": "pn-sumatorias-ejemplos", "sub": "{n} ejemplos resueltos"},
-             {"id": "repaso", "name": "Repaso de clase", "sub": "{n} preguntas tipo evaluación",
-              "note": "Preguntas tipo evaluación que se resolvieron en el repaso de clase. Mezclan temas de inecuaciones, parábolas, interés y progresiones.",
-              "items": [["final-extra", "sl-rep-ineq"], ["unidad-5.html", "sl-in-8"], ["unidad-5.html", "sl-in-7"],
-                        ["unidad-4.html", "sl-par-15"], ["unidad-5.html", "sl-pr-4"], ["unidad-4.html", "sl-par-12"]]}
+             {"id": "ef-2024-2", "name": "Examen final 2024-2", "sub": "{n} preguntas resueltas",
+              "note": "El examen final 2024-2 completo, en el orden del examen, resuelto en la asesoría previa al final y en el repaso de clase. Cada pregunta tiene la misma solución que en su unidad.",
+              "items": [["unidad-4.html", "sl-par-16"], ["final-extra", "sl-rep-ineq"], ["unidad-5.html", "sl-in-8"], ["unidad-5.html", "sl-in-7"],
+                        ["unidad-4.html", "sl-par-15"], ["unidad-5.html", "sl-pr-4"], ["unidad-5.html", "sl-mp-7"], ["unidad-5.html", "sl-mp-8"],
+                        ["unidad-4.html", "sl-od-6"], ["unidad-5.html", "sl-in-9"]]},
+             {"id": "repaso", "name": "Más del repaso", "sub": "{n} problemas resueltos",
+              "note": "Otros problemas que se resolvieron en la asesoría y en el repaso de clase: el arco del teatro (PC4 2023-1) y los ejercicios 4 y 8 de Progresiones de la Unidad 5.",
+              "items": [["unidad-4.html", "sl-par-12"], ["unidad-5.html", "pr4"], ["unidad-5.html", "pr8"]]}
            ],
            "scripts": ["mate-nive/u4.js", "mate-nive/u5.js"]
          }}

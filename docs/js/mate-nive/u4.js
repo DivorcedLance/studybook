@@ -338,6 +338,13 @@
     segs:[{a:[-4,3.75],b:[4,3.75],c:'ink',wd:2.5,dash:false},{a:[-4,0],b:[-4,3.75]},{a:[4,0],b:[4,3.75]}],
     fns:[{f:x=>-5*x*x/64+5,from:-8,to:8}],
     pts:[{x:-8,y:0,c:'orange',t:'A(−8, 0)',dx:4,dy:-10},{x:8,y:0,c:'orange',t:'B(8, 0)',anchor:'end',dx:-4,dy:-10},{x:0,y:5,c:'blue',t:'V(0, 5)',dx:8,dy:-6},{x:-4,y:3.75,c:'magenta',t:'P(−4, 15/4)',anchor:'end',dx:-6,dy:-8},{x:4,y:3.75,c:'magenta',t:'Q(4, 15/4)',dx:6,dy:-8}]});
+  plot('g-sl-par-16',{alt:'Parábola y=x²+x+1: vértice (−1/2, 3/4), no corta al eje x, corta al eje y en 1',x:[-3,2],y:[-0.8,4.6],tx:[[-0.5,'−1/2']],ty:[1],
+    fns:[{f:x=>x*x+x+1}],segs:[{a:[-0.5,0],b:[-0.5,0.75]}],
+    pts:[{x:-0.5,y:0.75,c:'blue',t:'V(−1/2, 3/4)',anchor:'middle',dx:0,dy:20},{x:0,y:1,c:'orange',t:'(0, 1)',dx:8,dy:-6}]});
+  plot('g-sl-od-6',{alt:'Oferta p=5q/6+5 y demanda p=−q/3+12; equilibrio (6, 10) y excedente del productor',x:[0,14],y:[0,14],gx:2,gy:2,lx:'q',ly:'p',tx:[6],ty:[5,10,12],
+    polys:[{pts:[[0,5],[6,10],[0,10]],c:'blue'}],segs:[{a:[6,0],b:[6,10]},{a:[0,10],b:[6,10]}],
+    fns:[{f:q=>5*q/6+5,from:0,to:10.5,c:'blue',t:'oferta',tx:10.2,dy:-10},{f:q=>-q/3+12,from:0,to:14,c:'orange',t:'demanda',tx:13.8,dy:-10}],
+    pts:[{x:6,y:10,c:'purple',t:'(6, 10)',dx:8,dy:-8},{x:2,y:8.3,c:'blue',r:0.01,t:'EP',anchor:'middle',dx:0,dy:4}]});
   plot('g-sl-cir-2',{alt:'Dos circunferencias que se cortan en (−1,−2) y (5,−2)',eq:true,x:[-4.5,8.5],y:[-12,2],gx:1,gy:1,tx:[2],ty:[-6],
     circs:[{h:2,k:-2,r:3},{h:2,k:-6,r:5,c:'green'}],
     pts:[{x:2,y:-2,c:'blue',t:'(2, −2)',dx:6,dy:-6},{x:2,y:-6,c:'blue',t:'(2, −6)',dx:6,dy:16},{x:-1,y:-2,c:'purple',t:'(−1, −2)',anchor:'end',dx:-8,dy:-6},{x:5,y:-2,c:'purple',t:'(5, −2)',dx:8,dy:-6}]});

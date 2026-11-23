@@ -80,6 +80,8 @@ def build(course, unit, web):
             arts = []
             for k, (src, aid) in enumerate(t['items'], 1):
                 a = clean(article(src, aid))
+                # un ejercicio de la unidad, aquí se lista como problema resuelto (se cuenta con los solucionarios)
+                a = re.sub(r'<article class="ej" id=', '<article class="ej sl" id=', a, count=1)
                 a = re.sub(r'<span class="num">[^<]*</span>', '<span class="num">%d</span>' % k, a, count=1)
                 arts.append(a)
             n = len(arts)
