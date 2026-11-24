@@ -38,8 +38,8 @@
                         ["unidad-4.html", "sl-par-15"], ["unidad-5.html", "sl-pr-4"], ["unidad-5.html", "sl-mp-7"], ["unidad-5.html", "sl-mp-8"],
                         ["unidad-4.html", "sl-od-6"], ["unidad-5.html", "sl-in-9"]]},
              {"id": "repaso", "name": "Más del repaso", "sub": "{n} problemas resueltos",
-              "note": "Otros problemas que se resolvieron en la asesoría y en el repaso de clase: el arco del teatro (PC4 2023-1) y los ejercicios 4 y 8 de Progresiones de la Unidad 5.",
-              "items": [["unidad-4.html", "sl-par-12"], ["unidad-5.html", "pr4"], ["unidad-5.html", "pr8"]]}
+              "note": "Otros problemas que se resolvieron en la asesoría y en el repaso de clase: el arco del teatro (PC4 2023-1) y los ejercicios 4 y 8 de Progresiones de la Unidad 5, y una suma telescópica con logaritmos.",
+              "items": [["unidad-4.html", "sl-par-12"], ["unidad-5.html", "pr4"], ["unidad-5.html", "pr8"], ["final-extra", "sl-rep-log"]]}
            ],
            "scripts": ["mate-nive/u4.js", "mate-nive/u5.js"]
          }}

@@ -17,3 +17,27 @@
     </div>
     <div class="resp"><b>Respuesta</b>\(x\in\langle-\infty,\,-2]\cup[1,\,+\infty\rangle\).</div>
   </article>
+
+  <article class="ej sl" id="sl-rep-log">
+    <div class="ej-head"><span class="num">1</span><h3>Una suma de logaritmos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="chip src">Repaso para el final</span><span class="head-btns"><button class="teo-btn" type="button" data-teo="t-su-tel" aria-expanded="false">Teoría</button></span></div>
+    <div class="enun">Determine el valor de \(n\) si se cumple que \[\sum_{k=1}^{n}\log_3\!\left(\frac{2k-1}{2k+1}\right)=-2\]</div>
+    <div class="sol">
+      <p class="paso">Paso 1 · Separar el logaritmo del cociente</p>
+      <p>Con \(\log_b\tfrac{x}{y}=\log_bx-\log_by\):</p>
+      <div class="math">\[\log_3\!\left(\frac{2k-1}{2k+1}\right)=\log_3(2k-1)-\log_3(2k+1)\]</div>
+      <p class="paso">Paso 2 · Es una telescópica</p>
+      <p>Si \(a_k=\log_3(2k-1)\), el siguiente es \(a_{k+1}=\log_3(2(k+1)-1)=\log_3(2k+1)\). Cada sumando es \(a_k-a_{k+1}\) (la resta al revés):</p>
+      <div class="math">\[\sum_{k=1}^{n}(a_k-a_{k+1})=a_1-a_{n+1}\]</div>
+      <p>Escrita término a término, todo se cancela menos el primero y el último:</p>
+      <div class="math">\[\begin{aligned}k=1:&\quad\log_31-\cancel{\log_33}\\k=2:&\quad\cancel{\log_33}-\cancel{\log_35}\\k=3:&\quad\cancel{\log_35}-\cancel{\log_37}\\&\quad\ \ \vdots\\k=n:&\quad\cancel{\log_3(2n-1)}-\log_3(2n+1)\end{aligned}\]</div>
+      <p>Queda:</p>
+      <div class="math">\[\log_31-\log_3(2\ve n+1)=-\log_3(2\ve n+1)\]</div>
+      <p class="paso">Paso 3 · Igualar a −2</p>
+      <div class="math">\[-\log_3(2\ve n+1)=-2\]</div>
+      <div class="math">\[\log_3(2\ve n+1)=2\]</div>
+      <div class="math">\[2\ve n+1=3^2=9\]</div>
+      <div class="math">\[\ma{n=4}\]</div>
+      <p>Comprobación: con \(n=4\), la suma de logaritmos es el logaritmo del producto, \(\log_3\!\left(\tfrac13\cdot\tfrac35\cdot\tfrac57\cdot\tfrac79\right)=\log_3\tfrac19=-2\) ✓</p>
+    </div>
+    <div class="resp"><b>Respuesta</b>\(n=4\).</div>
+  </article>

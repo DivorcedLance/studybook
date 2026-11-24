@@ -57,7 +57,7 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
   <button class="topic" data-topic="progresiones" aria-pressed="false"><span class="t-name">Progresiones</span><span class="t-sub">32 ejemplos resueltos</span></button>
   <button class="topic" data-topic="sumatorias" aria-pressed="false"><span class="t-name">Sumatorias</span><span class="t-sub">29 ejemplos resueltos</span></button>
   <button class="topic" data-topic="ef-2024-2" aria-pressed="false"><span class="t-name">Examen final 2024-2</span><span class="t-sub">10 preguntas resueltas</span></button>
-  <button class="topic" data-topic="repaso" aria-pressed="false"><span class="t-name">Más del repaso</span><span class="t-sub">3 problemas resueltos</span></button>
+  <button class="topic" data-topic="repaso" aria-pressed="false"><span class="t-name">Más del repaso</span><span class="t-sub">4 problemas resueltos</span></button>
 </div>
 
 <div class="tabs" role="tablist" aria-label="Contenido">
@@ -2366,8 +2366,8 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
 <!-- ===================== MÁS DEL REPASO ===================== -->
 
 <div class="panel" id="pn-repaso-solucionarios" role="tabpanel" hidden>
-  <div class="box"><h3>Más del repaso</h3><p>Otros problemas que se resolvieron en la asesoría y en el repaso de clase: el arco del teatro (PC4 2023-1) y los ejercicios 4 y 8 de Progresiones de la Unidad 5.</p></div>
-  <div class="jump" aria-label="Ir al problema"><button data-go="sl-par-12">1</button><button data-go="pr4">2</button><button data-go="pr8">3</button></div>
+  <div class="box"><h3>Más del repaso</h3><p>Otros problemas que se resolvieron en la asesoría y en el repaso de clase: el arco del teatro (PC4 2023-1) y los ejercicios 4 y 8 de Progresiones de la Unidad 5, y una suma telescópica con logaritmos.</p></div>
+  <div class="jump" aria-label="Ir al problema"><button data-go="sl-par-12">1</button><button data-go="pr4">2</button><button data-go="pr8">3</button><button data-go="sl-rep-log">4</button></div>
 
   <article class="ej sl" id="sl-par-12">
     <div class="ej-head"><span class="num">1</span><h3>El arco del teatro</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="chip src">PC4 2023-1 · Preg. 4</span><span class="head-btns"><a class="teo-link" href="unidad-4.html#t-par-vertice">Teoría</a></span></div>
@@ -2445,6 +2445,29 @@ var t='light';try{var g=localStorage.getItem('tema');if(g==='light'||g==='dark')
     </div>
     <div class="resp"><b>Respuesta</b>\(b_n=nd\), así que \(b_{n+1}-b_n=d\): es una PA de diferencia \(d\).</div>
     <div class="err"><b>En la unidad:</b> la respuesta dice \(a_{n+1}=a_n\), que es la respuesta del ejercicio 5 de Sumatorias. Lo que se prueba aquí es \(b_{n+1}-b_n=d\).</div>
+  </article>
+  <article class="ej sl" id="sl-rep-log">
+    <div class="ej-head"><span class="num">4</span><h3>Una suma de logaritmos</h3><span class="dif d2" title="Dificultad: intermedio" aria-label="Dificultad: intermedio"><i></i><i></i><i></i>Intermedio</span><span class="chip src">Repaso para el final</span><span class="head-btns"><a class="teo-link" href="unidad-5.html#t-su-tel">Teoría</a></span></div>
+    <div class="enun">Determine el valor de \(n\) si se cumple que \[\sum_{k=1}^{n}\log_3\!\left(\frac{2k-1}{2k+1}\right)=-2\]</div>
+    <div class="sol">
+      <p class="paso">Paso 1 · Separar el logaritmo del cociente</p>
+      <p>Con \(\log_b\tfrac{x}{y}=\log_bx-\log_by\):</p>
+      <div class="math">\[\log_3\!\left(\frac{2k-1}{2k+1}\right)=\log_3(2k-1)-\log_3(2k+1)\]</div>
+      <p class="paso">Paso 2 · Es una telescópica</p>
+      <p>Si \(a_k=\log_3(2k-1)\), el siguiente es \(a_{k+1}=\log_3(2(k+1)-1)=\log_3(2k+1)\). Cada sumando es \(a_k-a_{k+1}\) (la resta al revés):</p>
+      <div class="math">\[\sum_{k=1}^{n}(a_k-a_{k+1})=a_1-a_{n+1}\]</div>
+      <p>Escrita término a término, todo se cancela menos el primero y el último:</p>
+      <div class="math">\[\begin{aligned}k=1:&\quad\log_31-\cancel{\log_33}\\k=2:&\quad\cancel{\log_33}-\cancel{\log_35}\\k=3:&\quad\cancel{\log_35}-\cancel{\log_37}\\&\quad\ \ \vdots\\k=n:&\quad\cancel{\log_3(2n-1)}-\log_3(2n+1)\end{aligned}\]</div>
+      <p>Queda:</p>
+      <div class="math">\[\log_31-\log_3(2\ve n+1)=-\log_3(2\ve n+1)\]</div>
+      <p class="paso">Paso 3 · Igualar a −2</p>
+      <div class="math">\[-\log_3(2\ve n+1)=-2\]</div>
+      <div class="math">\[\log_3(2\ve n+1)=2\]</div>
+      <div class="math">\[2\ve n+1=3^2=9\]</div>
+      <div class="math">\[\ma{n=4}\]</div>
+      <p>Comprobación: con \(n=4\), la suma de logaritmos es el logaritmo del producto, \(\log_3\!\left(\tfrac13\cdot\tfrac35\cdot\tfrac57\cdot\tfrac79\right)=\log_3\tfrac19=-2\) ✓</p>
+    </div>
+    <div class="resp"><b>Respuesta</b>\(n=4\).</div>
   </article>
 </div>
 
